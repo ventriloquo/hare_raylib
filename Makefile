@@ -1,9 +1,9 @@
 game:
-	hare build -R -L. -lraylib -o examples/game examples/game.ha
+	hare build -R -L/usr/local/include/ -lraylib -lm -o examples/game examples/game.ha
 	./examples/game
 
 fib:
-	hare build -R -L. -lraylib -o examples/fib examples/fib.ha
+	hare build -R -L/usr/local/include/ -lraylib -lm -o examples/fib examples/fib.ha
 	./examples/fib
 
 doc:
