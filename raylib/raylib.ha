@@ -170,7 +170,7 @@ export type ConfigFlags = enum {
 // Keyboard keys
 //
 // Example:
-//	if (is_key_pressed(KeyboardKey::KEY_I)) play_sound(menu_enter);
+//	if (is_key_pressed(KeyboardKey::KEY_ENTER)) play_sound(menu_enter);
 export type KeyboardKey = enum {
 	KEY_NULL            = 0,
 	// Alphanumeric keys
@@ -396,43 +396,6 @@ export type NPatchLayout = enum {
 	NPATCH_THREE_PATCH_VERTICAL,    // Npatch layout: 1x3 tiles
 	NPATCH_THREE_PATCH_HORIZONTAL   // Npatch layout: 3x1 tiles};
 };
-
-// 235-bg-0 (#282828)
-export const GRUV_BG_DARK		= Color { r = 40,  g = 40,  b = 40,  a = 255 };
-// 223-fg-15 (#ebdbb2)
-export const GRUV_FG_DARK		= Color { r = 168, g = 153, b = 132, a = 255 };
-// 124-red-1 (#cc241d)
-export const GRUV_RED_DARK		= Color { r = 204, g = 36,  b = 29,  a = 255 };
-// 106-green-2 (#98971a)
-export const GRUV_GREEN_DARK		= Color { r = 152, g = 151, b = 26,  a = 255 };
-// 172-yellow-3 (#d79921)
-export const GRUV_YELLOW_DARK		= Color { r = 215, g = 153, b = 33,  a = 255 };
-// 66-blue-4 (#458588)
-export const GRUV_BLUE_DARK		= Color { r = 69,  g = 133, b = 136, a = 255 };
-// 132-purple-5 (#b16286)
-export const GRUV_PURPLE_DARK		= Color { r = 177, g = 98,  b = 134, a = 255 };
-// 72-aqua-6 (#689d6a)
-export const GRUV_AQUA_DARK		= Color { r = 104, g = 157, b = 106, a = 255 };
-// 166-orange-- (#d65d0e)
-export const GRUV_ORANGE_DARK		= Color { r = 214, g = 93,  b = 14,  a = 255 };
-// 237-bg1-- (#3c3836)
-export const GRUV_BG_LIGHT		= Color { r = 60,  g = 56,  b = 54,  a = 255 };
-// 229-fg0-- (#fbf1c7)
-export const GRUV_FG_LIGHT		= Color { r = 235, g = 219, b = 178, a = 255 };
-// 167-red-9 (#fb4934)
-export const GRUV_RED_LIGHT		= Color { r = 251, g = 73,  b = 52,  a = 255 };
-// 142-green-10 (#b8bb26)
-export const GRUV_GREEN_LIGHT		= Color { r = 184, g = 187, b = 38,  a = 255 };
-// 214-yellow-11 (#fabd2f)
-export const GRUV_YELLOW_LIGHT		= Color { r = 250, g = 189, b = 47,  a = 255 };
-// 109-blue-12 (#83a598)
-export const GRUV_BLUE_LIGHT		= Color { r = 131, g = 165, b = 152, a = 255 };
-// 175-purple-13 (#d3869b)
-export const GRUV_PURPLE_LIGHT		= Color { r = 211, g = 134, b = 155, a = 255 };
-// 108-aqua-14 (#8ec07c)
-export const GRUV_AQUA_LIGHT		= Color { r = 142, g = 192, b = 124, a = 255 };
-// 208-orange-- (#fe8019)
-export const GRUV_ORANGE_LIGHT		= Color { r = 254, g = 128, b = 25,  a = 255 };
 
 // Light Gray
 export const LIGHTGRAY			= Color { r = 200, g = 200, b = 200, a = 255 };
@@ -702,49 +665,129 @@ export @symbol("GetCharPressed") fn get_char_pressed() int;
 export @symbol("SetExitKey") fn set_exit_key(key: int) void;
 
 // Input-related functions: gamepad
+
+// Get gamepad internal name id
 @symbol("GetGamepadName") fn GetGamepadName(gamepad: int) const *c::char;
+
+// Set internal gamepad mappings (SDL_GameControllerDB)
 @symbol("SetGamepadMappings") fn SetGamepadMappings(*c::char) int;
+
+// Check if a gamepad is available
 export @symbol("IsGamepadAvaible") fn is_gamepad_avaible(gamepad: int) bool;
+
+// Get gamepad internal name id
 export fn get_gamepad_name(gamepad: int) str = return c::tostr(GetGamepadName(gamepad))!;
+
+// Check if a gamepad button has been pressed once
 export @symbol("IsGamepadButtonPressed") fn is_gamepad_button_pressed(gamepad: int, button: int) bool;
+
+// Check if a gamepad button is being pressed
 export @symbol("IsGamepadButtonDown") fn is_gamepad_button_down(gamepad: int, button: int) bool;
+
+// Check if a gamepad button has been released once
 export @symbol("IsGamepadButtonReleased") fn is_gamepad_button_released(gamepad: int, button: int) bool;
+
+// Check if a gamepad button is NOT being pressed
 export @symbol("IsGamepadButtonUp") fn is_gamepad_button_up(gamepad: int, button: int) bool;
+
+// Get the last gamepad button pressed
 export @symbol("GetGamepadButtonPressed") fn get_gamepad_button_pressed() int;
+
+// Get gamepad axis count for a gamepad
 export @symbol("GetGamepadAxisCount") fn get_gamepad_axis_count() int;
+
+// Get axis movement value for a gamepad axis
 export @symbol("GetGamepadAxisMovement") fn get_gamepad_axis_movement(gamepad: int, axis: int) f32;
+
+// Set internal gamepad mappings (SDL_GameControllerDB)
 export fn set_gamepad_mappings(mappings: str) int = SetGamepadMappings(c::fromstr(mappings: str)!);
 
+// Set gamepad vibration for both motors (duration in seconds)
+export @symbol("SetGamepadVibration") fn set_gamepad_vibration(gamepad: int, left_moto: f32, right_motor: f32, duration: f32) void;
+
 // Input-related functions: mouse
+
+// Check if a mouse button has been pressed once
 export @symbol("IsMouseButtonPressed") fn is_mouse_button_pressed(mouse_button: int) bool;
+
+// Check if a mouse button is being pressed
 export @symbol("IsMouseButtonDown") fn is_mouse_button_down(mouse_button: int) bool;
+
+// Check if a mouse button has been released once
 export @symbol("IsMouseButtonReleased") fn is_mouse_button_released(mouse_button: int) bool;
+
+// Check if a mouse button is NOT being pressed
 export @symbol("IsMouseButtonUp") fn is_mouse_button_up(mouse_button: int) bool;
+
+// Get mouse position X
 export @symbol("GetMouseX") fn get_mouse_x() int;
+
+// Get mouse position Y
 export @symbol("GetMouseY") fn get_mouse_y() int;
+
+// Get mouse position XY
 export @symbol("GetMousePosition") fn get_mouse_position() Vector2;
+
+// Get mouse delta between frames
 export @symbol("GetMouseDelta") fn get_mouse_delta() Vector2;
+
+// Set mouse position XY
 export @symbol("SetMousePosition") fn set_mouse_position(x: int, y: int) void;
+
+// Set mouse offset
 export @symbol("SetMouseOffset") fn set_mouse_offset(offset_x: int, offset_y: int) void;
+
+// Set mouse scaling
 export @symbol("SetMouseScale") fn set_mouse_scale(scale_x: f32, scale_y: f32) void;
+
+// Get mouse wheel movement for X or Y, whichever is larger
 export @symbol("GetMouseWheelMove") fn get_mouse_wheel_move() f32;
+
+// Get mouse wheel movement for both X and Y
 export @symbol("GetMouseWheelMoveV") fn get_mouse_wheel_move_v() Vector2;
+
+// Set mouse cursor
 export @symbol("SetMouseCursor") fn set_mouse_cursor(cursor: int) void;
 
 // Input-related functions: touch
 
+// Get touch position X for touch point 0 (relative to screen size)
 export @symbol("GetTouchX") fn get_touch_x() int;
+
+// Get touch position Y for touch point 0 (relative to screen size)
 export @symbol("GetTouchY") fn get_touch_y() int;
+
+// Get touch position XY for a touch point index (relative to screen size)
 export @symbol("GetTouchPosition") fn get_touch_position(index: int) Vector2;
+
+// Get touch point identifier for given index
 export @symbol("GetTouchPointId") fn get_touch_point_id(id: int) int;
+
+// Get number of touch points
 export @symbol("GetTouchPointCount") fn get_touch_point_count() int;
+
+// Enable a set of gestures using flags
 export @symbol("SetGesturesEnabled") fn set_gestures_enabled(flags: i32) void;
+
+// Check if a gesture have been detected
 export @symbol("IsGestureDetected") fn is_gesture_detected(gesture: i32) bool;
+
+// Get latest detected gesture
 export @symbol("GetGestureDetected") fn get_gesture_detected() int;
+
+// Get gesture hold time in seconds
 export @symbol("GetGestureHoldDuration") fn get_gesture_hold_duration() f32;
+
+// Get gesture drag vector
 export @symbol("GetGestureDragVector") fn get_gesture_drag_vector() Vector2;
+
+// Get gesture drag angle
 export @symbol("GetGestureDragAngle") fn get_gesture_drag_angle() f32;
+
+// Get gesture pinch delta
 export @symbol("GetGesturePinchVector") fn get_gesture_pinch_vector() Vector2;
+
+// Get gesture pinch angle
 export @symbol("GetGesturePinchAngle") fn get_gesture_pinch_angle() f32;
 
 // module: rshapes

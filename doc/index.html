@@ -1,16 +1,10 @@
-<head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1"> </head> <style> :root { --color: #dcd7ba; --background-color: #1F1F28; --background-color-alt: #2A2A37; --color-red:            #FF5D62; --color-yellow:         #FF9E3B; --color-orange:         #FFA066; --color-blue:           #7e9cd8; --color-green:          #98BB6C; --color-purple:         #957fbb; --color-pink:           #D27E99; --color-light-blue:     #7AA89F; --color-light-yellow:   #C0A36E; --color-light-purple:   #9CABCA; --border: solid 3px var(--color-purple); } ::-webkit-scrollbar { display: none; } * { font-family: monospace; scroll-behavior: smooth; } body { display: block; margin: 1em auto; padding: 1em; max-width: 80ch; background-color: var(--background-color); border-radius: 5px; } summary { color: var(--color-purple); padding: 0 1em; } a { text-decoration: none; color: var(--color-blue); } a:hover { opacity: 80%; } pre { padding: 1em; color: var(--color); background-color: var(--background-color-alt); border: solid 1px var(--background-color-alt); margin-left: auto; margin-right: auto; border-radius: 5px; overflow: scroll; } ol, ul { color: var(--color); } p { color: var(--color); margin: 1em 0; } h1 { color: var(--color); } h2 { color: var(--color); display: none; } h2 > .heading-extra, h3, h4, h4 .heading-extra { display: none; } .keyword { color: var(--color-purple); } .type { color: var(--color-light-blue); } .comment { color: var(--color-pink); } .heading-body { color: var(--color-purple); font-size: larger; } .heading-extra { color: var(--color-yellow); } .heading-extra a { color: var(--color-pink); float: right; } .readme { background-color: var(--background-color-alt); border: var(--border); border-radius: 5px; margin-top: 1em; padding: 2em 1em 0.5em 1em; position: relative; overflow-x: scroll; } .readme::before { content: "README"; position: absolute; color: var(--background-color); background-color: var(--color-purple); left: 0; top: 0; padding: 2px 1em; border-end-end-radius: 10px; } .sample { display: block; background-color: var(--background-color-alt); } .member { border: solid 1px var(--background-color-alt); border-radius: 5px; padding: 15px; } .member > h4 { color: var(--color); display: block !important; } .member:has(h4) { display: none; } h4+pre { display: block; } .member:has(h4:target) { display: block; } .red { color: var(--color-red) } .blue { color: var(--color-blue) } .yellow { color: var(--color-yellow) } .green { color: var(--color-green) } .purple { color: var(--color-purple) } .orange { color: var(--color-orange) } .lblue { color: var(--color-light-blue) } .lpurple { color: var(--color-light-purple) } .lyellow { color: var(--color-light-yellow) } span:has(+ span) { color: inherit; } .title { color: var(--color-green); font-size: x-large; } .quote, .note, .tip, .important, .warning, .caution { padding: 1em; background-color: var(--background-color-alt); color: var(--color-light-blue); border-left: solid 5px var(--color-light-blue); border-radius: 5px; position: relative; } .note, .tip, .important, .warning, .caution { padding-top: 3em; } .note { color: var(--color-blue); border-color: var(--color-blue); } .tip { color: var(--color-green); border-color: var(--color-green); } .important { color: var(--color-purple); border-color: var(--color-purple); } .warning { color: var(--color-yellow); border-color: var(--color-yellow); } .caution { color: var(--color-red); border-color: var(--color-red); } .note::before, .tip::before, .important::before, .warning::before, .caution::before { position: absolute; top: 0; left: 0; padding: 2px 1em; color: var(--background-color); border-end-end-radius: 10px; } .note::before { content: "nota"; background-color: var(--color-blue); } .tip::before { content: "dica"; background-color: var(--color-green); } .important::before { content: "importante"; background-color: var(--color-purple); } .warning::before { content: "alerta"; background-color: var(--color-yellow); } .caution::before { content: "cuidado"; background-color: var(--color-red); } @media only screen and (max-width: 800px) { pre { border: none; } .member { border: none; padding: 1em; } p { overflow-x: scroll; } } </style>
+<head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1"> </head> <style> :root { --color: #dcd7ba; --background-color: #1F1F28; --background-color-alt: #2A2A37; --color-red:            #FF5D62; --color-yellow:         #FF9E3B; --color-orange:         #FFA066; --color-blue:           #7e9cd8; --color-green:          #98BB6C; --color-purple:         #957fbb; --color-pink:           #D27E99; --color-light-blue:     #7AA89F; --color-light-yellow:   #C0A36E; --color-light-purple:   #9CABCA; --border: solid 3px var(--color-purple); } ::-webkit-scrollbar { display: none; } * { font-family: monospace; scroll-behavior: smooth; } body { display: block; margin: 1em auto; padding: 1em; max-width: 120ch; background-color: var(--background-color); border-radius: 5px; } summary { color: var(--color-purple); padding: 0 1em; } a { text-decoration: none; color: var(--color-blue); } a:hover { opacity: 80%; } pre { padding: 1em; color: var(--color); background-color: var(--background-color-alt); border: solid 1px var(--background-color-alt); margin-left: auto; margin-right: auto; border-radius: 5px; overflow: scroll; } ol, ul { color: var(--color); } p { color: var(--color); margin: 1em 0; } h1 { color: var(--color); } h2 { color: var(--color); display: none; } h2 > .heading-extra, h3, h4, h4 .heading-extra { display: none; } .keyword { color: var(--color-purple); } .type { color: var(--color-light-blue); } .comment { color: var(--color-pink); } .heading-body { color: var(--color-purple); font-size: larger; } .heading-extra { color: var(--color-yellow); } .heading-extra a { color: var(--color-pink); float: right; } .readme { background-color: var(--background-color-alt); border: var(--border); border-radius: 5px; margin-top: 1em; padding: 2em 1em 0.5em 1em; position: relative; overflow-x: scroll; } .readme::before { content: "README"; position: absolute; color: var(--background-color); background-color: var(--color-purple); left: 0; top: 0; padding: 2px 1em; border-end-end-radius: 10px; } .sample { display: block; background-color: var(--background-color-alt); } .member { border: solid 1px var(--background-color-alt); border-radius: 5px; padding: 15px; } .member > h4 { color: var(--color); display: block !important; } .member:has(h4) { display: none; } h4+pre { display: block; } .member:has(h4:target) { display: block; } .red { color: var(--color-red) } .blue { color: var(--color-blue) } .yellow { color: var(--color-yellow) } .green { color: var(--color-green) } .purple { color: var(--color-purple) } .orange { color: var(--color-orange) } .lblue { color: var(--color-light-blue) } .lpurple { color: var(--color-light-purple) } .lyellow { color: var(--color-light-yellow) } span:has(+ span) { color: inherit; } .title { color: var(--color-green); font-size: x-large; } .quote, .note, .tip, .important, .warning, .caution { padding: 1em; background-color: var(--background-color-alt); color: var(--color-light-blue); border-left: solid 5px var(--color-light-blue); border-radius: 5px; position: relative; } .note, .tip, .important, .warning, .caution { padding-top: 3em; } .note { color: var(--color-blue); border-color: var(--color-blue); } .tip { color: var(--color-green); border-color: var(--color-green); } .important { color: var(--color-purple); border-color: var(--color-purple); } .warning { color: var(--color-yellow); border-color: var(--color-yellow); } .caution { color: var(--color-red); border-color: var(--color-red); } .note::before, .tip::before, .important::before, .warning::before, .caution::before { position: absolute; top: 0; left: 0; padding: 2px 1em; color: var(--background-color); border-end-end-radius: 10px; } .note::before { content: "nota"; background-color: var(--color-blue); } .tip::before { content: "dica"; background-color: var(--color-green); } .important::before { content: "importante"; background-color: var(--color-purple); } .warning::before { content: "alerta"; background-color: var(--color-yellow); } .caution::before { content: "cuidado"; background-color: var(--color-red); } @media only screen and (max-width: 800px) { pre { border: none; } .member { border: none; padding: 1em; } p { overflow-x: scroll; } } </style>
 <h2><span class='heading-body'>raylib</span><span class='heading-extra'>+x86_64 +linux </span></h2>
 <div class='readme'>
-<p>Things to know
-<ul>
-<li>Currently, i&apos;m focussing on 2D game development, this means that any/all 3D related functions/structs/variables will not be implemented yet.
-<li>I&apos;m not a programmer, and I dont fully know what things do. If theres an issue in some part of the code, please, report it at the issues tab.
-</ul>
-<p>Objectives
-<ul>
-<li>Bring all of raylib functions to Hare and making the usability as close as possible to the original.
-<li>Take advantage of Hare features
-</ul>
+<p>Raylib.ha (não decidi ainda o nome permanente)
+<p>Essas são minhas bindings da Raylib para a linguagem de programação Hare!
+<p><a rel='nofollow noopener' href='https://harelang.org/'>https://harelang.org/</a>
+<p>Tentarei cobrir o máximo de funções da Raylib que conseguir, senão, todas. Também irei fazer as bindings da Raymath, quando algum exemplo exigir ela.
 </div>
 <h3>Index</h3>
 <h4>Types</h4>
@@ -65,6 +59,19 @@
 	GAMEPAD_BUTTON_MIDDLE_RIGHT,
 	GAMEPAD_BUTTON_LEFT_THUMB,
 	GAMEPAD_BUTTON_RIGHT_THUMB,
+};
+<span class='keyword'>type</span> <a href='#Gestures'>Gestures</a> = <span class='type'>enum</span> {
+	GESTURE_NONE = 0, <span class='comment'>//</span><span class='comment'> No gesture</span><span class='comment'>
+</span>	GESTURE_TAP = 1, <span class='comment'>//</span><span class='comment'> Tap gesture</span><span class='comment'>
+</span>	GESTURE_DOUBLETAP = 2, <span class='comment'>//</span><span class='comment'> Double tap gesture</span><span class='comment'>
+</span>	GESTURE_HOLD = 4, <span class='comment'>//</span><span class='comment'> Hold gesture</span><span class='comment'>
+</span>	GESTURE_DRAG = 8, <span class='comment'>//</span><span class='comment'> Drag gesture</span><span class='comment'>
+</span>	GESTURE_SWIPE_RIGHT = 16, <span class='comment'>//</span><span class='comment'> Swipe right gesture</span><span class='comment'>
+</span>	GESTURE_SWIPE_LEFT = 32, <span class='comment'>//</span><span class='comment'> Swipe left gesture</span><span class='comment'>
+</span>	GESTURE_SWIPE_UP = 64, <span class='comment'>//</span><span class='comment'> Swipe up gesture</span><span class='comment'>
+</span>	GESTURE_SWIPE_DOWN = 128, <span class='comment'>//</span><span class='comment'> Swipe down gesture</span><span class='comment'>
+</span>	GESTURE_PINCH_IN = 256, <span class='comment'>//</span><span class='comment'> Pinch in gesture</span><span class='comment'>
+</span>	GESTURE_PINCH_OUT = 512,
 };
 <span class='keyword'>type</span> <a href='#Image'>Image</a> = <span class='type'>struct</span> {
 	data: <span class='type'>*</span><span class='type'>opaque</span>,
@@ -372,24 +379,6 @@
 <span class='keyword'>const</span> <a href='#GOLD'>GOLD</a>;
 <span class='keyword'>const</span> <a href='#GRAY'>GRAY</a>;
 <span class='keyword'>const</span> <a href='#GREEN'>GREEN</a>;
-<span class='keyword'>const</span> <a href='#GRUV_AQUA_DARK'>GRUV_AQUA_DARK</a>;
-<span class='keyword'>const</span> <a href='#GRUV_AQUA_LIGHT'>GRUV_AQUA_LIGHT</a>;
-<span class='keyword'>const</span> <a href='#GRUV_BG_DARK'>GRUV_BG_DARK</a>;
-<span class='keyword'>const</span> <a href='#GRUV_BG_LIGHT'>GRUV_BG_LIGHT</a>;
-<span class='keyword'>const</span> <a href='#GRUV_BLUE_DARK'>GRUV_BLUE_DARK</a>;
-<span class='keyword'>const</span> <a href='#GRUV_BLUE_LIGHT'>GRUV_BLUE_LIGHT</a>;
-<span class='keyword'>const</span> <a href='#GRUV_FG_DARK'>GRUV_FG_DARK</a>;
-<span class='keyword'>const</span> <a href='#GRUV_FG_LIGHT'>GRUV_FG_LIGHT</a>;
-<span class='keyword'>const</span> <a href='#GRUV_GREEN_DARK'>GRUV_GREEN_DARK</a>;
-<span class='keyword'>const</span> <a href='#GRUV_GREEN_LIGHT'>GRUV_GREEN_LIGHT</a>;
-<span class='keyword'>const</span> <a href='#GRUV_ORANGE_DARK'>GRUV_ORANGE_DARK</a>;
-<span class='keyword'>const</span> <a href='#GRUV_ORANGE_LIGHT'>GRUV_ORANGE_LIGHT</a>;
-<span class='keyword'>const</span> <a href='#GRUV_PURPLE_DARK'>GRUV_PURPLE_DARK</a>;
-<span class='keyword'>const</span> <a href='#GRUV_PURPLE_LIGHT'>GRUV_PURPLE_LIGHT</a>;
-<span class='keyword'>const</span> <a href='#GRUV_RED_DARK'>GRUV_RED_DARK</a>;
-<span class='keyword'>const</span> <a href='#GRUV_RED_LIGHT'>GRUV_RED_LIGHT</a>;
-<span class='keyword'>const</span> <a href='#GRUV_YELLOW_DARK'>GRUV_YELLOW_DARK</a>;
-<span class='keyword'>const</span> <a href='#GRUV_YELLOW_LIGHT'>GRUV_YELLOW_LIGHT</a>;
 <span class='keyword'>const</span> <a href='#LIGHTGRAY'>LIGHTGRAY</a>;
 <span class='keyword'>const</span> <a href='#LIME'>LIME</a>;
 <span class='keyword'>const</span> <a href='#MAGENTA'>MAGENTA</a>;
@@ -421,18 +410,48 @@
 @symbol(&quot;DrawTexture&quot;) <span class='keyword'>fn</span> <a href='#draw_texture'>draw_texture</a>(texture: <span class='type'>Texture</span>, x: <span class='type'>int</span>, y: <span class='type'>int</span>, tint: <span class='type'>Color</span>) <span class='type'>void</span>;
 @symbol(&quot;GetCameraMatrix2D&quot;) <span class='keyword'>fn</span> <a href='#get_camera_matrix_2d'>get_camera_matrix_2d</a>(camera: <span class='type'>Camera2D</span>) <span class='type'>Matrix</span>;
 @symbol(&quot;GetColor&quot;) <span class='keyword'>fn</span> <a href='#get_color'>get_color</a>(color: <span class='type'>u32</span>) <span class='type'>Color</span>;
+@symbol(&quot;GetGamepadAxisCount&quot;) <span class='keyword'>fn</span> <a href='#get_gamepad_axis_count'>get_gamepad_axis_count</a>() <span class='type'>int</span>;
+@symbol(&quot;GetGamepadAxisMovement&quot;) <span class='keyword'>fn</span> <a href='#get_gamepad_axis_movement'>get_gamepad_axis_movement</a>(gamepad: <span class='type'>int</span>, axis: <span class='type'>int</span>) <span class='type'>f32</span>;
+@symbol(&quot;GetGamepadButtonPressed&quot;) <span class='keyword'>fn</span> <a href='#get_gamepad_button_pressed'>get_gamepad_button_pressed</a>() <span class='type'>int</span>;
+<span class='keyword'>fn</span> <a href='#get_gamepad_name'>get_gamepad_name</a>(gamepad: <span class='type'>int</span>) <span class='type'>str</span>;
+@symbol(&quot;GetGestureDetected&quot;) <span class='keyword'>fn</span> <a href='#get_gesture_detected'>get_gesture_detected</a>() <span class='type'>int</span>;
+@symbol(&quot;GetGestureDragAngle&quot;) <span class='keyword'>fn</span> <a href='#get_gesture_drag_angle'>get_gesture_drag_angle</a>() <span class='type'>f32</span>;
+@symbol(&quot;GetGestureDragVector&quot;) <span class='keyword'>fn</span> <a href='#get_gesture_drag_vector'>get_gesture_drag_vector</a>() <span class='type'>Vector2</span>;
+@symbol(&quot;GetGestureHoldDuration&quot;) <span class='keyword'>fn</span> <a href='#get_gesture_hold_duration'>get_gesture_hold_duration</a>() <span class='type'>f32</span>;
+@symbol(&quot;GetGesturePinchAngle&quot;) <span class='keyword'>fn</span> <a href='#get_gesture_pinch_angle'>get_gesture_pinch_angle</a>() <span class='type'>f32</span>;
+@symbol(&quot;GetGesturePinchVector&quot;) <span class='keyword'>fn</span> <a href='#get_gesture_pinch_vector'>get_gesture_pinch_vector</a>() <span class='type'>Vector2</span>;
+@symbol(&quot;GetMouseDelta&quot;) <span class='keyword'>fn</span> <a href='#get_mouse_delta'>get_mouse_delta</a>() <span class='type'>Vector2</span>;
+@symbol(&quot;GetMousePosition&quot;) <span class='keyword'>fn</span> <a href='#get_mouse_position'>get_mouse_position</a>() <span class='type'>Vector2</span>;
+@symbol(&quot;GetMouseWheelMove&quot;) <span class='keyword'>fn</span> <a href='#get_mouse_wheel_move'>get_mouse_wheel_move</a>() <span class='type'>f32</span>;
+@symbol(&quot;GetMouseWheelMoveV&quot;) <span class='keyword'>fn</span> <a href='#get_mouse_wheel_move_v'>get_mouse_wheel_move_v</a>() <span class='type'>Vector2</span>;
+@symbol(&quot;GetMouseX&quot;) <span class='keyword'>fn</span> <a href='#get_mouse_x'>get_mouse_x</a>() <span class='type'>int</span>;
+@symbol(&quot;GetMouseY&quot;) <span class='keyword'>fn</span> <a href='#get_mouse_y'>get_mouse_y</a>() <span class='type'>int</span>;
 @symbol(&quot;GetRandomValue&quot;) <span class='keyword'>fn</span> <a href='#get_random_value'>get_random_value</a>(min: <span class='type'>int</span>, max: <span class='type'>int</span>) <span class='type'>void</span>;
 @symbol(&quot;GetSplinePointBasis&quot;) <span class='keyword'>fn</span> <a href='#get_spline_point_basis'>get_spline_point_basis</a>(p1: <span class='type'>Vector2</span>, p2: <span class='type'>Vector2</span>, p3: <span class='type'>Vector2</span>, p4: <span class='type'>Vector2</span>, t: <span class='type'>f32</span>) <span class='type'>Vector2</span>;
 @symbol(&quot;GetSplinePointBezierCubic&quot;) <span class='keyword'>fn</span> <a href='#get_spline_point_bezier_cubic'>get_spline_point_bezier_cubic</a>(p1: <span class='type'>Vector2</span>, c2: <span class='type'>Vector2</span>, c3: <span class='type'>Vector2</span>, p4: <span class='type'>Vector2</span>, t: <span class='type'>f32</span>) <span class='type'>Vector2</span>;
 @symbol(&quot;GetSplinePointBezierQuad&quot;) <span class='keyword'>fn</span> <a href='#get_spline_point_bezier_quad'>get_spline_point_bezier_quad</a>(p1: <span class='type'>Vector2</span>, c2: <span class='type'>Vector2</span>, p3: <span class='type'>Vector2</span>, t: <span class='type'>f32</span>) <span class='type'>Vector2</span>;
 @symbol(&quot;GetSplinePointCatmullRom&quot;) <span class='keyword'>fn</span> <a href='#get_spline_point_catmull_rom'>get_spline_point_catmull_rom</a>(p1: <span class='type'>Vector2</span>, p2: <span class='type'>Vector2</span>, p3: <span class='type'>Vector2</span>, p4: <span class='type'>Vector2</span>, t: <span class='type'>f32</span>) <span class='type'>Vector2</span>;
 @symbol(&quot;GetSplinePointLinear&quot;) <span class='keyword'>fn</span> <a href='#get_spline_point_linear'>get_spline_point_linear</a>(start_pos: <span class='type'>Vector2</span>, end_pos: <span class='type'>Vector2</span>, t: <span class='type'>f32</span>) <span class='type'>Vector2</span>;
+@symbol(&quot;GetTouchPointCount&quot;) <span class='keyword'>fn</span> <a href='#get_touch_point_count'>get_touch_point_count</a>() <span class='type'>int</span>;
+@symbol(&quot;GetTouchPointId&quot;) <span class='keyword'>fn</span> <a href='#get_touch_point_id'>get_touch_point_id</a>(id: <span class='type'>int</span>) <span class='type'>int</span>;
+@symbol(&quot;GetTouchPosition&quot;) <span class='keyword'>fn</span> <a href='#get_touch_position'>get_touch_position</a>(index: <span class='type'>int</span>) <span class='type'>Vector2</span>;
+@symbol(&quot;GetTouchX&quot;) <span class='keyword'>fn</span> <a href='#get_touch_x'>get_touch_x</a>() <span class='type'>int</span>;
+@symbol(&quot;GetTouchY&quot;) <span class='keyword'>fn</span> <a href='#get_touch_y'>get_touch_y</a>() <span class='type'>int</span>;
 @symbol(&quot;InitAudioDevice&quot;) <span class='keyword'>fn</span> <a href='#init_audio_device'>init_audio_device</a>() <span class='type'>void</span>;
 @symbol(&quot;IsAudioStreamPlaying&quot;) <span class='keyword'>fn</span> <a href='#is_audio_stream_playing'>is_audio_stream_playing</a>(stream: <span class='type'>AudioStream</span>) <span class='type'>bool</span>;
 @symbol(&quot;IsAudioStreamProcessed&quot;) <span class='keyword'>fn</span> <a href='#is_audio_stream_processed'>is_audio_stream_processed</a>(stream: <span class='type'>AudioStream</span>) <span class='type'>bool</span>;
 @symbol(&quot;IsAudioStreamReady&quot;) <span class='keyword'>fn</span> <a href='#is_audio_stream_ready'>is_audio_stream_ready</a>(stream: <span class='type'>AudioStream</span>) <span class='type'>bool</span>;
+@symbol(&quot;IsGamepadAvaible&quot;) <span class='keyword'>fn</span> <a href='#is_gamepad_avaible'>is_gamepad_avaible</a>(gamepad: <span class='type'>int</span>) <span class='type'>bool</span>;
+@symbol(&quot;IsGamepadButtonDown&quot;) <span class='keyword'>fn</span> <a href='#is_gamepad_button_down'>is_gamepad_button_down</a>(gamepad: <span class='type'>int</span>, button: <span class='type'>int</span>) <span class='type'>bool</span>;
+@symbol(&quot;IsGamepadButtonPressed&quot;) <span class='keyword'>fn</span> <a href='#is_gamepad_button_pressed'>is_gamepad_button_pressed</a>(gamepad: <span class='type'>int</span>, button: <span class='type'>int</span>) <span class='type'>bool</span>;
+@symbol(&quot;IsGamepadButtonReleased&quot;) <span class='keyword'>fn</span> <a href='#is_gamepad_button_released'>is_gamepad_button_released</a>(gamepad: <span class='type'>int</span>, button: <span class='type'>int</span>) <span class='type'>bool</span>;
+@symbol(&quot;IsGamepadButtonUp&quot;) <span class='keyword'>fn</span> <a href='#is_gamepad_button_up'>is_gamepad_button_up</a>(gamepad: <span class='type'>int</span>, button: <span class='type'>int</span>) <span class='type'>bool</span>;
+@symbol(&quot;IsGestureDetected&quot;) <span class='keyword'>fn</span> <a href='#is_gesture_detected'>is_gesture_detected</a>(gesture: <span class='type'>i32</span>) <span class='type'>bool</span>;
 @symbol(&quot;IsKeyPressed&quot;) <span class='keyword'>fn</span> <a href='#is_key_pressed'>is_key_pressed</a>(key: <span class='type'>int</span>) <span class='type'>bool</span>;
+@symbol(&quot;IsMouseButtonDown&quot;) <span class='keyword'>fn</span> <a href='#is_mouse_button_down'>is_mouse_button_down</a>(mouse_button: <span class='type'>int</span>) <span class='type'>bool</span>;
 @symbol(&quot;IsMouseButtonPressed&quot;) <span class='keyword'>fn</span> <a href='#is_mouse_button_pressed'>is_mouse_button_pressed</a>(mouse_button: <span class='type'>int</span>) <span class='type'>bool</span>;
+@symbol(&quot;IsMouseButtonReleased&quot;) <span class='keyword'>fn</span> <a href='#is_mouse_button_released'>is_mouse_button_released</a>(mouse_button: <span class='type'>int</span>) <span class='type'>bool</span>;
+@symbol(&quot;IsMouseButtonUp&quot;) <span class='keyword'>fn</span> <a href='#is_mouse_button_up'>is_mouse_button_up</a>(mouse_button: <span class='type'>int</span>) <span class='type'>bool</span>;
 @symbol(&quot;LoadAudioStream&quot;) <span class='keyword'>fn</span> <a href='#load_audio_stream'>load_audio_stream</a>(sample_rate: <span class='type'>u32</span>, sample_size: <span class='type'>u32</span>, channels: <span class='type'>u32</span>) <span class='type'>AudioStream</span>;
 @symbol(&quot;PauseAudioStream&quot;) <span class='keyword'>fn</span> <a href='#pause_audio_stream'>pause_audio_stream</a>(stream: <span class='type'>AudioStream</span>) <span class='type'>void</span>;
 @symbol(&quot;PlayAudioStream&quot;) <span class='keyword'>fn</span> <a href='#play_audio_stream'>play_audio_stream</a>(stream: <span class='type'>AudioStream</span>) <span class='type'>void</span>;
@@ -443,6 +462,13 @@
 @symbol(&quot;SetAudioStreamPan&quot;) <span class='keyword'>fn</span> <a href='#set_audio_stream_pan'>set_audio_stream_pan</a>(stream: <span class='type'>AudioStream</span>, pan: <span class='type'>f32</span>) <span class='type'>void</span>;
 @symbol(&quot;SetAudioStreamPitch&quot;) <span class='keyword'>fn</span> <a href='#set_audio_stream_pitch'>set_audio_stream_pitch</a>(stream: <span class='type'>AudioStream</span>, pitch: <span class='type'>f32</span>) <span class='type'>void</span>;
 @symbol(&quot;SetAudioStreamVolume&quot;) <span class='keyword'>fn</span> <a href='#set_audio_stream_volume'>set_audio_stream_volume</a>(stream: <span class='type'>AudioStream</span>, volume: <span class='type'>f32</span>) <span class='type'>void</span>;
+<span class='keyword'>fn</span> <a href='#set_gamepad_mappings'>set_gamepad_mappings</a>(mappings: <span class='type'>str</span>) <span class='type'>int</span>;
+@symbol(&quot;SetGamepadVibration&quot;) <span class='keyword'>fn</span> <a href='#set_gamepad_vibration'>set_gamepad_vibration</a>(gamepad: <span class='type'>int</span>, left_moto: <span class='type'>f32</span>, right_motor: <span class='type'>f32</span>, duration: <span class='type'>f32</span>) <span class='type'>void</span>;
+@symbol(&quot;SetGesturesEnabled&quot;) <span class='keyword'>fn</span> <a href='#set_gestures_enabled'>set_gestures_enabled</a>(flags: <span class='type'>i32</span>) <span class='type'>void</span>;
+@symbol(&quot;SetMouseCursor&quot;) <span class='keyword'>fn</span> <a href='#set_mouse_cursor'>set_mouse_cursor</a>(cursor: <span class='type'>int</span>) <span class='type'>void</span>;
+@symbol(&quot;SetMouseOffset&quot;) <span class='keyword'>fn</span> <a href='#set_mouse_offset'>set_mouse_offset</a>(offset_x: <span class='type'>int</span>, offset_y: <span class='type'>int</span>) <span class='type'>void</span>;
+@symbol(&quot;SetMousePosition&quot;) <span class='keyword'>fn</span> <a href='#set_mouse_position'>set_mouse_position</a>(x: <span class='type'>int</span>, y: <span class='type'>int</span>) <span class='type'>void</span>;
+@symbol(&quot;SetMouseScale&quot;) <span class='keyword'>fn</span> <a href='#set_mouse_scale'>set_mouse_scale</a>(scale_x: <span class='type'>f32</span>, scale_y: <span class='type'>f32</span>) <span class='type'>void</span>;
 @symbol(&quot;SetRandomSeed&quot;) <span class='keyword'>fn</span> <a href='#set_random_seed'>set_random_seed</a>(seed: <span class='type'>u32</span>) <span class='type'>void</span>;
 @symbol(&quot;SetShapesTexture&quot;) <span class='keyword'>fn</span> <a href='#set_shapes_texture'>set_shapes_texture</a>(texture: <span class='type'>Texture2D</span>, source: <span class='type'>Rectangle</span>) <span class='type'>void</span>;
 @symbol(&quot;SetTargetFPS&quot;) <span class='keyword'>fn</span> <a href='#set_target_fps'>set_target_fps</a>(fps: <span class='type'>int</span>) <span class='type'>void</span>;
@@ -529,10 +555,6 @@
 @symbol(&quot;GetCurrentMonitor&quot;) <span class='keyword'>fn</span> <a href='#get_current_monitor'>get_current_monitor</a>() <span class='type'>int</span>;
 @symbol(&quot;GetFPS&quot;) <span class='keyword'>fn</span> <a href='#get_fps'>get_fps</a>() <span class='type'>int</span>;
 @symbol(&quot;GetFrameTime&quot;) <span class='keyword'>fn</span> <a href='#get_frame_time'>get_frame_time</a>() <span class='type'>f32</span>;
-@symbol(&quot;GetGamepadAxisCount&quot;) <span class='keyword'>fn</span> <a href='#get_gamepad_axis_count'>get_gamepad_axis_count</a>() <span class='type'>int</span>;
-@symbol(&quot;GetGamepadAxisMovement&quot;) <span class='keyword'>fn</span> <a href='#get_gamepad_axis_movement'>get_gamepad_axis_movement</a>(gamepad: <span class='type'>int</span>, axis: <span class='type'>int</span>) <span class='type'>f32</span>;
-@symbol(&quot;GetGamepadButtonPressed&quot;) <span class='keyword'>fn</span> <a href='#get_gamepad_button_pressed'>get_gamepad_button_pressed</a>() <span class='type'>int</span>;
-<span class='keyword'>fn</span> <a href='#get_gamepad_name'>get_gamepad_name</a>(gamepad: <span class='type'>int</span>) <span class='type'>str</span>;
 @symbol(&quot;GetKeyPressed&quot;) <span class='keyword'>fn</span> <a href='#get_key_pressed'>get_key_pressed</a>() <span class='type'>int</span>;
 @symbol(&quot;GetMasterVolume&quot;) <span class='keyword'>fn</span> <a href='#get_master_volume'>get_master_volume</a>() <span class='type'>f32</span>;
 @symbol(&quot;GetMonitorCount&quot;) <span class='keyword'>fn</span> <a href='#get_monitor_count'>get_monitor_count</a>() <span class='type'>int</span>;
@@ -543,12 +565,6 @@
 @symbol(&quot;GetMonitorPosition&quot;) <span class='keyword'>fn</span> <a href='#get_monitor_position'>get_monitor_position</a>(monitor: <span class='type'>int</span>) <span class='type'>Vector2</span>;
 @symbol(&quot;GetMonitorRefreshRate&quot;) <span class='keyword'>fn</span> <a href='#get_monitor_refresh_rate'>get_monitor_refresh_rate</a>(monitor: <span class='type'>int</span>) <span class='type'>int</span>;
 @symbol(&quot;GetMonitorWidth&quot;) <span class='keyword'>fn</span> <a href='#get_monitor_width'>get_monitor_width</a>(monitor: <span class='type'>int</span>) <span class='type'>int</span>;
-@symbol(&quot;GetMouseDelta&quot;) <span class='keyword'>fn</span> <a href='#get_mouse_delta'>get_mouse_delta</a>() <span class='type'>Vector2</span>;
-@symbol(&quot;GetMousePosition&quot;) <span class='keyword'>fn</span> <a href='#get_mouse_position'>get_mouse_position</a>() <span class='type'>Vector2</span>;
-@symbol(&quot;GetMouseWheelMove&quot;) <span class='keyword'>fn</span> <a href='#get_mouse_wheel_move'>get_mouse_wheel_move</a>() <span class='type'>f32</span>;
-@symbol(&quot;GetMouseWheelMoveV&quot;) <span class='keyword'>fn</span> <a href='#get_mouse_wheel_move_v'>get_mouse_wheel_move_v</a>() <span class='type'>Vector2</span>;
-@symbol(&quot;GetMouseX&quot;) <span class='keyword'>fn</span> <a href='#get_mouse_x'>get_mouse_x</a>() <span class='type'>int</span>;
-@symbol(&quot;GetMouseY&quot;) <span class='keyword'>fn</span> <a href='#get_mouse_y'>get_mouse_y</a>() <span class='type'>int</span>;
 @symbol(&quot;GetMusicTimeLength&quot;) <span class='keyword'>fn</span> <a href='#get_music_time_length'>get_music_time_length</a>(music: <span class='type'>Music</span>) <span class='type'>f32</span>;
 @symbol(&quot;GetMusicTimePlayed&quot;) <span class='keyword'>fn</span> <a href='#get_music_time_played'>get_music_time_played</a>(music: <span class='type'>Music</span>) <span class='type'>f32</span>;
 @symbol(&quot;GetRenderHeight&quot;) <span class='keyword'>fn</span> <a href='#get_render_height'>get_render_height</a>() <span class='type'>int</span>;
@@ -565,18 +581,10 @@
 @symbol(&quot;IsAudioDeviceReady&quot;) <span class='keyword'>fn</span> <a href='#is_audio_device_ready'>is_audio_device_ready</a>() <span class='type'>bool</span>;
 @symbol(&quot;IsCursorHidden&quot;) <span class='keyword'>fn</span> <a href='#is_cursor_hidden'>is_cursor_hidden</a>() <span class='type'>bool</span>;
 @symbol(&quot;IsCursorOnScreen&quot;) <span class='keyword'>fn</span> <a href='#is_cursor_on_screen'>is_cursor_on_screen</a>() <span class='type'>bool</span>;
-@symbol(&quot;IsGamepadAvaible&quot;) <span class='keyword'>fn</span> <a href='#is_gamepad_avaible'>is_gamepad_avaible</a>(gamepad: <span class='type'>int</span>) <span class='type'>bool</span>;
-@symbol(&quot;IsGamepadButtonDown&quot;) <span class='keyword'>fn</span> <a href='#is_gamepad_button_down'>is_gamepad_button_down</a>(gamepad: <span class='type'>int</span>, button: <span class='type'>int</span>) <span class='type'>bool</span>;
-@symbol(&quot;IsGamepadButtonPressed&quot;) <span class='keyword'>fn</span> <a href='#is_gamepad_button_pressed'>is_gamepad_button_pressed</a>(gamepad: <span class='type'>int</span>, button: <span class='type'>int</span>) <span class='type'>bool</span>;
-@symbol(&quot;IsGamepadButtonReleased&quot;) <span class='keyword'>fn</span> <a href='#is_gamepad_button_released'>is_gamepad_button_released</a>(gamepad: <span class='type'>int</span>, button: <span class='type'>int</span>) <span class='type'>bool</span>;
-@symbol(&quot;IsGamepadButtonUp&quot;) <span class='keyword'>fn</span> <a href='#is_gamepad_button_up'>is_gamepad_button_up</a>(gamepad: <span class='type'>int</span>, button: <span class='type'>int</span>) <span class='type'>bool</span>;
 @symbol(&quot;IsKeyDown&quot;) <span class='keyword'>fn</span> <a href='#is_key_down'>is_key_down</a>(key: <span class='type'>int</span>) <span class='type'>bool</span>;
 @symbol(&quot;IsKeyPressedRepeat&quot;) <span class='keyword'>fn</span> <a href='#is_key_pressed_repeat'>is_key_pressed_repeat</a>(key: <span class='type'>int</span>) <span class='type'>bool</span>;
 @symbol(&quot;IsKeyReleased&quot;) <span class='keyword'>fn</span> <a href='#is_key_released'>is_key_released</a>(key: <span class='type'>int</span>) <span class='type'>bool</span>;
 @symbol(&quot;IsKeyUp&quot;) <span class='keyword'>fn</span> <a href='#is_key_up'>is_key_up</a>(key: <span class='type'>int</span>) <span class='type'>bool</span>;
-@symbol(&quot;IsMouseButtonDown&quot;) <span class='keyword'>fn</span> <a href='#is_mouse_button_down'>is_mouse_button_down</a>(mouse_button: <span class='type'>int</span>) <span class='type'>bool</span>;
-@symbol(&quot;IsMouseButtonReleased&quot;) <span class='keyword'>fn</span> <a href='#is_mouse_button_released'>is_mouse_button_released</a>(mouse_button: <span class='type'>int</span>) <span class='type'>bool</span>;
-@symbol(&quot;IsMouseButtonUp&quot;) <span class='keyword'>fn</span> <a href='#is_mouse_button_up'>is_mouse_button_up</a>(mouse_button: <span class='type'>int</span>) <span class='type'>bool</span>;
 @symbol(&quot;IsMusicReady&quot;) <span class='keyword'>fn</span> <a href='#is_music_ready'>is_music_ready</a>(music: <span class='type'>Music</span>) <span class='type'>bool</span>;
 @symbol(&quot;IsMusicStreamPlaying&quot;) <span class='keyword'>fn</span> <a href='#is_music_stream_playing'>is_music_stream_playing</a>(music: <span class='type'>Music</span>) <span class='type'>bool</span>;
 @symbol(&quot;IsSoundPlaying&quot;) <span class='keyword'>fn</span> <a href='#is_sound_playing'>is_sound_playing</a>(sound: <span class='type'>Sound</span>) <span class='type'>bool</span>;
@@ -611,12 +619,7 @@
 @symbol(&quot;ResumeSound&quot;) <span class='keyword'>fn</span> <a href='#resume_sound'>resume_sound</a>(sound: <span class='type'>Sound</span>) <span class='type'>void</span>;
 @symbol(&quot;SeekMusicStream&quot;) <span class='keyword'>fn</span> <a href='#seek_music_stream'>seek_music_stream</a>(music: <span class='type'>Music</span>, position: <span class='type'>f32</span>) <span class='type'>void</span>;
 @symbol(&quot;SetExitKey&quot;) <span class='keyword'>fn</span> <a href='#set_exit_key'>set_exit_key</a>(key: <span class='type'>int</span>) <span class='type'>void</span>;
-<span class='keyword'>fn</span> <a href='#set_gamepad_mappings'>set_gamepad_mappings</a>(mappings: <span class='type'>str</span>) <span class='type'>int</span>;
 @symbol(&quot;SetMasterVolume&quot;) <span class='keyword'>fn</span> <a href='#set_master_volume'>set_master_volume</a>(volume: <span class='type'>f32</span>) <span class='type'>void</span>;
-@symbol(&quot;SetMouseCursor&quot;) <span class='keyword'>fn</span> <a href='#set_mouse_cursor'>set_mouse_cursor</a>(cursor: <span class='type'>int</span>) <span class='type'>void</span>;
-@symbol(&quot;SetMouseOffset&quot;) <span class='keyword'>fn</span> <a href='#set_mouse_offset'>set_mouse_offset</a>(offset_x: <span class='type'>int</span>, offset_y: <span class='type'>int</span>) <span class='type'>void</span>;
-@symbol(&quot;SetMousePosition&quot;) <span class='keyword'>fn</span> <a href='#set_mouse_position'>set_mouse_position</a>(x: <span class='type'>int</span>, y: <span class='type'>int</span>) <span class='type'>void</span>;
-@symbol(&quot;SetMouseScale&quot;) <span class='keyword'>fn</span> <a href='#set_mouse_scale'>set_mouse_scale</a>(scale_x: <span class='type'>f32</span>, scale_y: <span class='type'>f32</span>) <span class='type'>void</span>;
 @symbol(&quot;SetMusicPan&quot;) <span class='keyword'>fn</span> <a href='#set_music_pan'>set_music_pan</a>(music: <span class='type'>Music</span>, pan: <span class='type'>f32</span>) <span class='type'>void</span>;
 @symbol(&quot;SetMusicPitch&quot;) <span class='keyword'>fn</span> <a href='#set_music_pitch'>set_music_pitch</a>(music: <span class='type'>Music</span>, pitch: <span class='type'>f32</span>) <span class='type'>void</span>;
 @symbol(&quot;SetMusicVolume&quot;) <span class='keyword'>fn</span> <a href='#set_music_volume'>set_music_volume</a>(music: <span class='type'>Music</span>, volume: <span class='type'>f32</span>) <span class='type'>void</span>;
@@ -727,6 +730,24 @@
 	GAMEPAD_BUTTON_RIGHT_THUMB,
 };</pre>
 <p>Gamepad buttons
+</section>
+<section class='member'>
+<h4 id='Gestures'><span class='heading-body'>type Gestures</span><span class='heading-extra'><a href='#Gestures'>[permalink]</a></span></h4>
+<pre class='decl'>
+<span class='keyword'>type</span> Gestures = <span class='type'>enum</span> {
+	GESTURE_NONE = 0, <span class='comment'>//</span><span class='comment'> No gesture</span><span class='comment'>
+</span>	GESTURE_TAP = 1, <span class='comment'>//</span><span class='comment'> Tap gesture</span><span class='comment'>
+</span>	GESTURE_DOUBLETAP = 2, <span class='comment'>//</span><span class='comment'> Double tap gesture</span><span class='comment'>
+</span>	GESTURE_HOLD = 4, <span class='comment'>//</span><span class='comment'> Hold gesture</span><span class='comment'>
+</span>	GESTURE_DRAG = 8, <span class='comment'>//</span><span class='comment'> Drag gesture</span><span class='comment'>
+</span>	GESTURE_SWIPE_RIGHT = 16, <span class='comment'>//</span><span class='comment'> Swipe right gesture</span><span class='comment'>
+</span>	GESTURE_SWIPE_LEFT = 32, <span class='comment'>//</span><span class='comment'> Swipe left gesture</span><span class='comment'>
+</span>	GESTURE_SWIPE_UP = 64, <span class='comment'>//</span><span class='comment'> Swipe up gesture</span><span class='comment'>
+</span>	GESTURE_SWIPE_DOWN = 128, <span class='comment'>//</span><span class='comment'> Swipe down gesture</span><span class='comment'>
+</span>	GESTURE_PINCH_IN = 256, <span class='comment'>//</span><span class='comment'> Pinch in gesture</span><span class='comment'>
+</span>	GESTURE_PINCH_OUT = 512,
+};</pre>
+<p>Gestures
 </section>
 <section class='member'>
 <h4 id='Image'><span class='heading-body'>type Image</span><span class='heading-extra'><a href='#Image'>[permalink]</a></span></h4>
@@ -862,8 +883,8 @@
 };</pre>
 <p>Keyboard keys
 <p>Example:
-<pre class='sample'><code>if (is_key_pressed(KeyboardKey::KEY_I)) play_sound(menu_enter);
-</code></pre>
+<pre class='sample'>if (is_key_pressed(KeyboardKey::KEY_ENTER)) play_sound(menu_enter);
+</pre>
 </section>
 <section class='member'>
 <h4 id='Matrix'><span class='heading-body'>type Matrix</span><span class='heading-extra'><a href='#Matrix'>[permalink]</a></span></h4>
@@ -1290,114 +1311,6 @@
 <p>Green
 </section>
 <section class='member'>
-<h4 id='GRUV_AQUA_DARK'><span class='heading-body'>let GRUV_AQUA_DARK</span><span class='heading-extra'><a href='#GRUV_AQUA_DARK'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_AQUA_DARK;</pre>
-<p>72-aqua-6 (#689d6a)
-</section>
-<section class='member'>
-<h4 id='GRUV_AQUA_LIGHT'><span class='heading-body'>let GRUV_AQUA_LIGHT</span><span class='heading-extra'><a href='#GRUV_AQUA_LIGHT'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_AQUA_LIGHT;</pre>
-<p>108-aqua-14 (#8ec07c)
-</section>
-<section class='member'>
-<h4 id='GRUV_BG_DARK'><span class='heading-body'>let GRUV_BG_DARK</span><span class='heading-extra'><a href='#GRUV_BG_DARK'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_BG_DARK;</pre>
-<p>235-bg-0 (#282828)
-</section>
-<section class='member'>
-<h4 id='GRUV_BG_LIGHT'><span class='heading-body'>let GRUV_BG_LIGHT</span><span class='heading-extra'><a href='#GRUV_BG_LIGHT'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_BG_LIGHT;</pre>
-<p>237-bg1-- (#3c3836)
-</section>
-<section class='member'>
-<h4 id='GRUV_BLUE_DARK'><span class='heading-body'>let GRUV_BLUE_DARK</span><span class='heading-extra'><a href='#GRUV_BLUE_DARK'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_BLUE_DARK;</pre>
-<p>66-blue-4 (#458588)
-</section>
-<section class='member'>
-<h4 id='GRUV_BLUE_LIGHT'><span class='heading-body'>let GRUV_BLUE_LIGHT</span><span class='heading-extra'><a href='#GRUV_BLUE_LIGHT'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_BLUE_LIGHT;</pre>
-<p>109-blue-12 (#83a598)
-</section>
-<section class='member'>
-<h4 id='GRUV_FG_DARK'><span class='heading-body'>let GRUV_FG_DARK</span><span class='heading-extra'><a href='#GRUV_FG_DARK'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_FG_DARK;</pre>
-<p>223-fg-15 (#ebdbb2)
-</section>
-<section class='member'>
-<h4 id='GRUV_FG_LIGHT'><span class='heading-body'>let GRUV_FG_LIGHT</span><span class='heading-extra'><a href='#GRUV_FG_LIGHT'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_FG_LIGHT;</pre>
-<p>229-fg0-- (#fbf1c7)
-</section>
-<section class='member'>
-<h4 id='GRUV_GREEN_DARK'><span class='heading-body'>let GRUV_GREEN_DARK</span><span class='heading-extra'><a href='#GRUV_GREEN_DARK'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_GREEN_DARK;</pre>
-<p>106-green-2 (#98971a)
-</section>
-<section class='member'>
-<h4 id='GRUV_GREEN_LIGHT'><span class='heading-body'>let GRUV_GREEN_LIGHT</span><span class='heading-extra'><a href='#GRUV_GREEN_LIGHT'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_GREEN_LIGHT;</pre>
-<p>142-green-10 (#b8bb26)
-</section>
-<section class='member'>
-<h4 id='GRUV_ORANGE_DARK'><span class='heading-body'>let GRUV_ORANGE_DARK</span><span class='heading-extra'><a href='#GRUV_ORANGE_DARK'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_ORANGE_DARK;</pre>
-<p>166-orange-- (#d65d0e)
-</section>
-<section class='member'>
-<h4 id='GRUV_ORANGE_LIGHT'><span class='heading-body'>let GRUV_ORANGE_LIGHT</span><span class='heading-extra'><a href='#GRUV_ORANGE_LIGHT'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_ORANGE_LIGHT;</pre>
-<p>208-orange-- (#fe8019)
-</section>
-<section class='member'>
-<h4 id='GRUV_PURPLE_DARK'><span class='heading-body'>let GRUV_PURPLE_DARK</span><span class='heading-extra'><a href='#GRUV_PURPLE_DARK'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_PURPLE_DARK;</pre>
-<p>132-purple-5 (#b16286)
-</section>
-<section class='member'>
-<h4 id='GRUV_PURPLE_LIGHT'><span class='heading-body'>let GRUV_PURPLE_LIGHT</span><span class='heading-extra'><a href='#GRUV_PURPLE_LIGHT'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_PURPLE_LIGHT;</pre>
-<p>175-purple-13 (#d3869b)
-</section>
-<section class='member'>
-<h4 id='GRUV_RED_DARK'><span class='heading-body'>let GRUV_RED_DARK</span><span class='heading-extra'><a href='#GRUV_RED_DARK'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_RED_DARK;</pre>
-<p>124-red-1 (#cc241d)
-</section>
-<section class='member'>
-<h4 id='GRUV_RED_LIGHT'><span class='heading-body'>let GRUV_RED_LIGHT</span><span class='heading-extra'><a href='#GRUV_RED_LIGHT'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_RED_LIGHT;</pre>
-<p>167-red-9 (#fb4934)
-</section>
-<section class='member'>
-<h4 id='GRUV_YELLOW_DARK'><span class='heading-body'>let GRUV_YELLOW_DARK</span><span class='heading-extra'><a href='#GRUV_YELLOW_DARK'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_YELLOW_DARK;</pre>
-<p>172-yellow-3 (#d79921)
-</section>
-<section class='member'>
-<h4 id='GRUV_YELLOW_LIGHT'><span class='heading-body'>let GRUV_YELLOW_LIGHT</span><span class='heading-extra'><a href='#GRUV_YELLOW_LIGHT'>[permalink]</a></span></h4>
-<pre class='decl'>
-<span class='keyword'>const</span> GRUV_YELLOW_LIGHT;</pre>
-<p>214-yellow-11 (#fabd2f)
-</section>
-<section class='member'>
 <h4 id='LIGHTGRAY'><span class='heading-body'>let LIGHTGRAY</span><span class='heading-extra'><a href='#LIGHTGRAY'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> LIGHTGRAY;</pre>
@@ -1573,6 +1486,102 @@
 <p>Color/Pixel related functions
 </section>
 <section class='member'>
+<h4 id='get_gamepad_axis_count'><span class='heading-body'>fn get_gamepad_axis_count</span><span class='heading-extra'><a href='#get_gamepad_axis_count'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetGamepadAxisCount&quot;) <span class='keyword'>fn</span> get_gamepad_axis_count() <span class='type'>int</span>;</pre>
+<p>Get gamepad axis count for a gamepad
+</section>
+<section class='member'>
+<h4 id='get_gamepad_axis_movement'><span class='heading-body'>fn get_gamepad_axis_movement</span><span class='heading-extra'><a href='#get_gamepad_axis_movement'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetGamepadAxisMovement&quot;) <span class='keyword'>fn</span> get_gamepad_axis_movement(gamepad: <span class='type'>int</span>, axis: <span class='type'>int</span>) <span class='type'>f32</span>;</pre>
+<p>Get axis movement value for a gamepad axis
+</section>
+<section class='member'>
+<h4 id='get_gamepad_button_pressed'><span class='heading-body'>fn get_gamepad_button_pressed</span><span class='heading-extra'><a href='#get_gamepad_button_pressed'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetGamepadButtonPressed&quot;) <span class='keyword'>fn</span> get_gamepad_button_pressed() <span class='type'>int</span>;</pre>
+<p>Get the last gamepad button pressed
+</section>
+<section class='member'>
+<h4 id='get_gamepad_name'><span class='heading-body'>fn get_gamepad_name</span><span class='heading-extra'><a href='#get_gamepad_name'>[permalink]</a></span></h4>
+<pre class='decl'>
+<span class='keyword'>fn</span> get_gamepad_name(gamepad: <span class='type'>int</span>) <span class='type'>str</span>;</pre>
+<p>Get gamepad internal name id
+</section>
+<section class='member'>
+<h4 id='get_gesture_detected'><span class='heading-body'>fn get_gesture_detected</span><span class='heading-extra'><a href='#get_gesture_detected'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetGestureDetected&quot;) <span class='keyword'>fn</span> get_gesture_detected() <span class='type'>int</span>;</pre>
+<p>Get latest detected gesture
+</section>
+<section class='member'>
+<h4 id='get_gesture_drag_angle'><span class='heading-body'>fn get_gesture_drag_angle</span><span class='heading-extra'><a href='#get_gesture_drag_angle'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetGestureDragAngle&quot;) <span class='keyword'>fn</span> get_gesture_drag_angle() <span class='type'>f32</span>;</pre>
+<p>Get gesture drag angle
+</section>
+<section class='member'>
+<h4 id='get_gesture_drag_vector'><span class='heading-body'>fn get_gesture_drag_vector</span><span class='heading-extra'><a href='#get_gesture_drag_vector'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetGestureDragVector&quot;) <span class='keyword'>fn</span> get_gesture_drag_vector() <span class='type'>Vector2</span>;</pre>
+<p>Get gesture drag vector
+</section>
+<section class='member'>
+<h4 id='get_gesture_hold_duration'><span class='heading-body'>fn get_gesture_hold_duration</span><span class='heading-extra'><a href='#get_gesture_hold_duration'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetGestureHoldDuration&quot;) <span class='keyword'>fn</span> get_gesture_hold_duration() <span class='type'>f32</span>;</pre>
+<p>Get gesture hold time in seconds
+</section>
+<section class='member'>
+<h4 id='get_gesture_pinch_angle'><span class='heading-body'>fn get_gesture_pinch_angle</span><span class='heading-extra'><a href='#get_gesture_pinch_angle'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetGesturePinchAngle&quot;) <span class='keyword'>fn</span> get_gesture_pinch_angle() <span class='type'>f32</span>;</pre>
+<p>Get gesture pinch angle
+</section>
+<section class='member'>
+<h4 id='get_gesture_pinch_vector'><span class='heading-body'>fn get_gesture_pinch_vector</span><span class='heading-extra'><a href='#get_gesture_pinch_vector'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetGesturePinchVector&quot;) <span class='keyword'>fn</span> get_gesture_pinch_vector() <span class='type'>Vector2</span>;</pre>
+<p>Get gesture pinch delta
+</section>
+<section class='member'>
+<h4 id='get_mouse_delta'><span class='heading-body'>fn get_mouse_delta</span><span class='heading-extra'><a href='#get_mouse_delta'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetMouseDelta&quot;) <span class='keyword'>fn</span> get_mouse_delta() <span class='type'>Vector2</span>;</pre>
+<p>Get mouse delta between frames
+</section>
+<section class='member'>
+<h4 id='get_mouse_position'><span class='heading-body'>fn get_mouse_position</span><span class='heading-extra'><a href='#get_mouse_position'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetMousePosition&quot;) <span class='keyword'>fn</span> get_mouse_position() <span class='type'>Vector2</span>;</pre>
+<p>Get mouse position XY
+</section>
+<section class='member'>
+<h4 id='get_mouse_wheel_move'><span class='heading-body'>fn get_mouse_wheel_move</span><span class='heading-extra'><a href='#get_mouse_wheel_move'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetMouseWheelMove&quot;) <span class='keyword'>fn</span> get_mouse_wheel_move() <span class='type'>f32</span>;</pre>
+<p>Get mouse wheel movement for X or Y, whichever is larger
+</section>
+<section class='member'>
+<h4 id='get_mouse_wheel_move_v'><span class='heading-body'>fn get_mouse_wheel_move_v</span><span class='heading-extra'><a href='#get_mouse_wheel_move_v'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetMouseWheelMoveV&quot;) <span class='keyword'>fn</span> get_mouse_wheel_move_v() <span class='type'>Vector2</span>;</pre>
+<p>Get mouse wheel movement for both X and Y
+</section>
+<section class='member'>
+<h4 id='get_mouse_x'><span class='heading-body'>fn get_mouse_x</span><span class='heading-extra'><a href='#get_mouse_x'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetMouseX&quot;) <span class='keyword'>fn</span> get_mouse_x() <span class='type'>int</span>;</pre>
+<p>Get mouse position X
+</section>
+<section class='member'>
+<h4 id='get_mouse_y'><span class='heading-body'>fn get_mouse_y</span><span class='heading-extra'><a href='#get_mouse_y'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetMouseY&quot;) <span class='keyword'>fn</span> get_mouse_y() <span class='type'>int</span>;</pre>
+<p>Get mouse position Y
+</section>
+<section class='member'>
 <h4 id='get_random_value'><span class='heading-body'>fn get_random_value</span><span class='heading-extra'><a href='#get_random_value'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;GetRandomValue&quot;) <span class='keyword'>fn</span> get_random_value(min: <span class='type'>int</span>, max: <span class='type'>int</span>) <span class='type'>void</span>;</pre>
@@ -1609,6 +1618,36 @@
 <p>Spline segment point evaluation functions, for a given t [0.0f .. 1.0f]
 </section>
 <section class='member'>
+<h4 id='get_touch_point_count'><span class='heading-body'>fn get_touch_point_count</span><span class='heading-extra'><a href='#get_touch_point_count'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetTouchPointCount&quot;) <span class='keyword'>fn</span> get_touch_point_count() <span class='type'>int</span>;</pre>
+<p>Get number of touch points
+</section>
+<section class='member'>
+<h4 id='get_touch_point_id'><span class='heading-body'>fn get_touch_point_id</span><span class='heading-extra'><a href='#get_touch_point_id'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetTouchPointId&quot;) <span class='keyword'>fn</span> get_touch_point_id(id: <span class='type'>int</span>) <span class='type'>int</span>;</pre>
+<p>Get touch point identifier for given index
+</section>
+<section class='member'>
+<h4 id='get_touch_position'><span class='heading-body'>fn get_touch_position</span><span class='heading-extra'><a href='#get_touch_position'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetTouchPosition&quot;) <span class='keyword'>fn</span> get_touch_position(index: <span class='type'>int</span>) <span class='type'>Vector2</span>;</pre>
+<p>Get touch position XY for a touch point index (relative to screen size)
+</section>
+<section class='member'>
+<h4 id='get_touch_x'><span class='heading-body'>fn get_touch_x</span><span class='heading-extra'><a href='#get_touch_x'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetTouchX&quot;) <span class='keyword'>fn</span> get_touch_x() <span class='type'>int</span>;</pre>
+<p>Get touch position X for touch point 0 (relative to screen size)
+</section>
+<section class='member'>
+<h4 id='get_touch_y'><span class='heading-body'>fn get_touch_y</span><span class='heading-extra'><a href='#get_touch_y'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;GetTouchY&quot;) <span class='keyword'>fn</span> get_touch_y() <span class='type'>int</span>;</pre>
+<p>Get touch position Y for touch point 0 (relative to screen size)
+</section>
+<section class='member'>
 <h4 id='init_audio_device'><span class='heading-body'>fn init_audio_device</span><span class='heading-extra'><a href='#init_audio_device'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;InitAudioDevice&quot;) <span class='keyword'>fn</span> init_audio_device() <span class='type'>void</span>;</pre>
@@ -1633,16 +1672,70 @@
 <p>Load audio stream (to stream raw audio pcm data)
 </section>
 <section class='member'>
+<h4 id='is_gamepad_avaible'><span class='heading-body'>fn is_gamepad_avaible</span><span class='heading-extra'><a href='#is_gamepad_avaible'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;IsGamepadAvaible&quot;) <span class='keyword'>fn</span> is_gamepad_avaible(gamepad: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
+<p>Check if a gamepad is available
+</section>
+<section class='member'>
+<h4 id='is_gamepad_button_down'><span class='heading-body'>fn is_gamepad_button_down</span><span class='heading-extra'><a href='#is_gamepad_button_down'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;IsGamepadButtonDown&quot;) <span class='keyword'>fn</span> is_gamepad_button_down(gamepad: <span class='type'>int</span>, button: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
+<p>Check if a gamepad button is being pressed
+</section>
+<section class='member'>
+<h4 id='is_gamepad_button_pressed'><span class='heading-body'>fn is_gamepad_button_pressed</span><span class='heading-extra'><a href='#is_gamepad_button_pressed'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;IsGamepadButtonPressed&quot;) <span class='keyword'>fn</span> is_gamepad_button_pressed(gamepad: <span class='type'>int</span>, button: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
+<p>Check if a gamepad button has been pressed once
+</section>
+<section class='member'>
+<h4 id='is_gamepad_button_released'><span class='heading-body'>fn is_gamepad_button_released</span><span class='heading-extra'><a href='#is_gamepad_button_released'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;IsGamepadButtonReleased&quot;) <span class='keyword'>fn</span> is_gamepad_button_released(gamepad: <span class='type'>int</span>, button: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
+<p>Check if a gamepad button has been released once
+</section>
+<section class='member'>
+<h4 id='is_gamepad_button_up'><span class='heading-body'>fn is_gamepad_button_up</span><span class='heading-extra'><a href='#is_gamepad_button_up'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;IsGamepadButtonUp&quot;) <span class='keyword'>fn</span> is_gamepad_button_up(gamepad: <span class='type'>int</span>, button: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
+<p>Check if a gamepad button is NOT being pressed
+</section>
+<section class='member'>
+<h4 id='is_gesture_detected'><span class='heading-body'>fn is_gesture_detected</span><span class='heading-extra'><a href='#is_gesture_detected'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;IsGestureDetected&quot;) <span class='keyword'>fn</span> is_gesture_detected(gesture: <span class='type'>i32</span>) <span class='type'>bool</span>;</pre>
+<p>Check if a gesture have been detected
+</section>
+<section class='member'>
 <h4 id='is_key_pressed'><span class='heading-body'>fn is_key_pressed</span><span class='heading-extra'><a href='#is_key_pressed'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;IsKeyPressed&quot;) <span class='keyword'>fn</span> is_key_pressed(key: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
 <p>Input-related functions: keyboard
 </section>
 <section class='member'>
+<h4 id='is_mouse_button_down'><span class='heading-body'>fn is_mouse_button_down</span><span class='heading-extra'><a href='#is_mouse_button_down'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;IsMouseButtonDown&quot;) <span class='keyword'>fn</span> is_mouse_button_down(mouse_button: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
+<p>Check if a mouse button is being pressed
+</section>
+<section class='member'>
 <h4 id='is_mouse_button_pressed'><span class='heading-body'>fn is_mouse_button_pressed</span><span class='heading-extra'><a href='#is_mouse_button_pressed'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;IsMouseButtonPressed&quot;) <span class='keyword'>fn</span> is_mouse_button_pressed(mouse_button: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
-<p>Input-related functions: mouse
+<p>Check if a mouse button has been pressed once
+</section>
+<section class='member'>
+<h4 id='is_mouse_button_released'><span class='heading-body'>fn is_mouse_button_released</span><span class='heading-extra'><a href='#is_mouse_button_released'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;IsMouseButtonReleased&quot;) <span class='keyword'>fn</span> is_mouse_button_released(mouse_button: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
+<p>Check if a mouse button has been released once
+</section>
+<section class='member'>
+<h4 id='is_mouse_button_up'><span class='heading-body'>fn is_mouse_button_up</span><span class='heading-extra'><a href='#is_mouse_button_up'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;IsMouseButtonUp&quot;) <span class='keyword'>fn</span> is_mouse_button_up(mouse_button: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
+<p>Check if a mouse button is NOT being pressed
 </section>
 <section class='member'>
 <h4 id='load_audio_stream'><span class='heading-body'>fn load_audio_stream</span><span class='heading-extra'><a href='#load_audio_stream'>[permalink]</a></span></h4>
@@ -1703,6 +1796,48 @@
 <pre class='decl'>
 @symbol(&quot;SetAudioStreamVolume&quot;) <span class='keyword'>fn</span> set_audio_stream_volume(stream: <span class='type'>AudioStream</span>, volume: <span class='type'>f32</span>) <span class='type'>void</span>;</pre>
 <p>Stop audio stream
+</section>
+<section class='member'>
+<h4 id='set_gamepad_mappings'><span class='heading-body'>fn set_gamepad_mappings</span><span class='heading-extra'><a href='#set_gamepad_mappings'>[permalink]</a></span></h4>
+<pre class='decl'>
+<span class='keyword'>fn</span> set_gamepad_mappings(mappings: <span class='type'>str</span>) <span class='type'>int</span>;</pre>
+<p>Set internal gamepad mappings (SDL_GameControllerDB)
+</section>
+<section class='member'>
+<h4 id='set_gamepad_vibration'><span class='heading-body'>fn set_gamepad_vibration</span><span class='heading-extra'><a href='#set_gamepad_vibration'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;SetGamepadVibration&quot;) <span class='keyword'>fn</span> set_gamepad_vibration(gamepad: <span class='type'>int</span>, left_moto: <span class='type'>f32</span>, right_motor: <span class='type'>f32</span>, duration: <span class='type'>f32</span>) <span class='type'>void</span>;</pre>
+<p>Set gamepad vibration for both motors (duration in seconds)
+</section>
+<section class='member'>
+<h4 id='set_gestures_enabled'><span class='heading-body'>fn set_gestures_enabled</span><span class='heading-extra'><a href='#set_gestures_enabled'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;SetGesturesEnabled&quot;) <span class='keyword'>fn</span> set_gestures_enabled(flags: <span class='type'>i32</span>) <span class='type'>void</span>;</pre>
+<p>Enable a set of gestures using flags
+</section>
+<section class='member'>
+<h4 id='set_mouse_cursor'><span class='heading-body'>fn set_mouse_cursor</span><span class='heading-extra'><a href='#set_mouse_cursor'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;SetMouseCursor&quot;) <span class='keyword'>fn</span> set_mouse_cursor(cursor: <span class='type'>int</span>) <span class='type'>void</span>;</pre>
+<p>Set mouse cursor
+</section>
+<section class='member'>
+<h4 id='set_mouse_offset'><span class='heading-body'>fn set_mouse_offset</span><span class='heading-extra'><a href='#set_mouse_offset'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;SetMouseOffset&quot;) <span class='keyword'>fn</span> set_mouse_offset(offset_x: <span class='type'>int</span>, offset_y: <span class='type'>int</span>) <span class='type'>void</span>;</pre>
+<p>Set mouse offset
+</section>
+<section class='member'>
+<h4 id='set_mouse_position'><span class='heading-body'>fn set_mouse_position</span><span class='heading-extra'><a href='#set_mouse_position'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;SetMousePosition&quot;) <span class='keyword'>fn</span> set_mouse_position(x: <span class='type'>int</span>, y: <span class='type'>int</span>) <span class='type'>void</span>;</pre>
+<p>Set mouse position XY
+</section>
+<section class='member'>
+<h4 id='set_mouse_scale'><span class='heading-body'>fn set_mouse_scale</span><span class='heading-extra'><a href='#set_mouse_scale'>[permalink]</a></span></h4>
+<pre class='decl'>
+@symbol(&quot;SetMouseScale&quot;) <span class='keyword'>fn</span> set_mouse_scale(scale_x: <span class='type'>f32</span>, scale_y: <span class='type'>f32</span>) <span class='type'>void</span>;</pre>
+<p>Set mouse scaling
 </section>
 <section class='member'>
 <h4 id='set_random_seed'><span class='heading-body'>fn set_random_seed</span><span class='heading-extra'><a href='#set_random_seed'>[permalink]</a></span></h4>
@@ -2357,38 +2492,6 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_gamepad_axis_count'><span class='heading-body'>fn get_gamepad_axis_count</span><span class='heading-extra'><a href='#get_gamepad_axis_count'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;GetGamepadAxisCount&quot;) <span class='keyword'>fn</span> get_gamepad_axis_count() <span class='type'>int</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='get_gamepad_axis_movement'><span class='heading-body'>fn get_gamepad_axis_movement</span><span class='heading-extra'><a href='#get_gamepad_axis_movement'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;GetGamepadAxisMovement&quot;) <span class='keyword'>fn</span> get_gamepad_axis_movement(gamepad: <span class='type'>int</span>, axis: <span class='type'>int</span>) <span class='type'>f32</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='get_gamepad_button_pressed'><span class='heading-body'>fn get_gamepad_button_pressed</span><span class='heading-extra'><a href='#get_gamepad_button_pressed'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;GetGamepadButtonPressed&quot;) <span class='keyword'>fn</span> get_gamepad_button_pressed() <span class='type'>int</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='get_gamepad_name'><span class='heading-body'>fn get_gamepad_name</span><span class='heading-extra'><a href='#get_gamepad_name'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-<span class='keyword'>fn</span> get_gamepad_name(gamepad: <span class='type'>int</span>) <span class='type'>str</span>;</pre>
-</details>
-</section>
-<section class='member'>
 <h4 id='get_key_pressed'><span class='heading-body'>fn get_key_pressed</span><span class='heading-extra'><a href='#get_key_pressed'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
@@ -2466,54 +2569,6 @@
 <summary>Show undocumented member</summary>
 <pre class='decl'>
 @symbol(&quot;GetMonitorWidth&quot;) <span class='keyword'>fn</span> get_monitor_width(monitor: <span class='type'>int</span>) <span class='type'>int</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='get_mouse_delta'><span class='heading-body'>fn get_mouse_delta</span><span class='heading-extra'><a href='#get_mouse_delta'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;GetMouseDelta&quot;) <span class='keyword'>fn</span> get_mouse_delta() <span class='type'>Vector2</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='get_mouse_position'><span class='heading-body'>fn get_mouse_position</span><span class='heading-extra'><a href='#get_mouse_position'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;GetMousePosition&quot;) <span class='keyword'>fn</span> get_mouse_position() <span class='type'>Vector2</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='get_mouse_wheel_move'><span class='heading-body'>fn get_mouse_wheel_move</span><span class='heading-extra'><a href='#get_mouse_wheel_move'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;GetMouseWheelMove&quot;) <span class='keyword'>fn</span> get_mouse_wheel_move() <span class='type'>f32</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='get_mouse_wheel_move_v'><span class='heading-body'>fn get_mouse_wheel_move_v</span><span class='heading-extra'><a href='#get_mouse_wheel_move_v'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;GetMouseWheelMoveV&quot;) <span class='keyword'>fn</span> get_mouse_wheel_move_v() <span class='type'>Vector2</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='get_mouse_x'><span class='heading-body'>fn get_mouse_x</span><span class='heading-extra'><a href='#get_mouse_x'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;GetMouseX&quot;) <span class='keyword'>fn</span> get_mouse_x() <span class='type'>int</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='get_mouse_y'><span class='heading-body'>fn get_mouse_y</span><span class='heading-extra'><a href='#get_mouse_y'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;GetMouseY&quot;) <span class='keyword'>fn</span> get_mouse_y() <span class='type'>int</span>;</pre>
 </details>
 </section>
 <section class='member'>
@@ -2645,46 +2700,6 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_gamepad_avaible'><span class='heading-body'>fn is_gamepad_avaible</span><span class='heading-extra'><a href='#is_gamepad_avaible'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;IsGamepadAvaible&quot;) <span class='keyword'>fn</span> is_gamepad_avaible(gamepad: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='is_gamepad_button_down'><span class='heading-body'>fn is_gamepad_button_down</span><span class='heading-extra'><a href='#is_gamepad_button_down'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;IsGamepadButtonDown&quot;) <span class='keyword'>fn</span> is_gamepad_button_down(gamepad: <span class='type'>int</span>, button: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='is_gamepad_button_pressed'><span class='heading-body'>fn is_gamepad_button_pressed</span><span class='heading-extra'><a href='#is_gamepad_button_pressed'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;IsGamepadButtonPressed&quot;) <span class='keyword'>fn</span> is_gamepad_button_pressed(gamepad: <span class='type'>int</span>, button: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='is_gamepad_button_released'><span class='heading-body'>fn is_gamepad_button_released</span><span class='heading-extra'><a href='#is_gamepad_button_released'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;IsGamepadButtonReleased&quot;) <span class='keyword'>fn</span> is_gamepad_button_released(gamepad: <span class='type'>int</span>, button: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='is_gamepad_button_up'><span class='heading-body'>fn is_gamepad_button_up</span><span class='heading-extra'><a href='#is_gamepad_button_up'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;IsGamepadButtonUp&quot;) <span class='keyword'>fn</span> is_gamepad_button_up(gamepad: <span class='type'>int</span>, button: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
-</details>
-</section>
-<section class='member'>
 <h4 id='is_key_down'><span class='heading-body'>fn is_key_down</span><span class='heading-extra'><a href='#is_key_down'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
@@ -2714,30 +2729,6 @@
 <summary>Show undocumented member</summary>
 <pre class='decl'>
 @symbol(&quot;IsKeyUp&quot;) <span class='keyword'>fn</span> is_key_up(key: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='is_mouse_button_down'><span class='heading-body'>fn is_mouse_button_down</span><span class='heading-extra'><a href='#is_mouse_button_down'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;IsMouseButtonDown&quot;) <span class='keyword'>fn</span> is_mouse_button_down(mouse_button: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='is_mouse_button_released'><span class='heading-body'>fn is_mouse_button_released</span><span class='heading-extra'><a href='#is_mouse_button_released'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;IsMouseButtonReleased&quot;) <span class='keyword'>fn</span> is_mouse_button_released(mouse_button: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='is_mouse_button_up'><span class='heading-body'>fn is_mouse_button_up</span><span class='heading-extra'><a href='#is_mouse_button_up'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;IsMouseButtonUp&quot;) <span class='keyword'>fn</span> is_mouse_button_up(mouse_button: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
 </details>
 </section>
 <section class='member'>
@@ -3013,51 +3004,11 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_gamepad_mappings'><span class='heading-body'>fn set_gamepad_mappings</span><span class='heading-extra'><a href='#set_gamepad_mappings'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-<span class='keyword'>fn</span> set_gamepad_mappings(mappings: <span class='type'>str</span>) <span class='type'>int</span>;</pre>
-</details>
-</section>
-<section class='member'>
 <h4 id='set_master_volume'><span class='heading-body'>fn set_master_volume</span><span class='heading-extra'><a href='#set_master_volume'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
 @symbol(&quot;SetMasterVolume&quot;) <span class='keyword'>fn</span> set_master_volume(volume: <span class='type'>f32</span>) <span class='type'>void</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='set_mouse_cursor'><span class='heading-body'>fn set_mouse_cursor</span><span class='heading-extra'><a href='#set_mouse_cursor'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;SetMouseCursor&quot;) <span class='keyword'>fn</span> set_mouse_cursor(cursor: <span class='type'>int</span>) <span class='type'>void</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='set_mouse_offset'><span class='heading-body'>fn set_mouse_offset</span><span class='heading-extra'><a href='#set_mouse_offset'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;SetMouseOffset&quot;) <span class='keyword'>fn</span> set_mouse_offset(offset_x: <span class='type'>int</span>, offset_y: <span class='type'>int</span>) <span class='type'>void</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='set_mouse_position'><span class='heading-body'>fn set_mouse_position</span><span class='heading-extra'><a href='#set_mouse_position'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;SetMousePosition&quot;) <span class='keyword'>fn</span> set_mouse_position(x: <span class='type'>int</span>, y: <span class='type'>int</span>) <span class='type'>void</span>;</pre>
-</details>
-</section>
-<section class='member'>
-<h4 id='set_mouse_scale'><span class='heading-body'>fn set_mouse_scale</span><span class='heading-extra'><a href='#set_mouse_scale'>[permalink]</a></span></h4>
-<details>
-<summary>Show undocumented member</summary>
-<pre class='decl'>
-@symbol(&quot;SetMouseScale&quot;) <span class='keyword'>fn</span> set_mouse_scale(scale_x: <span class='type'>f32</span>, scale_y: <span class='type'>f32</span>) <span class='type'>void</span>;</pre>
 </details>
 </section>
 <section class='member'>
