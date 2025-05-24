@@ -8,6 +8,10 @@ bin:
 	hare build ${FLAGS} -o ${OUT}/01_basic_window examples/01_basic_window.ha
 	./${OUT}/01_basic_window
 
+02: bin
+	hare build ${FLAGS} -o ${OUT}/02_basic_screen_manager examples/02_basic_screen_manager.ha
+	./${OUT}/02_basic_screen_manager
+
 doc:
 	@rm -rf doc
 	@mkdir doc

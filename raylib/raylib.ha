@@ -341,6 +341,21 @@ export type GamepadAxis = enum {
 	GAMEPAD_AXIS_RIGHT_TRIGGER = 5
 };
 
+// Gestures
+export type Gestures = enum {
+	GESTURE_NONE        = 0,        // No gesture
+	GESTURE_TAP         = 1,        // Tap gesture
+	GESTURE_DOUBLETAP   = 2,        // Double tap gesture
+	GESTURE_HOLD        = 4,        // Hold gesture
+	GESTURE_DRAG        = 8,        // Drag gesture
+	GESTURE_SWIPE_RIGHT = 16,       // Swipe right gesture
+	GESTURE_SWIPE_LEFT  = 32,       // Swipe left gesture
+	GESTURE_SWIPE_UP    = 64,       // Swipe up gesture
+	GESTURE_SWIPE_DOWN  = 128,      // Swipe down gesture
+	GESTURE_PINCH_IN    = 256,      // Pinch in gesture
+	GESTURE_PINCH_OUT   = 512       // Pinch out gesture
+};
+
 // Pixel format
 export type PixelFormat = enum {
 	PIXELFORMAT_UNCOMPRESSED_GRAYSCALE = 1,
@@ -722,10 +737,15 @@ export @symbol("GetTouchX") fn get_touch_x() int;
 export @symbol("GetTouchY") fn get_touch_y() int;
 export @symbol("GetTouchPosition") fn get_touch_position(index: int) Vector2;
 export @symbol("GetTouchPointId") fn get_touch_point_id(id: int) int;
-export @symbol("GetTouchPointCount") fn get_touch_point_id() int;
-export @symbol("SetGesturesEnabled") fn set_gestures_enabled(flags: u32) void;
-export @symbol("IsGestureDetected") fn is_gesture_detected(gesture: u32) bool;
+export @symbol("GetTouchPointCount") fn get_touch_point_count() int;
+export @symbol("SetGesturesEnabled") fn set_gestures_enabled(flags: i32) void;
+export @symbol("IsGestureDetected") fn is_gesture_detected(gesture: i32) bool;
 export @symbol("GetGestureDetected") fn get_gesture_detected() int;
+export @symbol("GetGestureHoldDuration") fn get_gesture_hold_duration() f32;
+export @symbol("GetGestureDragVector") fn get_gesture_drag_vector() Vector2;
+export @symbol("GetGestureDragAngle") fn get_gesture_drag_angle() f32;
+export @symbol("GetGesturePinchVector") fn get_gesture_pinch_vector() Vector2;
+export @symbol("GetGesturePinchAngle") fn get_gesture_pinch_angle() f32;
 
 // module: rshapes
 // NOTE: It can be useful when using basic shapes and one single font,
