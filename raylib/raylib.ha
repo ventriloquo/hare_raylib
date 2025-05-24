@@ -716,6 +716,17 @@ export @symbol("GetMouseWheelMove") fn get_mouse_wheel_move() f32;
 export @symbol("GetMouseWheelMoveV") fn get_mouse_wheel_move_v() Vector2;
 export @symbol("SetMouseCursor") fn set_mouse_cursor(cursor: int) void;
 
+// Input-related functions: touch
+
+export @symbol("GetTouchX") fn get_touch_x() int;
+export @symbol("GetTouchY") fn get_touch_y() int;
+export @symbol("GetTouchPosition") fn get_touch_position(index: int) Vector2;
+export @symbol("GetTouchPointId") fn get_touch_point_id(id: int) int;
+export @symbol("GetTouchPointCount") fn get_touch_point_id() int;
+export @symbol("SetGesturesEnabled") fn set_gestures_enabled(flags: u32) void;
+export @symbol("IsGestureDetected") fn is_gesture_detected(gesture: u32) bool;
+export @symbol("GetGestureDetected") fn get_gesture_detected() int;
+
 // module: rshapes
 // NOTE: It can be useful when using basic shapes and one single font,
 // defining a font char white rectangle would allow drawing everything in a single draw call

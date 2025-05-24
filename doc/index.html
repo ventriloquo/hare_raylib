@@ -1,4 +1,4 @@
-<head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1"> </head> <style> :root { --color: #d5c4a1; --color-h1: #ebdbb2; --color-h2: #bdae93; --background-color: #1d2021; --background-color-alt: #282828; --border: #3c3836; --color-red: #fb4934; --color-yellow: #d79921; --color-blue: #458588; --color-azure: #8ec07c; --color-purple: #b16286; } *::-webkit-scrollbar { display: none; } * { font-family: monospace; } .keyword { color: var(--color-red); } .type { color: var(--color-yellow); } .comment { color: var(--color); font-weight: bold; } .heading-body { color: var(--color-yellow)} .heading-extra { color: var(--color-azure)} html { display: block; background-color: var(--background-color)} body { display: block; border: solid 2px var(--border); margin: 1em auto; padding: 1em; width: 80ch; background-color: var(--background-color-alt);} summary { color: var(--color-purple); padding: 0 1em;} a { text-decoration: none; color: var(--color-blue); } a:hover { color: var(--color-azure); } pre { padding: 1em; overflow: scroll; border: solid 2px var(--color-azure); color: var(--color); background-color: var(--background-color); margin-left: auto; margin-right: auto} ol, ul { color: var(--color); } p { color: var(--color-h2); margin-top: 0; margin-bottom: 1em; } p { margin-top: 1em; } h1 { color: var(--color-h1); } h2, h3 { color: var(--color-h2); } h4 { color: var(--color-h2); padding-bottom: 4px; border-bottom: solid 1px var(--border)}</style>
+<head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1"> </head> <style> :root { --color: #dcd7ba; --background-color: #1F1F28; --background-color-alt: #2A2A37; --color-red:            #FF5D62; --color-yellow:         #FF9E3B; --color-orange:         #FFA066; --color-blue:           #7e9cd8; --color-green:          #98BB6C; --color-purple:         #957fbb; --color-pink:           #D27E99; --color-light-blue:     #7AA89F; --color-light-yellow:   #C0A36E; --color-light-purple:   #9CABCA; --border: solid 3px var(--color-purple); } ::-webkit-scrollbar { display: none; } * { font-family: monospace; scroll-behavior: smooth; } body { display: block; margin: 1em auto; padding: 1em; max-width: 80ch; background-color: var(--background-color); border-radius: 5px; } summary { color: var(--color-purple); padding: 0 1em; } a { text-decoration: none; color: var(--color-blue); } a:hover { opacity: 80%; } pre { padding: 1em; color: var(--color); background-color: var(--background-color-alt); border: solid 1px var(--background-color-alt); margin-left: auto; margin-right: auto; border-radius: 5px; overflow: scroll; } ol, ul { color: var(--color); } p { color: var(--color); margin: 1em 0; } h1 { color: var(--color); } h2 { color: var(--color); display: none; } h2 > .heading-extra, h3, h4, h4 .heading-extra { display: none; } .keyword { color: var(--color-purple); } .type { color: var(--color-light-blue); } .comment { color: var(--color-pink); } .heading-body { color: var(--color-purple); font-size: larger; } .heading-extra { color: var(--color-yellow); } .heading-extra a { color: var(--color-pink); float: right; } .readme { background-color: var(--background-color-alt); border: var(--border); border-radius: 5px; margin-top: 1em; padding: 2em 1em 0.5em 1em; position: relative; overflow-x: scroll; } .readme::before { content: "README"; position: absolute; color: var(--background-color); background-color: var(--color-purple); left: 0; top: 0; padding: 2px 1em; border-end-end-radius: 10px; } .sample { display: block; background-color: var(--background-color-alt); } .member { border: solid 1px var(--background-color-alt); border-radius: 5px; padding: 15px; } .member > h4 { color: var(--color); display: block !important; } .member:has(h4) { display: none; } h4+pre { display: block; } .member:has(h4:target) { display: block; } .red { color: var(--color-red) } .blue { color: var(--color-blue) } .yellow { color: var(--color-yellow) } .green { color: var(--color-green) } .purple { color: var(--color-purple) } .orange { color: var(--color-orange) } .lblue { color: var(--color-light-blue) } .lpurple { color: var(--color-light-purple) } .lyellow { color: var(--color-light-yellow) } span:has(+ span) { color: inherit; } .title { color: var(--color-green); font-size: x-large; } .quote, .note, .tip, .important, .warning, .caution { padding: 1em; background-color: var(--background-color-alt); color: var(--color-light-blue); border-left: solid 5px var(--color-light-blue); border-radius: 5px; position: relative; } .note, .tip, .important, .warning, .caution { padding-top: 3em; } .note { color: var(--color-blue); border-color: var(--color-blue); } .tip { color: var(--color-green); border-color: var(--color-green); } .important { color: var(--color-purple); border-color: var(--color-purple); } .warning { color: var(--color-yellow); border-color: var(--color-yellow); } .caution { color: var(--color-red); border-color: var(--color-red); } .note::before, .tip::before, .important::before, .warning::before, .caution::before { position: absolute; top: 0; left: 0; padding: 2px 1em; color: var(--background-color); border-end-end-radius: 10px; } .note::before { content: "nota"; background-color: var(--color-blue); } .tip::before { content: "dica"; background-color: var(--color-green); } .important::before { content: "importante"; background-color: var(--color-purple); } .warning::before { content: "alerta"; background-color: var(--color-yellow); } .caution::before { content: "cuidado"; background-color: var(--color-red); } @media only screen and (max-width: 800px) { pre { border: none; } .member { border: none; padding: 1em; } p { overflow-x: scroll; } } </style>
 <h2><span class='heading-body'>raylib</span><span class='heading-extra'>+x86_64 +linux </span></h2>
 <div class='readme'>
 <p>Things to know
@@ -653,8 +653,7 @@
 @symbol(&quot;WindowShouldClose&quot;) <span class='keyword'>fn</span> <a href='#window_should_close'>window_should_close</a>() <span class='type'>bool</span>;
 </pre><h3>Types</h3>
 <section class='member'>
-<h4 id='Color'><span class='heading-body'>type Color</span><span class='heading-extra'><a href='#Color'>[link]</a>
-	</span></h4>
+<h4 id='Color'><span class='heading-body'>type Color</span><span class='heading-extra'><a href='#Color'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>type</span> Color = <span class='type'>struct</span> {
 	r: <span class='type'>u8</span>,
@@ -665,8 +664,7 @@
 <p>RGBA Color struct
 </section>
 <section class='member'>
-<h4 id='ConfigFlags'><span class='heading-body'>type ConfigFlags</span><span class='heading-extra'><a href='#ConfigFlags'>[link]</a>
-	</span></h4>
+<h4 id='ConfigFlags'><span class='heading-body'>type ConfigFlags</span><span class='heading-extra'><a href='#ConfigFlags'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>type</span> ConfigFlags = <span class='type'>enum</span> {
 	FLAG_FULLSCREEN_MODE = 2,
@@ -683,8 +681,7 @@
 <p>Flags
 </section>
 <section class='member'>
-<h4 id='FontType'><span class='heading-body'>type FontType</span><span class='heading-extra'><a href='#FontType'>[link]</a>
-	</span></h4>
+<h4 id='FontType'><span class='heading-body'>type FontType</span><span class='heading-extra'><a href='#FontType'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>type</span> FontType = <span class='type'>enum</span> {
 	FONT_DEFAULT = 0,
@@ -694,8 +691,7 @@
 <p>Font type
 </section>
 <section class='member'>
-<h4 id='GamepadAxis'><span class='heading-body'>type GamepadAxis</span><span class='heading-extra'><a href='#GamepadAxis'>[link]</a>
-	</span></h4>
+<h4 id='GamepadAxis'><span class='heading-body'>type GamepadAxis</span><span class='heading-extra'><a href='#GamepadAxis'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>type</span> GamepadAxis = <span class='type'>enum</span> {
 	GAMEPAD_AXIS_LEFT_X = 0,
@@ -708,8 +704,7 @@
 <p>Gamepad axis
 </section>
 <section class='member'>
-<h4 id='GamepadButton'><span class='heading-body'>type GamepadButton</span><span class='heading-extra'><a href='#GamepadButton'>[link]</a>
-	</span></h4>
+<h4 id='GamepadButton'><span class='heading-body'>type GamepadButton</span><span class='heading-extra'><a href='#GamepadButton'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>type</span> GamepadButton = <span class='type'>enum</span> {
 	GAMEPAD_BUTTON_UNKNOWN = 0,
@@ -734,8 +729,7 @@
 <p>Gamepad buttons
 </section>
 <section class='member'>
-<h4 id='Image'><span class='heading-body'>type Image</span><span class='heading-extra'><a href='#Image'>[link]</a>
-	</span></h4>
+<h4 id='Image'><span class='heading-body'>type Image</span><span class='heading-extra'><a href='#Image'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>type</span> Image = <span class='type'>struct</span> {
 	data: <span class='type'>*</span><span class='type'>opaque</span>,
@@ -756,8 +750,7 @@
 </ul>
 </section>
 <section class='member'>
-<h4 id='KeyboardKey'><span class='heading-body'>type KeyboardKey</span><span class='heading-extra'><a href='#KeyboardKey'>[link]</a>
-	</span></h4>
+<h4 id='KeyboardKey'><span class='heading-body'>type KeyboardKey</span><span class='heading-extra'><a href='#KeyboardKey'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>type</span> KeyboardKey = <span class='type'>enum</span> {
 	KEY_NULL = 0,
@@ -869,12 +862,11 @@
 };</pre>
 <p>Keyboard keys
 <p>Example:
-<pre class='sample'>if (is_key_pressed(KeyboardKey::KEY_I)) play_sound(menu_enter);
-</pre>
+<pre class='sample'><code>if (is_key_pressed(KeyboardKey::KEY_I)) play_sound(menu_enter);
+</code></pre>
 </section>
 <section class='member'>
-<h4 id='Matrix'><span class='heading-body'>type Matrix</span><span class='heading-extra'><a href='#Matrix'>[link]</a>
-	</span></h4>
+<h4 id='Matrix'><span class='heading-body'>type Matrix</span><span class='heading-extra'><a href='#Matrix'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>type</span> Matrix = <span class='type'>struct</span> {
 	m0: <span class='type'>f32</span>,
@@ -897,8 +889,7 @@
 <p>Matrix
 </section>
 <section class='member'>
-<h4 id='MouseButton'><span class='heading-body'>type MouseButton</span><span class='heading-extra'><a href='#MouseButton'>[link]</a>
-	</span></h4>
+<h4 id='MouseButton'><span class='heading-body'>type MouseButton</span><span class='heading-extra'><a href='#MouseButton'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>type</span> MouseButton = <span class='type'>enum</span> {
 	MOUSE_BUTTON_LEFT = 0,
@@ -912,8 +903,7 @@
 <p>Mouse buttons
 </section>
 <section class='member'>
-<h4 id='MouseCursor'><span class='heading-body'>type MouseCursor</span><span class='heading-extra'><a href='#MouseCursor'>[link]</a>
-	</span></h4>
+<h4 id='MouseCursor'><span class='heading-body'>type MouseCursor</span><span class='heading-extra'><a href='#MouseCursor'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>type</span> MouseCursor = <span class='type'>enum</span> {
 	MOUSE_CURSOR_DEFAULT = 0,
@@ -931,8 +921,7 @@
 <p>Mouse cursor
 </section>
 <section class='member'>
-<h4 id='PixelFormat'><span class='heading-body'>type PixelFormat</span><span class='heading-extra'><a href='#PixelFormat'>[link]</a>
-	</span></h4>
+<h4 id='PixelFormat'><span class='heading-body'>type PixelFormat</span><span class='heading-extra'><a href='#PixelFormat'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>type</span> PixelFormat = <span class='type'>enum</span> {
 	PIXELFORMAT_UNCOMPRESSED_GRAYSCALE = 1,
@@ -963,15 +952,13 @@
 <p>Pixel format
 </section>
 <section class='member'>
-<h4 id='Quaternion'><span class='heading-body'>type Quaternion</span><span class='heading-extra'><a href='#Quaternion'>[link]</a>
-	</span></h4>
+<h4 id='Quaternion'><span class='heading-body'>type Quaternion</span><span class='heading-extra'><a href='#Quaternion'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>type</span> Quaternion = <span class='type'>Vector4</span>;</pre>
 <p>Same as 4D Vector
 </section>
 <section class='member'>
-<h4 id='Rectangle'><span class='heading-body'>type Rectangle</span><span class='heading-extra'><a href='#Rectangle'>[link]</a>
-	</span></h4>
+<h4 id='Rectangle'><span class='heading-body'>type Rectangle</span><span class='heading-extra'><a href='#Rectangle'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>type</span> Rectangle = <span class='type'>struct</span> {
 	x: <span class='type'>f32</span>,
@@ -983,8 +970,7 @@
 <p>It takes a [x, y] position and [width, height]
 </section>
 <section class='member'>
-<h4 id='Triangle'><span class='heading-body'>type Triangle</span><span class='heading-extra'><a href='#Triangle'>[link]</a>
-	</span></h4>
+<h4 id='Triangle'><span class='heading-body'>type Triangle</span><span class='heading-extra'><a href='#Triangle'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>type</span> Triangle = <span class='type'>struct</span> {
 	point_1: <span class='type'>Vector2</span>,
@@ -995,8 +981,7 @@
 <p>It takes 3 2D vectors. They are used to define each vertice of the triangle.
 </section>
 <section class='member'>
-<h4 id='Vector2'><span class='heading-body'>type Vector2</span><span class='heading-extra'><a href='#Vector2'>[link]</a>
-	</span></h4>
+<h4 id='Vector2'><span class='heading-body'>type Vector2</span><span class='heading-extra'><a href='#Vector2'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>type</span> Vector2 = <span class='type'>struct</span> {
 	x: <span class='type'>f32</span>,
@@ -1005,8 +990,7 @@
 <p>2D Vector
 </section>
 <section class='member'>
-<h4 id='Vector3'><span class='heading-body'>type Vector3</span><span class='heading-extra'><a href='#Vector3'>[link]</a>
-	</span></h4>
+<h4 id='Vector3'><span class='heading-body'>type Vector3</span><span class='heading-extra'><a href='#Vector3'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>type</span> Vector3 = <span class='type'>struct</span> {
 	x: <span class='type'>f32</span>,
@@ -1016,8 +1000,7 @@
 <p>3D Vector
 </section>
 <section class='member'>
-<h4 id='Vector4'><span class='heading-body'>type Vector4</span><span class='heading-extra'><a href='#Vector4'>[link]</a>
-	</span></h4>
+<h4 id='Vector4'><span class='heading-body'>type Vector4</span><span class='heading-extra'><a href='#Vector4'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>type</span> Vector4 = <span class='type'>struct</span> {
 	x: <span class='type'>f32</span>,
@@ -1028,8 +1011,7 @@
 <p>4D Vector
 </section>
 <section class='member'>
-<h4 id='AudioStream'><span class='heading-body'>type AudioStream</span><span class='heading-extra'><a href='#AudioStream'>[link]</a>
-	</span></h4>
+<h4 id='AudioStream'><span class='heading-body'>type AudioStream</span><span class='heading-extra'><a href='#AudioStream'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1043,8 +1025,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='Camera2D'><span class='heading-body'>type Camera2D</span><span class='heading-extra'><a href='#Camera2D'>[link]</a>
-	</span></h4>
+<h4 id='Camera2D'><span class='heading-body'>type Camera2D</span><span class='heading-extra'><a href='#Camera2D'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1057,8 +1038,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='FilePathList'><span class='heading-body'>type FilePathList</span><span class='heading-extra'><a href='#FilePathList'>[link]</a>
-	</span></h4>
+<h4 id='FilePathList'><span class='heading-body'>type FilePathList</span><span class='heading-extra'><a href='#FilePathList'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1070,8 +1050,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='Font'><span class='heading-body'>type Font</span><span class='heading-extra'><a href='#Font'>[link]</a>
-	</span></h4>
+<h4 id='Font'><span class='heading-body'>type Font</span><span class='heading-extra'><a href='#Font'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1086,8 +1065,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='GlyphInfo'><span class='heading-body'>type GlyphInfo</span><span class='heading-extra'><a href='#GlyphInfo'>[link]</a>
-	</span></h4>
+<h4 id='GlyphInfo'><span class='heading-body'>type GlyphInfo</span><span class='heading-extra'><a href='#GlyphInfo'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1101,8 +1079,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='Music'><span class='heading-body'>type Music</span><span class='heading-extra'><a href='#Music'>[link]</a>
-	</span></h4>
+<h4 id='Music'><span class='heading-body'>type Music</span><span class='heading-extra'><a href='#Music'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1116,8 +1093,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='NPatchInfo'><span class='heading-body'>type NPatchInfo</span><span class='heading-extra'><a href='#NPatchInfo'>[link]</a>
-	</span></h4>
+<h4 id='NPatchInfo'><span class='heading-body'>type NPatchInfo</span><span class='heading-extra'><a href='#NPatchInfo'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1132,8 +1108,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='NPatchLayout'><span class='heading-body'>type NPatchLayout</span><span class='heading-extra'><a href='#NPatchLayout'>[link]</a>
-	</span></h4>
+<h4 id='NPatchLayout'><span class='heading-body'>type NPatchLayout</span><span class='heading-extra'><a href='#NPatchLayout'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1145,8 +1120,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='RenderTexture'><span class='heading-body'>type RenderTexture</span><span class='heading-extra'><a href='#RenderTexture'>[link]</a>
-	</span></h4>
+<h4 id='RenderTexture'><span class='heading-body'>type RenderTexture</span><span class='heading-extra'><a href='#RenderTexture'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1158,8 +1132,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='RenderTexture2D'><span class='heading-body'>type RenderTexture2D</span><span class='heading-extra'><a href='#RenderTexture2D'>[link]</a>
-	</span></h4>
+<h4 id='RenderTexture2D'><span class='heading-body'>type RenderTexture2D</span><span class='heading-extra'><a href='#RenderTexture2D'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1167,8 +1140,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='Sound'><span class='heading-body'>type Sound</span><span class='heading-extra'><a href='#Sound'>[link]</a>
-	</span></h4>
+<h4 id='Sound'><span class='heading-body'>type Sound</span><span class='heading-extra'><a href='#Sound'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1179,8 +1151,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='Texture'><span class='heading-body'>type Texture</span><span class='heading-extra'><a href='#Texture'>[link]</a>
-	</span></h4>
+<h4 id='Texture'><span class='heading-body'>type Texture</span><span class='heading-extra'><a href='#Texture'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1194,8 +1165,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='Texture2D'><span class='heading-body'>type Texture2D</span><span class='heading-extra'><a href='#Texture2D'>[link]</a>
-	</span></h4>
+<h4 id='Texture2D'><span class='heading-body'>type Texture2D</span><span class='heading-extra'><a href='#Texture2D'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1203,8 +1173,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='TextureCubemap'><span class='heading-body'>type TextureCubemap</span><span class='heading-extra'><a href='#TextureCubemap'>[link]</a>
-	</span></h4>
+<h4 id='TextureCubemap'><span class='heading-body'>type TextureCubemap</span><span class='heading-extra'><a href='#TextureCubemap'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1212,8 +1181,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='Wave'><span class='heading-body'>type Wave</span><span class='heading-extra'><a href='#Wave'>[link]</a>
-	</span></h4>
+<h4 id='Wave'><span class='heading-body'>type Wave</span><span class='heading-extra'><a href='#Wave'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1227,8 +1195,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='rAudioBuffer'><span class='heading-body'>type rAudioBuffer</span><span class='heading-extra'><a href='#rAudioBuffer'>[link]</a>
-	</span></h4>
+<h4 id='rAudioBuffer'><span class='heading-body'>type rAudioBuffer</span><span class='heading-extra'><a href='#rAudioBuffer'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1236,8 +1203,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='rAudioProcessor'><span class='heading-body'>type rAudioProcessor</span><span class='heading-extra'><a href='#rAudioProcessor'>[link]</a>
-	</span></h4>
+<h4 id='rAudioProcessor'><span class='heading-body'>type rAudioProcessor</span><span class='heading-extra'><a href='#rAudioProcessor'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1246,653 +1212,560 @@
 </section>
 <h3>Globals</h3>
 <section class='member'>
-<h4 id='BEIGE'><span class='heading-body'>let BEIGE</span><span class='heading-extra'><a href='#BEIGE'>[link]</a>
-	</span></h4>
+<h4 id='BEIGE'><span class='heading-body'>let BEIGE</span><span class='heading-extra'><a href='#BEIGE'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> BEIGE;</pre>
 <p>Beige
 </section>
 <section class='member'>
-<h4 id='BLACK'><span class='heading-body'>let BLACK</span><span class='heading-extra'><a href='#BLACK'>[link]</a>
-	</span></h4>
+<h4 id='BLACK'><span class='heading-body'>let BLACK</span><span class='heading-extra'><a href='#BLACK'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> BLACK;</pre>
 <p>Black
 </section>
 <section class='member'>
-<h4 id='BLANK'><span class='heading-body'>let BLANK</span><span class='heading-extra'><a href='#BLANK'>[link]</a>
-	</span></h4>
+<h4 id='BLANK'><span class='heading-body'>let BLANK</span><span class='heading-extra'><a href='#BLANK'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> BLANK;</pre>
 <p>Blank
 </section>
 <section class='member'>
-<h4 id='BLUE'><span class='heading-body'>let BLUE</span><span class='heading-extra'><a href='#BLUE'>[link]</a>
-	</span></h4>
+<h4 id='BLUE'><span class='heading-body'>let BLUE</span><span class='heading-extra'><a href='#BLUE'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> BLUE;</pre>
 <p>Blue
 </section>
 <section class='member'>
-<h4 id='BROWN'><span class='heading-body'>let BROWN</span><span class='heading-extra'><a href='#BROWN'>[link]</a>
-	</span></h4>
+<h4 id='BROWN'><span class='heading-body'>let BROWN</span><span class='heading-extra'><a href='#BROWN'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> BROWN;</pre>
 <p>Brown
 </section>
 <section class='member'>
-<h4 id='DARKBLUE'><span class='heading-body'>let DARKBLUE</span><span class='heading-extra'><a href='#DARKBLUE'>[link]</a>
-	</span></h4>
+<h4 id='DARKBLUE'><span class='heading-body'>let DARKBLUE</span><span class='heading-extra'><a href='#DARKBLUE'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> DARKBLUE;</pre>
 <p>Dark Blue
 </section>
 <section class='member'>
-<h4 id='DARKBROWN'><span class='heading-body'>let DARKBROWN</span><span class='heading-extra'><a href='#DARKBROWN'>[link]</a>
-	</span></h4>
+<h4 id='DARKBROWN'><span class='heading-body'>let DARKBROWN</span><span class='heading-extra'><a href='#DARKBROWN'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> DARKBROWN;</pre>
 <p>Dark Brown
 </section>
 <section class='member'>
-<h4 id='DARKGRAY'><span class='heading-body'>let DARKGRAY</span><span class='heading-extra'><a href='#DARKGRAY'>[link]</a>
-	</span></h4>
+<h4 id='DARKGRAY'><span class='heading-body'>let DARKGRAY</span><span class='heading-extra'><a href='#DARKGRAY'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> DARKGRAY;</pre>
 <p>Dark Gray
 </section>
 <section class='member'>
-<h4 id='DARKGREEN'><span class='heading-body'>let DARKGREEN</span><span class='heading-extra'><a href='#DARKGREEN'>[link]</a>
-	</span></h4>
+<h4 id='DARKGREEN'><span class='heading-body'>let DARKGREEN</span><span class='heading-extra'><a href='#DARKGREEN'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> DARKGREEN;</pre>
 <p>Dark Green
 </section>
 <section class='member'>
-<h4 id='DARKPURPLE'><span class='heading-body'>let DARKPURPLE</span><span class='heading-extra'><a href='#DARKPURPLE'>[link]</a>
-	</span></h4>
+<h4 id='DARKPURPLE'><span class='heading-body'>let DARKPURPLE</span><span class='heading-extra'><a href='#DARKPURPLE'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> DARKPURPLE;</pre>
 <p>Dark Purple
 </section>
 <section class='member'>
-<h4 id='GOLD'><span class='heading-body'>let GOLD</span><span class='heading-extra'><a href='#GOLD'>[link]</a>
-	</span></h4>
+<h4 id='GOLD'><span class='heading-body'>let GOLD</span><span class='heading-extra'><a href='#GOLD'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GOLD;</pre>
 <p>Gold
 </section>
 <section class='member'>
-<h4 id='GRAY'><span class='heading-body'>let GRAY</span><span class='heading-extra'><a href='#GRAY'>[link]</a>
-	</span></h4>
+<h4 id='GRAY'><span class='heading-body'>let GRAY</span><span class='heading-extra'><a href='#GRAY'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRAY;</pre>
 <p>Gray
 </section>
 <section class='member'>
-<h4 id='GREEN'><span class='heading-body'>let GREEN</span><span class='heading-extra'><a href='#GREEN'>[link]</a>
-	</span></h4>
+<h4 id='GREEN'><span class='heading-body'>let GREEN</span><span class='heading-extra'><a href='#GREEN'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GREEN;</pre>
 <p>Green
 </section>
 <section class='member'>
-<h4 id='GRUV_AQUA_DARK'><span class='heading-body'>let GRUV_AQUA_DARK</span><span class='heading-extra'><a href='#GRUV_AQUA_DARK'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_AQUA_DARK'><span class='heading-body'>let GRUV_AQUA_DARK</span><span class='heading-extra'><a href='#GRUV_AQUA_DARK'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_AQUA_DARK;</pre>
 <p>72-aqua-6 (#689d6a)
 </section>
 <section class='member'>
-<h4 id='GRUV_AQUA_LIGHT'><span class='heading-body'>let GRUV_AQUA_LIGHT</span><span class='heading-extra'><a href='#GRUV_AQUA_LIGHT'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_AQUA_LIGHT'><span class='heading-body'>let GRUV_AQUA_LIGHT</span><span class='heading-extra'><a href='#GRUV_AQUA_LIGHT'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_AQUA_LIGHT;</pre>
 <p>108-aqua-14 (#8ec07c)
 </section>
 <section class='member'>
-<h4 id='GRUV_BG_DARK'><span class='heading-body'>let GRUV_BG_DARK</span><span class='heading-extra'><a href='#GRUV_BG_DARK'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_BG_DARK'><span class='heading-body'>let GRUV_BG_DARK</span><span class='heading-extra'><a href='#GRUV_BG_DARK'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_BG_DARK;</pre>
 <p>235-bg-0 (#282828)
 </section>
 <section class='member'>
-<h4 id='GRUV_BG_LIGHT'><span class='heading-body'>let GRUV_BG_LIGHT</span><span class='heading-extra'><a href='#GRUV_BG_LIGHT'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_BG_LIGHT'><span class='heading-body'>let GRUV_BG_LIGHT</span><span class='heading-extra'><a href='#GRUV_BG_LIGHT'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_BG_LIGHT;</pre>
 <p>237-bg1-- (#3c3836)
 </section>
 <section class='member'>
-<h4 id='GRUV_BLUE_DARK'><span class='heading-body'>let GRUV_BLUE_DARK</span><span class='heading-extra'><a href='#GRUV_BLUE_DARK'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_BLUE_DARK'><span class='heading-body'>let GRUV_BLUE_DARK</span><span class='heading-extra'><a href='#GRUV_BLUE_DARK'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_BLUE_DARK;</pre>
 <p>66-blue-4 (#458588)
 </section>
 <section class='member'>
-<h4 id='GRUV_BLUE_LIGHT'><span class='heading-body'>let GRUV_BLUE_LIGHT</span><span class='heading-extra'><a href='#GRUV_BLUE_LIGHT'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_BLUE_LIGHT'><span class='heading-body'>let GRUV_BLUE_LIGHT</span><span class='heading-extra'><a href='#GRUV_BLUE_LIGHT'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_BLUE_LIGHT;</pre>
 <p>109-blue-12 (#83a598)
 </section>
 <section class='member'>
-<h4 id='GRUV_FG_DARK'><span class='heading-body'>let GRUV_FG_DARK</span><span class='heading-extra'><a href='#GRUV_FG_DARK'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_FG_DARK'><span class='heading-body'>let GRUV_FG_DARK</span><span class='heading-extra'><a href='#GRUV_FG_DARK'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_FG_DARK;</pre>
 <p>223-fg-15 (#ebdbb2)
 </section>
 <section class='member'>
-<h4 id='GRUV_FG_LIGHT'><span class='heading-body'>let GRUV_FG_LIGHT</span><span class='heading-extra'><a href='#GRUV_FG_LIGHT'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_FG_LIGHT'><span class='heading-body'>let GRUV_FG_LIGHT</span><span class='heading-extra'><a href='#GRUV_FG_LIGHT'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_FG_LIGHT;</pre>
 <p>229-fg0-- (#fbf1c7)
 </section>
 <section class='member'>
-<h4 id='GRUV_GREEN_DARK'><span class='heading-body'>let GRUV_GREEN_DARK</span><span class='heading-extra'><a href='#GRUV_GREEN_DARK'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_GREEN_DARK'><span class='heading-body'>let GRUV_GREEN_DARK</span><span class='heading-extra'><a href='#GRUV_GREEN_DARK'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_GREEN_DARK;</pre>
 <p>106-green-2 (#98971a)
 </section>
 <section class='member'>
-<h4 id='GRUV_GREEN_LIGHT'><span class='heading-body'>let GRUV_GREEN_LIGHT</span><span class='heading-extra'><a href='#GRUV_GREEN_LIGHT'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_GREEN_LIGHT'><span class='heading-body'>let GRUV_GREEN_LIGHT</span><span class='heading-extra'><a href='#GRUV_GREEN_LIGHT'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_GREEN_LIGHT;</pre>
 <p>142-green-10 (#b8bb26)
 </section>
 <section class='member'>
-<h4 id='GRUV_ORANGE_DARK'><span class='heading-body'>let GRUV_ORANGE_DARK</span><span class='heading-extra'><a href='#GRUV_ORANGE_DARK'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_ORANGE_DARK'><span class='heading-body'>let GRUV_ORANGE_DARK</span><span class='heading-extra'><a href='#GRUV_ORANGE_DARK'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_ORANGE_DARK;</pre>
 <p>166-orange-- (#d65d0e)
 </section>
 <section class='member'>
-<h4 id='GRUV_ORANGE_LIGHT'><span class='heading-body'>let GRUV_ORANGE_LIGHT</span><span class='heading-extra'><a href='#GRUV_ORANGE_LIGHT'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_ORANGE_LIGHT'><span class='heading-body'>let GRUV_ORANGE_LIGHT</span><span class='heading-extra'><a href='#GRUV_ORANGE_LIGHT'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_ORANGE_LIGHT;</pre>
 <p>208-orange-- (#fe8019)
 </section>
 <section class='member'>
-<h4 id='GRUV_PURPLE_DARK'><span class='heading-body'>let GRUV_PURPLE_DARK</span><span class='heading-extra'><a href='#GRUV_PURPLE_DARK'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_PURPLE_DARK'><span class='heading-body'>let GRUV_PURPLE_DARK</span><span class='heading-extra'><a href='#GRUV_PURPLE_DARK'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_PURPLE_DARK;</pre>
 <p>132-purple-5 (#b16286)
 </section>
 <section class='member'>
-<h4 id='GRUV_PURPLE_LIGHT'><span class='heading-body'>let GRUV_PURPLE_LIGHT</span><span class='heading-extra'><a href='#GRUV_PURPLE_LIGHT'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_PURPLE_LIGHT'><span class='heading-body'>let GRUV_PURPLE_LIGHT</span><span class='heading-extra'><a href='#GRUV_PURPLE_LIGHT'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_PURPLE_LIGHT;</pre>
 <p>175-purple-13 (#d3869b)
 </section>
 <section class='member'>
-<h4 id='GRUV_RED_DARK'><span class='heading-body'>let GRUV_RED_DARK</span><span class='heading-extra'><a href='#GRUV_RED_DARK'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_RED_DARK'><span class='heading-body'>let GRUV_RED_DARK</span><span class='heading-extra'><a href='#GRUV_RED_DARK'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_RED_DARK;</pre>
 <p>124-red-1 (#cc241d)
 </section>
 <section class='member'>
-<h4 id='GRUV_RED_LIGHT'><span class='heading-body'>let GRUV_RED_LIGHT</span><span class='heading-extra'><a href='#GRUV_RED_LIGHT'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_RED_LIGHT'><span class='heading-body'>let GRUV_RED_LIGHT</span><span class='heading-extra'><a href='#GRUV_RED_LIGHT'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_RED_LIGHT;</pre>
 <p>167-red-9 (#fb4934)
 </section>
 <section class='member'>
-<h4 id='GRUV_YELLOW_DARK'><span class='heading-body'>let GRUV_YELLOW_DARK</span><span class='heading-extra'><a href='#GRUV_YELLOW_DARK'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_YELLOW_DARK'><span class='heading-body'>let GRUV_YELLOW_DARK</span><span class='heading-extra'><a href='#GRUV_YELLOW_DARK'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_YELLOW_DARK;</pre>
 <p>172-yellow-3 (#d79921)
 </section>
 <section class='member'>
-<h4 id='GRUV_YELLOW_LIGHT'><span class='heading-body'>let GRUV_YELLOW_LIGHT</span><span class='heading-extra'><a href='#GRUV_YELLOW_LIGHT'>[link]</a>
-	</span></h4>
+<h4 id='GRUV_YELLOW_LIGHT'><span class='heading-body'>let GRUV_YELLOW_LIGHT</span><span class='heading-extra'><a href='#GRUV_YELLOW_LIGHT'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> GRUV_YELLOW_LIGHT;</pre>
 <p>214-yellow-11 (#fabd2f)
 </section>
 <section class='member'>
-<h4 id='LIGHTGRAY'><span class='heading-body'>let LIGHTGRAY</span><span class='heading-extra'><a href='#LIGHTGRAY'>[link]</a>
-	</span></h4>
+<h4 id='LIGHTGRAY'><span class='heading-body'>let LIGHTGRAY</span><span class='heading-extra'><a href='#LIGHTGRAY'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> LIGHTGRAY;</pre>
 <p>Light Gray
 </section>
 <section class='member'>
-<h4 id='LIME'><span class='heading-body'>let LIME</span><span class='heading-extra'><a href='#LIME'>[link]</a>
-	</span></h4>
+<h4 id='LIME'><span class='heading-body'>let LIME</span><span class='heading-extra'><a href='#LIME'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> LIME;</pre>
 <p>Lime
 </section>
 <section class='member'>
-<h4 id='MAGENTA'><span class='heading-body'>let MAGENTA</span><span class='heading-extra'><a href='#MAGENTA'>[link]</a>
-	</span></h4>
+<h4 id='MAGENTA'><span class='heading-body'>let MAGENTA</span><span class='heading-extra'><a href='#MAGENTA'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> MAGENTA;</pre>
 <p>Magenta
 </section>
 <section class='member'>
-<h4 id='MAROON'><span class='heading-body'>let MAROON</span><span class='heading-extra'><a href='#MAROON'>[link]</a>
-	</span></h4>
+<h4 id='MAROON'><span class='heading-body'>let MAROON</span><span class='heading-extra'><a href='#MAROON'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> MAROON;</pre>
 <p>Maroon
 </section>
 <section class='member'>
-<h4 id='ORANGE'><span class='heading-body'>let ORANGE</span><span class='heading-extra'><a href='#ORANGE'>[link]</a>
-	</span></h4>
+<h4 id='ORANGE'><span class='heading-body'>let ORANGE</span><span class='heading-extra'><a href='#ORANGE'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> ORANGE;</pre>
 <p>Orange
 </section>
 <section class='member'>
-<h4 id='PINK'><span class='heading-body'>let PINK</span><span class='heading-extra'><a href='#PINK'>[link]</a>
-	</span></h4>
+<h4 id='PINK'><span class='heading-body'>let PINK</span><span class='heading-extra'><a href='#PINK'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> PINK;</pre>
 <p>Pink
 </section>
 <section class='member'>
-<h4 id='PURPLE'><span class='heading-body'>let PURPLE</span><span class='heading-extra'><a href='#PURPLE'>[link]</a>
-	</span></h4>
+<h4 id='PURPLE'><span class='heading-body'>let PURPLE</span><span class='heading-extra'><a href='#PURPLE'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> PURPLE;</pre>
 <p>Purple
 </section>
 <section class='member'>
-<h4 id='RAYWHITE'><span class='heading-body'>let RAYWHITE</span><span class='heading-extra'><a href='#RAYWHITE'>[link]</a>
-	</span></h4>
+<h4 id='RAYWHITE'><span class='heading-body'>let RAYWHITE</span><span class='heading-extra'><a href='#RAYWHITE'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> RAYWHITE;</pre>
 <p>Ray White
 </section>
 <section class='member'>
-<h4 id='RED'><span class='heading-body'>let RED</span><span class='heading-extra'><a href='#RED'>[link]</a>
-	</span></h4>
+<h4 id='RED'><span class='heading-body'>let RED</span><span class='heading-extra'><a href='#RED'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> RED;</pre>
 <p>Red
 </section>
 <section class='member'>
-<h4 id='SKYBLUE'><span class='heading-body'>let SKYBLUE</span><span class='heading-extra'><a href='#SKYBLUE'>[link]</a>
-	</span></h4>
+<h4 id='SKYBLUE'><span class='heading-body'>let SKYBLUE</span><span class='heading-extra'><a href='#SKYBLUE'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> SKYBLUE;</pre>
 <p>Sky Blue
 </section>
 <section class='member'>
-<h4 id='VIOLET'><span class='heading-body'>let VIOLET</span><span class='heading-extra'><a href='#VIOLET'>[link]</a>
-	</span></h4>
+<h4 id='VIOLET'><span class='heading-body'>let VIOLET</span><span class='heading-extra'><a href='#VIOLET'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> VIOLET;</pre>
 <p>Violet
 </section>
 <section class='member'>
-<h4 id='WHITE'><span class='heading-body'>let WHITE</span><span class='heading-extra'><a href='#WHITE'>[link]</a>
-	</span></h4>
+<h4 id='WHITE'><span class='heading-body'>let WHITE</span><span class='heading-extra'><a href='#WHITE'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> WHITE;</pre>
 <p>White
 </section>
 <section class='member'>
-<h4 id='YELLOW'><span class='heading-body'>let YELLOW</span><span class='heading-extra'><a href='#YELLOW'>[link]</a>
-	</span></h4>
+<h4 id='YELLOW'><span class='heading-body'>let YELLOW</span><span class='heading-extra'><a href='#YELLOW'>[permalink]</a></span></h4>
 <pre class='decl'>
 <span class='keyword'>const</span> YELLOW;</pre>
 <p>Yellow
 </section>
 <h3>Functions</h3>
 <section class='member'>
-<h4 id='check_collision_recs'><span class='heading-body'>fn check_collision_recs</span><span class='heading-extra'><a href='#check_collision_recs'>[link]</a>
-	</span></h4>
+<h4 id='check_collision_recs'><span class='heading-body'>fn check_collision_recs</span><span class='heading-extra'><a href='#check_collision_recs'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;CheckCollisionRecs&quot;) <span class='keyword'>fn</span> check_collision_recs(rec_1: <span class='type'>Rectangle</span>, rec_2: <span class='type'>Rectangle</span>) <span class='type'>bool</span>;</pre>
 <p>Basic shapes collision detection functions
 </section>
 <section class='member'>
-<h4 id='clear_background'><span class='heading-body'>fn clear_background</span><span class='heading-extra'><a href='#clear_background'>[link]</a>
-	</span></h4>
+<h4 id='clear_background'><span class='heading-body'>fn clear_background</span><span class='heading-extra'><a href='#clear_background'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;ClearBackground&quot;) <span class='keyword'>fn</span> clear_background(color: <span class='type'>Color</span>) <span class='type'>void</span>;</pre>
 <p>Drawing-Related functions
 </section>
 <section class='member'>
-<h4 id='draw_pixel'><span class='heading-body'>fn draw_pixel</span><span class='heading-extra'><a href='#draw_pixel'>[link]</a>
-	</span></h4>
+<h4 id='draw_pixel'><span class='heading-body'>fn draw_pixel</span><span class='heading-extra'><a href='#draw_pixel'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;DrawPixel&quot;) <span class='keyword'>fn</span> draw_pixel(x: <span class='type'>int</span>, y: <span class='type'>int</span>, color: <span class='type'>Color</span>) <span class='type'>void</span>;</pre>
 <p>Basic shapes drawing functions
 </section>
 <section class='member'>
-<h4 id='draw_spline_basis'><span class='heading-body'>fn draw_spline_basis</span><span class='heading-extra'><a href='#draw_spline_basis'>[link]</a>
-	</span></h4>
+<h4 id='draw_spline_basis'><span class='heading-body'>fn draw_spline_basis</span><span class='heading-extra'><a href='#draw_spline_basis'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;DrawSplineBasis&quot;) <span class='keyword'>fn</span> draw_spline_basis(points: <span class='type'>*</span><span class='type'>Vector2</span>, point_count: <span class='type'>int</span>, thick: <span class='type'>f32</span>, color: <span class='type'>Color</span>) <span class='type'>void</span>;</pre>
 <p>Draw spline: Linear, minimum 2 points
 </section>
 <section class='member'>
-<h4 id='draw_spline_bezier_quadratic'><span class='heading-body'>fn draw_spline_bezier_quadratic</span><span class='heading-extra'><a href='#draw_spline_bezier_quadratic'>[link]</a>
-	</span></h4>
+<h4 id='draw_spline_bezier_quadratic'><span class='heading-body'>fn draw_spline_bezier_quadratic</span><span class='heading-extra'><a href='#draw_spline_bezier_quadratic'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;DrawSplineBezierQuadratic&quot;) <span class='keyword'>fn</span> draw_spline_bezier_quadratic(points: <span class='type'>*</span><span class='type'>Vector2</span>, point_count: <span class='type'>int</span>, thick: <span class='type'>f32</span>, color: <span class='type'>Color</span>) <span class='type'>void</span>;</pre>
 <p>Draw spline: Catmull-Rom, minimum 4 points
 </section>
 <section class='member'>
-<h4 id='draw_spline_catmull_rom'><span class='heading-body'>fn draw_spline_catmull_rom</span><span class='heading-extra'><a href='#draw_spline_catmull_rom'>[link]</a>
-	</span></h4>
+<h4 id='draw_spline_catmull_rom'><span class='heading-body'>fn draw_spline_catmull_rom</span><span class='heading-extra'><a href='#draw_spline_catmull_rom'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;DrawSplineCatmullRom&quot;) <span class='keyword'>fn</span> draw_spline_catmull_rom(points: <span class='type'>*</span><span class='type'>Vector2</span>, point_count: <span class='type'>int</span>, thick: <span class='type'>f32</span>, color: <span class='type'>Color</span>) <span class='type'>void</span>;</pre>
 <p>Draw spline: B-Spline, minimum 4 points
 </section>
 <section class='member'>
-<h4 id='draw_spline_cubic'><span class='heading-body'>fn draw_spline_cubic</span><span class='heading-extra'><a href='#draw_spline_cubic'>[link]</a>
-	</span></h4>
+<h4 id='draw_spline_cubic'><span class='heading-body'>fn draw_spline_cubic</span><span class='heading-extra'><a href='#draw_spline_cubic'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;DrawSplineBezierCubic&quot;) <span class='keyword'>fn</span> draw_spline_cubic(points: <span class='type'>*</span><span class='type'>Vector2</span>, point_count: <span class='type'>int</span>, thick: <span class='type'>f32</span>, color: <span class='type'>Color</span>) <span class='type'>void</span>;</pre>
 <p>Draw spline: Quadratic Bezier, minimum 3 points (1 control point): [p1, c2, p3, c4...]
 </section>
 <section class='member'>
-<h4 id='draw_spline_linear'><span class='heading-body'>fn draw_spline_linear</span><span class='heading-extra'><a href='#draw_spline_linear'>[link]</a>
-	</span></h4>
+<h4 id='draw_spline_linear'><span class='heading-body'>fn draw_spline_linear</span><span class='heading-extra'><a href='#draw_spline_linear'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;DrawSplineLinear&quot;) <span class='keyword'>fn</span> draw_spline_linear(points: <span class='type'>*</span><span class='type'>Vector2</span>, point_count: <span class='type'>int</span>, thick: <span class='type'>f32</span>, color: <span class='type'>Color</span>) <span class='type'>void</span>;</pre>
 <p>Splines drawing functions
 </section>
 <section class='member'>
-<h4 id='draw_spline_segment_basis'><span class='heading-body'>fn draw_spline_segment_basis</span><span class='heading-extra'><a href='#draw_spline_segment_basis'>[link]</a>
-	</span></h4>
+<h4 id='draw_spline_segment_basis'><span class='heading-body'>fn draw_spline_segment_basis</span><span class='heading-extra'><a href='#draw_spline_segment_basis'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;DrawSplineSegmentBasis&quot;) <span class='keyword'>fn</span> draw_spline_segment_basis(p1: <span class='type'>Vector2</span>, p2: <span class='type'>Vector2</span>, p3: <span class='type'>Vector2</span>, p4: <span class='type'>Vector2</span>, thick: <span class='type'>f32</span>, color: <span class='type'>Color</span>) <span class='type'>void</span>;</pre>
 <p>Draw spline segment: Linear, 2 points
 </section>
 <section class='member'>
-<h4 id='draw_spline_segment_bezier_cubic'><span class='heading-body'>fn draw_spline_segment_bezier_cubic</span><span class='heading-extra'><a href='#draw_spline_segment_bezier_cubic'>[link]</a>
-	</span></h4>
+<h4 id='draw_spline_segment_bezier_cubic'><span class='heading-body'>fn draw_spline_segment_bezier_cubic</span><span class='heading-extra'><a href='#draw_spline_segment_bezier_cubic'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;DrawSplineSegmentBezierCubic&quot;) <span class='keyword'>fn</span> draw_spline_segment_bezier_cubic(p1: <span class='type'>Vector2</span>, c2: <span class='type'>Vector2</span>, c3: <span class='type'>Vector2</span>, p4: <span class='type'>Vector2</span>, thick: <span class='type'>f32</span>, color: <span class='type'>Color</span>) <span class='type'>void</span>;</pre>
 <p>Draw spline segment: Quadratic Bezier, 2 points, 1 control point
 </section>
 <section class='member'>
-<h4 id='draw_spline_segment_bezier_quadratic'><span class='heading-body'>fn draw_spline_segment_bezier_quadratic</span><span class='heading-extra'><a href='#draw_spline_segment_bezier_quadratic'>[link]</a>
-	</span></h4>
+<h4 id='draw_spline_segment_bezier_quadratic'><span class='heading-body'>fn draw_spline_segment_bezier_quadratic</span><span class='heading-extra'><a href='#draw_spline_segment_bezier_quadratic'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;DrawSplineSegmentBezierQuadratic&quot;) <span class='keyword'>fn</span> draw_spline_segment_bezier_quadratic(p1: <span class='type'>Vector2</span>, c2: <span class='type'>Vector2</span>, p3: <span class='type'>Vector2</span>, thick: <span class='type'>f32</span>, color: <span class='type'>Color</span>) <span class='type'>void</span>;</pre>
 <p>Draw spline segment: Catmull-Rom, 4 points
 </section>
 <section class='member'>
-<h4 id='draw_spline_segment_catmull_rom'><span class='heading-body'>fn draw_spline_segment_catmull_rom</span><span class='heading-extra'><a href='#draw_spline_segment_catmull_rom'>[link]</a>
-	</span></h4>
+<h4 id='draw_spline_segment_catmull_rom'><span class='heading-body'>fn draw_spline_segment_catmull_rom</span><span class='heading-extra'><a href='#draw_spline_segment_catmull_rom'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;DrawSplineSegmentCatmullRom&quot;) <span class='keyword'>fn</span> draw_spline_segment_catmull_rom(p1: <span class='type'>Vector2</span>, p2: <span class='type'>Vector2</span>, p3: <span class='type'>Vector2</span>, p4: <span class='type'>Vector2</span>, thick: <span class='type'>f32</span>, color: <span class='type'>Color</span>) <span class='type'>void</span>;</pre>
 <p>Draw spline segment: B-Spline, 4 points
 </section>
 <section class='member'>
-<h4 id='draw_spline_segment_linear'><span class='heading-body'>fn draw_spline_segment_linear</span><span class='heading-extra'><a href='#draw_spline_segment_linear'>[link]</a>
-	</span></h4>
+<h4 id='draw_spline_segment_linear'><span class='heading-body'>fn draw_spline_segment_linear</span><span class='heading-extra'><a href='#draw_spline_segment_linear'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;DrawSplineSegmentLinear&quot;) <span class='keyword'>fn</span> draw_spline_segment_linear(p1: <span class='type'>Vector2</span>, p2: <span class='type'>Vector2</span>, thick: <span class='type'>f32</span>, color: <span class='type'>Color</span>) <span class='type'>void</span>;</pre>
 <p>Draw spline: Cubic Bezier, minimum 4 points (2 control points): [p1, c2, c3, p4, c5, c6...]
 </section>
 <section class='member'>
-<h4 id='draw_texture'><span class='heading-body'>fn draw_texture</span><span class='heading-extra'><a href='#draw_texture'>[link]</a>
-	</span></h4>
+<h4 id='draw_texture'><span class='heading-body'>fn draw_texture</span><span class='heading-extra'><a href='#draw_texture'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;DrawTexture&quot;) <span class='keyword'>fn</span> draw_texture(texture: <span class='type'>Texture</span>, x: <span class='type'>int</span>, y: <span class='type'>int</span>, tint: <span class='type'>Color</span>) <span class='type'>void</span>;</pre>
 <p>Texture drawing functions
 </section>
 <section class='member'>
-<h4 id='get_camera_matrix_2d'><span class='heading-body'>fn get_camera_matrix_2d</span><span class='heading-extra'><a href='#get_camera_matrix_2d'>[link]</a>
-	</span></h4>
+<h4 id='get_camera_matrix_2d'><span class='heading-body'>fn get_camera_matrix_2d</span><span class='heading-extra'><a href='#get_camera_matrix_2d'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;GetCameraMatrix2D&quot;) <span class='keyword'>fn</span> get_camera_matrix_2d(camera: <span class='type'>Camera2D</span>) <span class='type'>Matrix</span>;</pre>
 <p>TODO: Screen-space-related functions GetMouseRay GetCameraMatrix GetWorldToScreen GetWorldToScreenEx
 </section>
 <section class='member'>
-<h4 id='get_color'><span class='heading-body'>fn get_color</span><span class='heading-extra'><a href='#get_color'>[link]</a>
-	</span></h4>
+<h4 id='get_color'><span class='heading-body'>fn get_color</span><span class='heading-extra'><a href='#get_color'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;GetColor&quot;) <span class='keyword'>fn</span> get_color(color: <span class='type'>u32</span>) <span class='type'>Color</span>;</pre>
 <p>Color/Pixel related functions
 </section>
 <section class='member'>
-<h4 id='get_random_value'><span class='heading-body'>fn get_random_value</span><span class='heading-extra'><a href='#get_random_value'>[link]</a>
-	</span></h4>
+<h4 id='get_random_value'><span class='heading-body'>fn get_random_value</span><span class='heading-extra'><a href='#get_random_value'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;GetRandomValue&quot;) <span class='keyword'>fn</span> get_random_value(min: <span class='type'>int</span>, max: <span class='type'>int</span>) <span class='type'>void</span>;</pre>
 <p>Set the seed for the random number generator
 </section>
 <section class='member'>
-<h4 id='get_spline_point_basis'><span class='heading-body'>fn get_spline_point_basis</span><span class='heading-extra'><a href='#get_spline_point_basis'>[link]</a>
-	</span></h4>
+<h4 id='get_spline_point_basis'><span class='heading-body'>fn get_spline_point_basis</span><span class='heading-extra'><a href='#get_spline_point_basis'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;GetSplinePointBasis&quot;) <span class='keyword'>fn</span> get_spline_point_basis(p1: <span class='type'>Vector2</span>, p2: <span class='type'>Vector2</span>, p3: <span class='type'>Vector2</span>, p4: <span class='type'>Vector2</span>, t: <span class='type'>f32</span>) <span class='type'>Vector2</span>;</pre>
 <p>Get (evaluate) spline point: Linear
 </section>
 <section class='member'>
-<h4 id='get_spline_point_bezier_cubic'><span class='heading-body'>fn get_spline_point_bezier_cubic</span><span class='heading-extra'><a href='#get_spline_point_bezier_cubic'>[link]</a>
-	</span></h4>
+<h4 id='get_spline_point_bezier_cubic'><span class='heading-body'>fn get_spline_point_bezier_cubic</span><span class='heading-extra'><a href='#get_spline_point_bezier_cubic'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;GetSplinePointBezierCubic&quot;) <span class='keyword'>fn</span> get_spline_point_bezier_cubic(p1: <span class='type'>Vector2</span>, c2: <span class='type'>Vector2</span>, c3: <span class='type'>Vector2</span>, p4: <span class='type'>Vector2</span>, t: <span class='type'>f32</span>) <span class='type'>Vector2</span>;</pre>
 <p>Get (evaluate) spline point: Quadratic Bezier
 </section>
 <section class='member'>
-<h4 id='get_spline_point_bezier_quad'><span class='heading-body'>fn get_spline_point_bezier_quad</span><span class='heading-extra'><a href='#get_spline_point_bezier_quad'>[link]</a>
-	</span></h4>
+<h4 id='get_spline_point_bezier_quad'><span class='heading-body'>fn get_spline_point_bezier_quad</span><span class='heading-extra'><a href='#get_spline_point_bezier_quad'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;GetSplinePointBezierQuad&quot;) <span class='keyword'>fn</span> get_spline_point_bezier_quad(p1: <span class='type'>Vector2</span>, c2: <span class='type'>Vector2</span>, p3: <span class='type'>Vector2</span>, t: <span class='type'>f32</span>) <span class='type'>Vector2</span>;</pre>
 <p>Get (evaluate) spline point: Catmull-Rom
 </section>
 <section class='member'>
-<h4 id='get_spline_point_catmull_rom'><span class='heading-body'>fn get_spline_point_catmull_rom</span><span class='heading-extra'><a href='#get_spline_point_catmull_rom'>[link]</a>
-	</span></h4>
+<h4 id='get_spline_point_catmull_rom'><span class='heading-body'>fn get_spline_point_catmull_rom</span><span class='heading-extra'><a href='#get_spline_point_catmull_rom'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;GetSplinePointCatmullRom&quot;) <span class='keyword'>fn</span> get_spline_point_catmull_rom(p1: <span class='type'>Vector2</span>, p2: <span class='type'>Vector2</span>, p3: <span class='type'>Vector2</span>, p4: <span class='type'>Vector2</span>, t: <span class='type'>f32</span>) <span class='type'>Vector2</span>;</pre>
 <p>Get (evaluate) spline point: B-Spline
 </section>
 <section class='member'>
-<h4 id='get_spline_point_linear'><span class='heading-body'>fn get_spline_point_linear</span><span class='heading-extra'><a href='#get_spline_point_linear'>[link]</a>
-	</span></h4>
+<h4 id='get_spline_point_linear'><span class='heading-body'>fn get_spline_point_linear</span><span class='heading-extra'><a href='#get_spline_point_linear'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;GetSplinePointLinear&quot;) <span class='keyword'>fn</span> get_spline_point_linear(start_pos: <span class='type'>Vector2</span>, end_pos: <span class='type'>Vector2</span>, t: <span class='type'>f32</span>) <span class='type'>Vector2</span>;</pre>
 <p>Spline segment point evaluation functions, for a given t [0.0f .. 1.0f]
 </section>
 <section class='member'>
-<h4 id='init_audio_device'><span class='heading-body'>fn init_audio_device</span><span class='heading-extra'><a href='#init_audio_device'>[link]</a>
-	</span></h4>
+<h4 id='init_audio_device'><span class='heading-body'>fn init_audio_device</span><span class='heading-extra'><a href='#init_audio_device'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;InitAudioDevice&quot;) <span class='keyword'>fn</span> init_audio_device() <span class='type'>void</span>;</pre>
 <p>module: raudio Audio device management functions
 </section>
 <section class='member'>
-<h4 id='is_audio_stream_playing'><span class='heading-body'>fn is_audio_stream_playing</span><span class='heading-extra'><a href='#is_audio_stream_playing'>[link]</a>
-	</span></h4>
+<h4 id='is_audio_stream_playing'><span class='heading-body'>fn is_audio_stream_playing</span><span class='heading-extra'><a href='#is_audio_stream_playing'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;IsAudioStreamPlaying&quot;) <span class='keyword'>fn</span> is_audio_stream_playing(stream: <span class='type'>AudioStream</span>) <span class='type'>bool</span>;</pre>
 <p>Resume audio stream
 </section>
 <section class='member'>
-<h4 id='is_audio_stream_processed'><span class='heading-body'>fn is_audio_stream_processed</span><span class='heading-extra'><a href='#is_audio_stream_processed'>[link]</a>
-	</span></h4>
+<h4 id='is_audio_stream_processed'><span class='heading-body'>fn is_audio_stream_processed</span><span class='heading-extra'><a href='#is_audio_stream_processed'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;IsAudioStreamProcessed&quot;) <span class='keyword'>fn</span> is_audio_stream_processed(stream: <span class='type'>AudioStream</span>) <span class='type'>bool</span>;</pre>
 <p>Update audio stream buffers with data
 </section>
 <section class='member'>
-<h4 id='is_audio_stream_ready'><span class='heading-body'>fn is_audio_stream_ready</span><span class='heading-extra'><a href='#is_audio_stream_ready'>[link]</a>
-	</span></h4>
+<h4 id='is_audio_stream_ready'><span class='heading-body'>fn is_audio_stream_ready</span><span class='heading-extra'><a href='#is_audio_stream_ready'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;IsAudioStreamReady&quot;) <span class='keyword'>fn</span> is_audio_stream_ready(stream: <span class='type'>AudioStream</span>) <span class='type'>bool</span>;</pre>
 <p>Load audio stream (to stream raw audio pcm data)
 </section>
 <section class='member'>
-<h4 id='is_key_pressed'><span class='heading-body'>fn is_key_pressed</span><span class='heading-extra'><a href='#is_key_pressed'>[link]</a>
-	</span></h4>
+<h4 id='is_key_pressed'><span class='heading-body'>fn is_key_pressed</span><span class='heading-extra'><a href='#is_key_pressed'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;IsKeyPressed&quot;) <span class='keyword'>fn</span> is_key_pressed(key: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
 <p>Input-related functions: keyboard
 </section>
 <section class='member'>
-<h4 id='is_mouse_button_pressed'><span class='heading-body'>fn is_mouse_button_pressed</span><span class='heading-extra'><a href='#is_mouse_button_pressed'>[link]</a>
-	</span></h4>
+<h4 id='is_mouse_button_pressed'><span class='heading-body'>fn is_mouse_button_pressed</span><span class='heading-extra'><a href='#is_mouse_button_pressed'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;IsMouseButtonPressed&quot;) <span class='keyword'>fn</span> is_mouse_button_pressed(mouse_button: <span class='type'>int</span>) <span class='type'>bool</span>;</pre>
 <p>Input-related functions: mouse
 </section>
 <section class='member'>
-<h4 id='load_audio_stream'><span class='heading-body'>fn load_audio_stream</span><span class='heading-extra'><a href='#load_audio_stream'>[link]</a>
-	</span></h4>
+<h4 id='load_audio_stream'><span class='heading-body'>fn load_audio_stream</span><span class='heading-extra'><a href='#load_audio_stream'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;LoadAudioStream&quot;) <span class='keyword'>fn</span> load_audio_stream(sample_rate: <span class='type'>u32</span>, sample_size: <span class='type'>u32</span>, channels: <span class='type'>u32</span>) <span class='type'>AudioStream</span>;</pre>
 <p>AudioStream management functions
 </section>
 <section class='member'>
-<h4 id='pause_audio_stream'><span class='heading-body'>fn pause_audio_stream</span><span class='heading-extra'><a href='#pause_audio_stream'>[link]</a>
-	</span></h4>
+<h4 id='pause_audio_stream'><span class='heading-body'>fn pause_audio_stream</span><span class='heading-extra'><a href='#pause_audio_stream'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;PauseAudioStream&quot;) <span class='keyword'>fn</span> pause_audio_stream(stream: <span class='type'>AudioStream</span>) <span class='type'>void</span>;</pre>
 <p>Play audio stream
 </section>
 <section class='member'>
-<h4 id='play_audio_stream'><span class='heading-body'>fn play_audio_stream</span><span class='heading-extra'><a href='#play_audio_stream'>[link]</a>
-	</span></h4>
+<h4 id='play_audio_stream'><span class='heading-body'>fn play_audio_stream</span><span class='heading-extra'><a href='#play_audio_stream'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;PlayAudioStream&quot;) <span class='keyword'>fn</span> play_audio_stream(stream: <span class='type'>AudioStream</span>) <span class='type'>void</span>;</pre>
 <p>Check if any audio stream buffers requires refill
 </section>
 <section class='member'>
-<h4 id='play_sound'><span class='heading-body'>fn play_sound</span><span class='heading-extra'><a href='#play_sound'>[link]</a>
-	</span></h4>
+<h4 id='play_sound'><span class='heading-body'>fn play_sound</span><span class='heading-extra'><a href='#play_sound'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;PlaySound&quot;) <span class='keyword'>fn</span> play_sound(sound: <span class='type'>Sound</span>) <span class='type'>void</span>;</pre>
 <p>Wave/Sound management functions
 </section>
 <section class='member'>
-<h4 id='poll_input_events'><span class='heading-body'>fn poll_input_events</span><span class='heading-extra'><a href='#poll_input_events'>[link]</a>
-	</span></h4>
+<h4 id='poll_input_events'><span class='heading-body'>fn poll_input_events</span><span class='heading-extra'><a href='#poll_input_events'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;PollInputEvents&quot;) <span class='keyword'>fn</span> poll_input_events() <span class='type'>void</span>;</pre>
 <p>Swap back buffer with front buffer (screen drawing)
 </section>
 <section class='member'>
-<h4 id='resume_audio_stream'><span class='heading-body'>fn resume_audio_stream</span><span class='heading-extra'><a href='#resume_audio_stream'>[link]</a>
-	</span></h4>
+<h4 id='resume_audio_stream'><span class='heading-body'>fn resume_audio_stream</span><span class='heading-extra'><a href='#resume_audio_stream'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;ResumeAudioStream&quot;) <span class='keyword'>fn</span> resume_audio_stream(stream: <span class='type'>AudioStream</span>) <span class='type'>void</span>;</pre>
 <p>Pause audio stream
 </section>
 <section class='member'>
-<h4 id='set_audio_stream_buffer_size_default'><span class='heading-body'>fn set_audio_stream_buffer_size_default</span><span class='heading-extra'><a href='#set_audio_stream_buffer_size_default'>[link]</a>
-	</span></h4>
+<h4 id='set_audio_stream_buffer_size_default'><span class='heading-body'>fn set_audio_stream_buffer_size_default</span><span class='heading-extra'><a href='#set_audio_stream_buffer_size_default'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;SetAudioStreamBufferSizeDefault&quot;) <span class='keyword'>fn</span> set_audio_stream_buffer_size_default(buffer_size: <span class='type'>int</span>) <span class='type'>void</span>;</pre>
 <p>Set pan for audio stream (0.5 is centered)
 </section>
 <section class='member'>
-<h4 id='set_audio_stream_pan'><span class='heading-body'>fn set_audio_stream_pan</span><span class='heading-extra'><a href='#set_audio_stream_pan'>[link]</a>
-	</span></h4>
+<h4 id='set_audio_stream_pan'><span class='heading-body'>fn set_audio_stream_pan</span><span class='heading-extra'><a href='#set_audio_stream_pan'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;SetAudioStreamPan&quot;) <span class='keyword'>fn</span> set_audio_stream_pan(stream: <span class='type'>AudioStream</span>, pan: <span class='type'>f32</span>) <span class='type'>void</span>;</pre>
 <p>Set pitch for audio stream (1.0 is base level)
 </section>
 <section class='member'>
-<h4 id='set_audio_stream_pitch'><span class='heading-body'>fn set_audio_stream_pitch</span><span class='heading-extra'><a href='#set_audio_stream_pitch'>[link]</a>
-	</span></h4>
+<h4 id='set_audio_stream_pitch'><span class='heading-body'>fn set_audio_stream_pitch</span><span class='heading-extra'><a href='#set_audio_stream_pitch'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;SetAudioStreamPitch&quot;) <span class='keyword'>fn</span> set_audio_stream_pitch(stream: <span class='type'>AudioStream</span>, pitch: <span class='type'>f32</span>) <span class='type'>void</span>;</pre>
 <p>Set volume for audio stream (1.0 is max level)
 </section>
 <section class='member'>
-<h4 id='set_audio_stream_volume'><span class='heading-body'>fn set_audio_stream_volume</span><span class='heading-extra'><a href='#set_audio_stream_volume'>[link]</a>
-	</span></h4>
+<h4 id='set_audio_stream_volume'><span class='heading-body'>fn set_audio_stream_volume</span><span class='heading-extra'><a href='#set_audio_stream_volume'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;SetAudioStreamVolume&quot;) <span class='keyword'>fn</span> set_audio_stream_volume(stream: <span class='type'>AudioStream</span>, volume: <span class='type'>f32</span>) <span class='type'>void</span>;</pre>
 <p>Stop audio stream
 </section>
 <section class='member'>
-<h4 id='set_random_seed'><span class='heading-body'>fn set_random_seed</span><span class='heading-extra'><a href='#set_random_seed'>[link]</a>
-	</span></h4>
+<h4 id='set_random_seed'><span class='heading-body'>fn set_random_seed</span><span class='heading-extra'><a href='#set_random_seed'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;SetRandomSeed&quot;) <span class='keyword'>fn</span> set_random_seed(seed: <span class='type'>u32</span>) <span class='type'>void</span>;</pre>
 <p>Random values generation functions
 </section>
 <section class='member'>
-<h4 id='set_shapes_texture'><span class='heading-body'>fn set_shapes_texture</span><span class='heading-extra'><a href='#set_shapes_texture'>[link]</a>
-	</span></h4>
+<h4 id='set_shapes_texture'><span class='heading-body'>fn set_shapes_texture</span><span class='heading-extra'><a href='#set_shapes_texture'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;SetShapesTexture&quot;) <span class='keyword'>fn</span> set_shapes_texture(texture: <span class='type'>Texture2D</span>, source: <span class='type'>Rectangle</span>) <span class='type'>void</span>;</pre>
 <p>module: rshapes NOTE: It can be useful when using basic shapes and one single font, defining a font char white rectangle would allow drawing everything in a single draw call
 </section>
 <section class='member'>
-<h4 id='set_target_fps'><span class='heading-body'>fn set_target_fps</span><span class='heading-extra'><a href='#set_target_fps'>[link]</a>
-	</span></h4>
+<h4 id='set_target_fps'><span class='heading-body'>fn set_target_fps</span><span class='heading-extra'><a href='#set_target_fps'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;SetTargetFPS&quot;) <span class='keyword'>fn</span> set_target_fps(fps: <span class='type'>int</span>) <span class='type'>void</span>;</pre>
 <p>Timing-Related functions
 </section>
 <section class='member'>
-<h4 id='set_text_line_spacing'><span class='heading-body'>fn set_text_line_spacing</span><span class='heading-extra'><a href='#set_text_line_spacing'>[link]</a>
-	</span></h4>
+<h4 id='set_text_line_spacing'><span class='heading-body'>fn set_text_line_spacing</span><span class='heading-extra'><a href='#set_text_line_spacing'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;SetTextLineSpacing&quot;) <span class='keyword'>fn</span> set_text_line_spacing(spacing: <span class='type'>int</span>) <span class='type'>void</span>;</pre>
 <p>Text font info functions
 </section>
 <section class='member'>
-<h4 id='show_cursor'><span class='heading-body'>fn show_cursor</span><span class='heading-extra'><a href='#show_cursor'>[link]</a>
-	</span></h4>
+<h4 id='show_cursor'><span class='heading-body'>fn show_cursor</span><span class='heading-extra'><a href='#show_cursor'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;ShowCursor&quot;) <span class='keyword'>fn</span> show_cursor() <span class='type'>void</span>;</pre>
 <p>Cursor-Related functions
 </section>
 <section class='member'>
-<h4 id='stop_audio_stream'><span class='heading-body'>fn stop_audio_stream</span><span class='heading-extra'><a href='#stop_audio_stream'>[link]</a>
-	</span></h4>
+<h4 id='stop_audio_stream'><span class='heading-body'>fn stop_audio_stream</span><span class='heading-extra'><a href='#stop_audio_stream'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;StopAudioStream&quot;) <span class='keyword'>fn</span> stop_audio_stream(stream: <span class='type'>AudioStream</span>) <span class='type'>void</span>;</pre>
 <p>Check if audio stream is playing
 </section>
 <section class='member'>
-<h4 id='swap_screen_buffer'><span class='heading-body'>fn swap_screen_buffer</span><span class='heading-extra'><a href='#swap_screen_buffer'>[link]</a>
-	</span></h4>
+<h4 id='swap_screen_buffer'><span class='heading-body'>fn swap_screen_buffer</span><span class='heading-extra'><a href='#swap_screen_buffer'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;SwapScreenBuffer&quot;) <span class='keyword'>fn</span> swap_screen_buffer() <span class='type'>void</span>;</pre>
 <p>Custom frame control functions NOTE: Those functions are intended for advance users that want full control over the frame processing By default EndDrawing() does this job: draws everything + SwapScreenBuffer() + manage frame timing + PollInputEvents() To avoid that behaviour and control frame processes manually, enable in config.h: SUPPORT_CUSTOM_FRAME_CONTROL
 </section>
 <section class='member'>
-<h4 id='unload_audio_stream'><span class='heading-body'>fn unload_audio_stream</span><span class='heading-extra'><a href='#unload_audio_stream'>[link]</a>
-	</span></h4>
+<h4 id='unload_audio_stream'><span class='heading-body'>fn unload_audio_stream</span><span class='heading-extra'><a href='#unload_audio_stream'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;UnloadAudioStream&quot;) <span class='keyword'>fn</span> unload_audio_stream(stream: <span class='type'>AudioStream</span>) <span class='type'>void</span>;</pre>
 <p>Checks if an audio stream is ready
 </section>
 <section class='member'>
-<h4 id='update_audio_stream'><span class='heading-body'>fn update_audio_stream</span><span class='heading-extra'><a href='#update_audio_stream'>[link]</a>
-	</span></h4>
+<h4 id='update_audio_stream'><span class='heading-body'>fn update_audio_stream</span><span class='heading-extra'><a href='#update_audio_stream'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;UpdateAudioStream&quot;) <span class='keyword'>fn</span> update_audio_stream(stream: <span class='type'>AudioStream</span>, data: <span class='type'>*</span><span class='type'>opaque</span>, frame_count: <span class='type'>int</span>) <span class='type'>void</span>;</pre>
 <p>Unload audio stream and free memory
 </section>
 <section class='member'>
-<h4 id='wait_time'><span class='heading-body'>fn wait_time</span><span class='heading-extra'><a href='#wait_time'>[link]</a>
-	</span></h4>
+<h4 id='wait_time'><span class='heading-body'>fn wait_time</span><span class='heading-extra'><a href='#wait_time'>[permalink]</a></span></h4>
 <pre class='decl'>
 @symbol(&quot;WaitTime&quot;) <span class='keyword'>fn</span> wait_time(seconds: <span class='type'>f64</span>) <span class='type'>void</span>;</pre>
 <p>Register all input events
 </section>
 <section class='member'>
-<h4 id='begin_blend_mode'><span class='heading-body'>fn begin_blend_mode</span><span class='heading-extra'><a href='#begin_blend_mode'>[link]</a>
-	</span></h4>
+<h4 id='begin_blend_mode'><span class='heading-body'>fn begin_blend_mode</span><span class='heading-extra'><a href='#begin_blend_mode'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1900,8 +1773,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='begin_drawing'><span class='heading-body'>fn begin_drawing</span><span class='heading-extra'><a href='#begin_drawing'>[link]</a>
-	</span></h4>
+<h4 id='begin_drawing'><span class='heading-body'>fn begin_drawing</span><span class='heading-extra'><a href='#begin_drawing'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1909,8 +1781,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='begin_mode_2d'><span class='heading-body'>fn begin_mode_2d</span><span class='heading-extra'><a href='#begin_mode_2d'>[link]</a>
-	</span></h4>
+<h4 id='begin_mode_2d'><span class='heading-body'>fn begin_mode_2d</span><span class='heading-extra'><a href='#begin_mode_2d'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1918,8 +1789,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='begin_scissor_mode'><span class='heading-body'>fn begin_scissor_mode</span><span class='heading-extra'><a href='#begin_scissor_mode'>[link]</a>
-	</span></h4>
+<h4 id='begin_scissor_mode'><span class='heading-body'>fn begin_scissor_mode</span><span class='heading-extra'><a href='#begin_scissor_mode'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1927,8 +1797,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='begin_texture_mode'><span class='heading-body'>fn begin_texture_mode</span><span class='heading-extra'><a href='#begin_texture_mode'>[link]</a>
-	</span></h4>
+<h4 id='begin_texture_mode'><span class='heading-body'>fn begin_texture_mode</span><span class='heading-extra'><a href='#begin_texture_mode'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1936,8 +1805,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='check_collision_circles'><span class='heading-body'>fn check_collision_circles</span><span class='heading-extra'><a href='#check_collision_circles'>[link]</a>
-	</span></h4>
+<h4 id='check_collision_circles'><span class='heading-body'>fn check_collision_circles</span><span class='heading-extra'><a href='#check_collision_circles'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1945,8 +1813,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='check_collision_circles_rec'><span class='heading-body'>fn check_collision_circles_rec</span><span class='heading-extra'><a href='#check_collision_circles_rec'>[link]</a>
-	</span></h4>
+<h4 id='check_collision_circles_rec'><span class='heading-body'>fn check_collision_circles_rec</span><span class='heading-extra'><a href='#check_collision_circles_rec'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1954,8 +1821,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='check_collision_lines'><span class='heading-body'>fn check_collision_lines</span><span class='heading-extra'><a href='#check_collision_lines'>[link]</a>
-	</span></h4>
+<h4 id='check_collision_lines'><span class='heading-body'>fn check_collision_lines</span><span class='heading-extra'><a href='#check_collision_lines'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1963,8 +1829,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='check_collision_point_circles'><span class='heading-body'>fn check_collision_point_circles</span><span class='heading-extra'><a href='#check_collision_point_circles'>[link]</a>
-	</span></h4>
+<h4 id='check_collision_point_circles'><span class='heading-body'>fn check_collision_point_circles</span><span class='heading-extra'><a href='#check_collision_point_circles'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1972,8 +1837,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='check_collision_point_line'><span class='heading-body'>fn check_collision_point_line</span><span class='heading-extra'><a href='#check_collision_point_line'>[link]</a>
-	</span></h4>
+<h4 id='check_collision_point_line'><span class='heading-body'>fn check_collision_point_line</span><span class='heading-extra'><a href='#check_collision_point_line'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1981,8 +1845,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='check_collision_point_poly'><span class='heading-body'>fn check_collision_point_poly</span><span class='heading-extra'><a href='#check_collision_point_poly'>[link]</a>
-	</span></h4>
+<h4 id='check_collision_point_poly'><span class='heading-body'>fn check_collision_point_poly</span><span class='heading-extra'><a href='#check_collision_point_poly'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1990,8 +1853,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='check_collision_point_triangle'><span class='heading-body'>fn check_collision_point_triangle</span><span class='heading-extra'><a href='#check_collision_point_triangle'>[link]</a>
-	</span></h4>
+<h4 id='check_collision_point_triangle'><span class='heading-body'>fn check_collision_point_triangle</span><span class='heading-extra'><a href='#check_collision_point_triangle'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -1999,8 +1861,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='clear_window_state'><span class='heading-body'>fn clear_window_state</span><span class='heading-extra'><a href='#clear_window_state'>[link]</a>
-	</span></h4>
+<h4 id='clear_window_state'><span class='heading-body'>fn clear_window_state</span><span class='heading-extra'><a href='#clear_window_state'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2008,8 +1869,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='close_audio_device'><span class='heading-body'>fn close_audio_device</span><span class='heading-extra'><a href='#close_audio_device'>[link]</a>
-	</span></h4>
+<h4 id='close_audio_device'><span class='heading-body'>fn close_audio_device</span><span class='heading-extra'><a href='#close_audio_device'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2017,8 +1877,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='close_window'><span class='heading-body'>fn close_window</span><span class='heading-extra'><a href='#close_window'>[link]</a>
-	</span></h4>
+<h4 id='close_window'><span class='heading-body'>fn close_window</span><span class='heading-extra'><a href='#close_window'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2026,8 +1885,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='disable_cursor'><span class='heading-body'>fn disable_cursor</span><span class='heading-extra'><a href='#disable_cursor'>[link]</a>
-	</span></h4>
+<h4 id='disable_cursor'><span class='heading-body'>fn disable_cursor</span><span class='heading-extra'><a href='#disable_cursor'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2035,8 +1893,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='disable_event_waiting'><span class='heading-body'>fn disable_event_waiting</span><span class='heading-extra'><a href='#disable_event_waiting'>[link]</a>
-	</span></h4>
+<h4 id='disable_event_waiting'><span class='heading-body'>fn disable_event_waiting</span><span class='heading-extra'><a href='#disable_event_waiting'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2044,8 +1901,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_circle'><span class='heading-body'>fn draw_circle</span><span class='heading-extra'><a href='#draw_circle'>[link]</a>
-	</span></h4>
+<h4 id='draw_circle'><span class='heading-body'>fn draw_circle</span><span class='heading-extra'><a href='#draw_circle'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2053,8 +1909,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_circle_gradient'><span class='heading-body'>fn draw_circle_gradient</span><span class='heading-extra'><a href='#draw_circle_gradient'>[link]</a>
-	</span></h4>
+<h4 id='draw_circle_gradient'><span class='heading-body'>fn draw_circle_gradient</span><span class='heading-extra'><a href='#draw_circle_gradient'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2062,8 +1917,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_circle_lines'><span class='heading-body'>fn draw_circle_lines</span><span class='heading-extra'><a href='#draw_circle_lines'>[link]</a>
-	</span></h4>
+<h4 id='draw_circle_lines'><span class='heading-body'>fn draw_circle_lines</span><span class='heading-extra'><a href='#draw_circle_lines'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2071,8 +1925,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_circle_lines_v'><span class='heading-body'>fn draw_circle_lines_v</span><span class='heading-extra'><a href='#draw_circle_lines_v'>[link]</a>
-	</span></h4>
+<h4 id='draw_circle_lines_v'><span class='heading-body'>fn draw_circle_lines_v</span><span class='heading-extra'><a href='#draw_circle_lines_v'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2080,8 +1933,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_circle_sector'><span class='heading-body'>fn draw_circle_sector</span><span class='heading-extra'><a href='#draw_circle_sector'>[link]</a>
-	</span></h4>
+<h4 id='draw_circle_sector'><span class='heading-body'>fn draw_circle_sector</span><span class='heading-extra'><a href='#draw_circle_sector'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2089,8 +1941,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_circle_sector_lines'><span class='heading-body'>fn draw_circle_sector_lines</span><span class='heading-extra'><a href='#draw_circle_sector_lines'>[link]</a>
-	</span></h4>
+<h4 id='draw_circle_sector_lines'><span class='heading-body'>fn draw_circle_sector_lines</span><span class='heading-extra'><a href='#draw_circle_sector_lines'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2098,8 +1949,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_circle_v'><span class='heading-body'>fn draw_circle_v</span><span class='heading-extra'><a href='#draw_circle_v'>[link]</a>
-	</span></h4>
+<h4 id='draw_circle_v'><span class='heading-body'>fn draw_circle_v</span><span class='heading-extra'><a href='#draw_circle_v'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2107,8 +1957,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_ellipse'><span class='heading-body'>fn draw_ellipse</span><span class='heading-extra'><a href='#draw_ellipse'>[link]</a>
-	</span></h4>
+<h4 id='draw_ellipse'><span class='heading-body'>fn draw_ellipse</span><span class='heading-extra'><a href='#draw_ellipse'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2116,8 +1965,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_ellipse_lines'><span class='heading-body'>fn draw_ellipse_lines</span><span class='heading-extra'><a href='#draw_ellipse_lines'>[link]</a>
-	</span></h4>
+<h4 id='draw_ellipse_lines'><span class='heading-body'>fn draw_ellipse_lines</span><span class='heading-extra'><a href='#draw_ellipse_lines'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2125,8 +1973,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_fps'><span class='heading-body'>fn draw_fps</span><span class='heading-extra'><a href='#draw_fps'>[link]</a>
-	</span></h4>
+<h4 id='draw_fps'><span class='heading-body'>fn draw_fps</span><span class='heading-extra'><a href='#draw_fps'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2134,8 +1981,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_line'><span class='heading-body'>fn draw_line</span><span class='heading-extra'><a href='#draw_line'>[link]</a>
-	</span></h4>
+<h4 id='draw_line'><span class='heading-body'>fn draw_line</span><span class='heading-extra'><a href='#draw_line'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2143,8 +1989,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_line_bezier'><span class='heading-body'>fn draw_line_bezier</span><span class='heading-extra'><a href='#draw_line_bezier'>[link]</a>
-	</span></h4>
+<h4 id='draw_line_bezier'><span class='heading-body'>fn draw_line_bezier</span><span class='heading-extra'><a href='#draw_line_bezier'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2152,8 +1997,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_line_ex'><span class='heading-body'>fn draw_line_ex</span><span class='heading-extra'><a href='#draw_line_ex'>[link]</a>
-	</span></h4>
+<h4 id='draw_line_ex'><span class='heading-body'>fn draw_line_ex</span><span class='heading-extra'><a href='#draw_line_ex'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2161,8 +2005,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_line_strip'><span class='heading-body'>fn draw_line_strip</span><span class='heading-extra'><a href='#draw_line_strip'>[link]</a>
-	</span></h4>
+<h4 id='draw_line_strip'><span class='heading-body'>fn draw_line_strip</span><span class='heading-extra'><a href='#draw_line_strip'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2170,8 +2013,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_line_v'><span class='heading-body'>fn draw_line_v</span><span class='heading-extra'><a href='#draw_line_v'>[link]</a>
-	</span></h4>
+<h4 id='draw_line_v'><span class='heading-body'>fn draw_line_v</span><span class='heading-extra'><a href='#draw_line_v'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2179,8 +2021,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_pixel_v'><span class='heading-body'>fn draw_pixel_v</span><span class='heading-extra'><a href='#draw_pixel_v'>[link]</a>
-	</span></h4>
+<h4 id='draw_pixel_v'><span class='heading-body'>fn draw_pixel_v</span><span class='heading-extra'><a href='#draw_pixel_v'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2188,8 +2029,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_poly'><span class='heading-body'>fn draw_poly</span><span class='heading-extra'><a href='#draw_poly'>[link]</a>
-	</span></h4>
+<h4 id='draw_poly'><span class='heading-body'>fn draw_poly</span><span class='heading-extra'><a href='#draw_poly'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2197,8 +2037,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_poly_lines'><span class='heading-body'>fn draw_poly_lines</span><span class='heading-extra'><a href='#draw_poly_lines'>[link]</a>
-	</span></h4>
+<h4 id='draw_poly_lines'><span class='heading-body'>fn draw_poly_lines</span><span class='heading-extra'><a href='#draw_poly_lines'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2206,8 +2045,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_poly_lines_ex'><span class='heading-body'>fn draw_poly_lines_ex</span><span class='heading-extra'><a href='#draw_poly_lines_ex'>[link]</a>
-	</span></h4>
+<h4 id='draw_poly_lines_ex'><span class='heading-body'>fn draw_poly_lines_ex</span><span class='heading-extra'><a href='#draw_poly_lines_ex'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2215,8 +2053,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_rectangle'><span class='heading-body'>fn draw_rectangle</span><span class='heading-extra'><a href='#draw_rectangle'>[link]</a>
-	</span></h4>
+<h4 id='draw_rectangle'><span class='heading-body'>fn draw_rectangle</span><span class='heading-extra'><a href='#draw_rectangle'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2224,8 +2061,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_rectangle_gradient_ex'><span class='heading-body'>fn draw_rectangle_gradient_ex</span><span class='heading-extra'><a href='#draw_rectangle_gradient_ex'>[link]</a>
-	</span></h4>
+<h4 id='draw_rectangle_gradient_ex'><span class='heading-body'>fn draw_rectangle_gradient_ex</span><span class='heading-extra'><a href='#draw_rectangle_gradient_ex'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2233,8 +2069,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_rectangle_gradient_h'><span class='heading-body'>fn draw_rectangle_gradient_h</span><span class='heading-extra'><a href='#draw_rectangle_gradient_h'>[link]</a>
-	</span></h4>
+<h4 id='draw_rectangle_gradient_h'><span class='heading-body'>fn draw_rectangle_gradient_h</span><span class='heading-extra'><a href='#draw_rectangle_gradient_h'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2242,8 +2077,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_rectangle_gradient_v'><span class='heading-body'>fn draw_rectangle_gradient_v</span><span class='heading-extra'><a href='#draw_rectangle_gradient_v'>[link]</a>
-	</span></h4>
+<h4 id='draw_rectangle_gradient_v'><span class='heading-body'>fn draw_rectangle_gradient_v</span><span class='heading-extra'><a href='#draw_rectangle_gradient_v'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2251,8 +2085,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_rectangle_lines'><span class='heading-body'>fn draw_rectangle_lines</span><span class='heading-extra'><a href='#draw_rectangle_lines'>[link]</a>
-	</span></h4>
+<h4 id='draw_rectangle_lines'><span class='heading-body'>fn draw_rectangle_lines</span><span class='heading-extra'><a href='#draw_rectangle_lines'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2260,8 +2093,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_rectangle_lines_ex'><span class='heading-body'>fn draw_rectangle_lines_ex</span><span class='heading-extra'><a href='#draw_rectangle_lines_ex'>[link]</a>
-	</span></h4>
+<h4 id='draw_rectangle_lines_ex'><span class='heading-body'>fn draw_rectangle_lines_ex</span><span class='heading-extra'><a href='#draw_rectangle_lines_ex'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2269,8 +2101,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_rectangle_pro'><span class='heading-body'>fn draw_rectangle_pro</span><span class='heading-extra'><a href='#draw_rectangle_pro'>[link]</a>
-	</span></h4>
+<h4 id='draw_rectangle_pro'><span class='heading-body'>fn draw_rectangle_pro</span><span class='heading-extra'><a href='#draw_rectangle_pro'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2278,8 +2109,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_rectangle_rec'><span class='heading-body'>fn draw_rectangle_rec</span><span class='heading-extra'><a href='#draw_rectangle_rec'>[link]</a>
-	</span></h4>
+<h4 id='draw_rectangle_rec'><span class='heading-body'>fn draw_rectangle_rec</span><span class='heading-extra'><a href='#draw_rectangle_rec'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2287,8 +2117,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_rectangle_rounded'><span class='heading-body'>fn draw_rectangle_rounded</span><span class='heading-extra'><a href='#draw_rectangle_rounded'>[link]</a>
-	</span></h4>
+<h4 id='draw_rectangle_rounded'><span class='heading-body'>fn draw_rectangle_rounded</span><span class='heading-extra'><a href='#draw_rectangle_rounded'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2296,8 +2125,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_rectangle_rounded_lines'><span class='heading-body'>fn draw_rectangle_rounded_lines</span><span class='heading-extra'><a href='#draw_rectangle_rounded_lines'>[link]</a>
-	</span></h4>
+<h4 id='draw_rectangle_rounded_lines'><span class='heading-body'>fn draw_rectangle_rounded_lines</span><span class='heading-extra'><a href='#draw_rectangle_rounded_lines'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2305,8 +2133,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_rectangle_v'><span class='heading-body'>fn draw_rectangle_v</span><span class='heading-extra'><a href='#draw_rectangle_v'>[link]</a>
-	</span></h4>
+<h4 id='draw_rectangle_v'><span class='heading-body'>fn draw_rectangle_v</span><span class='heading-extra'><a href='#draw_rectangle_v'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2314,8 +2141,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_ring'><span class='heading-body'>fn draw_ring</span><span class='heading-extra'><a href='#draw_ring'>[link]</a>
-	</span></h4>
+<h4 id='draw_ring'><span class='heading-body'>fn draw_ring</span><span class='heading-extra'><a href='#draw_ring'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2323,8 +2149,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_ring_line'><span class='heading-body'>fn draw_ring_line</span><span class='heading-extra'><a href='#draw_ring_line'>[link]</a>
-	</span></h4>
+<h4 id='draw_ring_line'><span class='heading-body'>fn draw_ring_line</span><span class='heading-extra'><a href='#draw_ring_line'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2332,8 +2157,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_text'><span class='heading-body'>fn draw_text</span><span class='heading-extra'><a href='#draw_text'>[link]</a>
-	</span></h4>
+<h4 id='draw_text'><span class='heading-body'>fn draw_text</span><span class='heading-extra'><a href='#draw_text'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2341,8 +2165,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_texture_ex'><span class='heading-body'>fn draw_texture_ex</span><span class='heading-extra'><a href='#draw_texture_ex'>[link]</a>
-	</span></h4>
+<h4 id='draw_texture_ex'><span class='heading-body'>fn draw_texture_ex</span><span class='heading-extra'><a href='#draw_texture_ex'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2350,8 +2173,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_texture_npatch'><span class='heading-body'>fn draw_texture_npatch</span><span class='heading-extra'><a href='#draw_texture_npatch'>[link]</a>
-	</span></h4>
+<h4 id='draw_texture_npatch'><span class='heading-body'>fn draw_texture_npatch</span><span class='heading-extra'><a href='#draw_texture_npatch'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2359,8 +2181,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_texture_pro'><span class='heading-body'>fn draw_texture_pro</span><span class='heading-extra'><a href='#draw_texture_pro'>[link]</a>
-	</span></h4>
+<h4 id='draw_texture_pro'><span class='heading-body'>fn draw_texture_pro</span><span class='heading-extra'><a href='#draw_texture_pro'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2368,8 +2189,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_texture_rec'><span class='heading-body'>fn draw_texture_rec</span><span class='heading-extra'><a href='#draw_texture_rec'>[link]</a>
-	</span></h4>
+<h4 id='draw_texture_rec'><span class='heading-body'>fn draw_texture_rec</span><span class='heading-extra'><a href='#draw_texture_rec'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2377,8 +2197,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_texture_v'><span class='heading-body'>fn draw_texture_v</span><span class='heading-extra'><a href='#draw_texture_v'>[link]</a>
-	</span></h4>
+<h4 id='draw_texture_v'><span class='heading-body'>fn draw_texture_v</span><span class='heading-extra'><a href='#draw_texture_v'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2386,8 +2205,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_triangle'><span class='heading-body'>fn draw_triangle</span><span class='heading-extra'><a href='#draw_triangle'>[link]</a>
-	</span></h4>
+<h4 id='draw_triangle'><span class='heading-body'>fn draw_triangle</span><span class='heading-extra'><a href='#draw_triangle'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2395,8 +2213,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_triangle_fan'><span class='heading-body'>fn draw_triangle_fan</span><span class='heading-extra'><a href='#draw_triangle_fan'>[link]</a>
-	</span></h4>
+<h4 id='draw_triangle_fan'><span class='heading-body'>fn draw_triangle_fan</span><span class='heading-extra'><a href='#draw_triangle_fan'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2404,8 +2221,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_triangle_lines'><span class='heading-body'>fn draw_triangle_lines</span><span class='heading-extra'><a href='#draw_triangle_lines'>[link]</a>
-	</span></h4>
+<h4 id='draw_triangle_lines'><span class='heading-body'>fn draw_triangle_lines</span><span class='heading-extra'><a href='#draw_triangle_lines'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2413,8 +2229,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_triangle_strip'><span class='heading-body'>fn draw_triangle_strip</span><span class='heading-extra'><a href='#draw_triangle_strip'>[link]</a>
-	</span></h4>
+<h4 id='draw_triangle_strip'><span class='heading-body'>fn draw_triangle_strip</span><span class='heading-extra'><a href='#draw_triangle_strip'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2422,8 +2237,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='draw_triangle_v'><span class='heading-body'>fn draw_triangle_v</span><span class='heading-extra'><a href='#draw_triangle_v'>[link]</a>
-	</span></h4>
+<h4 id='draw_triangle_v'><span class='heading-body'>fn draw_triangle_v</span><span class='heading-extra'><a href='#draw_triangle_v'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2431,8 +2245,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='enable_cursor'><span class='heading-body'>fn enable_cursor</span><span class='heading-extra'><a href='#enable_cursor'>[link]</a>
-	</span></h4>
+<h4 id='enable_cursor'><span class='heading-body'>fn enable_cursor</span><span class='heading-extra'><a href='#enable_cursor'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2440,8 +2253,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='enable_event_waiting'><span class='heading-body'>fn enable_event_waiting</span><span class='heading-extra'><a href='#enable_event_waiting'>[link]</a>
-	</span></h4>
+<h4 id='enable_event_waiting'><span class='heading-body'>fn enable_event_waiting</span><span class='heading-extra'><a href='#enable_event_waiting'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2449,8 +2261,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='end_blend_mode'><span class='heading-body'>fn end_blend_mode</span><span class='heading-extra'><a href='#end_blend_mode'>[link]</a>
-	</span></h4>
+<h4 id='end_blend_mode'><span class='heading-body'>fn end_blend_mode</span><span class='heading-extra'><a href='#end_blend_mode'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2458,8 +2269,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='end_drawing'><span class='heading-body'>fn end_drawing</span><span class='heading-extra'><a href='#end_drawing'>[link]</a>
-	</span></h4>
+<h4 id='end_drawing'><span class='heading-body'>fn end_drawing</span><span class='heading-extra'><a href='#end_drawing'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2467,8 +2277,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='end_mode_2d'><span class='heading-body'>fn end_mode_2d</span><span class='heading-extra'><a href='#end_mode_2d'>[link]</a>
-	</span></h4>
+<h4 id='end_mode_2d'><span class='heading-body'>fn end_mode_2d</span><span class='heading-extra'><a href='#end_mode_2d'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2476,8 +2285,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='end_scissor_mode'><span class='heading-body'>fn end_scissor_mode</span><span class='heading-extra'><a href='#end_scissor_mode'>[link]</a>
-	</span></h4>
+<h4 id='end_scissor_mode'><span class='heading-body'>fn end_scissor_mode</span><span class='heading-extra'><a href='#end_scissor_mode'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2485,8 +2293,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='end_texture_mode'><span class='heading-body'>fn end_texture_mode</span><span class='heading-extra'><a href='#end_texture_mode'>[link]</a>
-	</span></h4>
+<h4 id='end_texture_mode'><span class='heading-body'>fn end_texture_mode</span><span class='heading-extra'><a href='#end_texture_mode'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2494,8 +2301,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='export_wave'><span class='heading-body'>fn export_wave</span><span class='heading-extra'><a href='#export_wave'>[link]</a>
-	</span></h4>
+<h4 id='export_wave'><span class='heading-body'>fn export_wave</span><span class='heading-extra'><a href='#export_wave'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2503,8 +2309,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='export_wave_as_code'><span class='heading-body'>fn export_wave_as_code</span><span class='heading-extra'><a href='#export_wave_as_code'>[link]</a>
-	</span></h4>
+<h4 id='export_wave_as_code'><span class='heading-body'>fn export_wave_as_code</span><span class='heading-extra'><a href='#export_wave_as_code'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2512,8 +2317,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_char_pressed'><span class='heading-body'>fn get_char_pressed</span><span class='heading-extra'><a href='#get_char_pressed'>[link]</a>
-	</span></h4>
+<h4 id='get_char_pressed'><span class='heading-body'>fn get_char_pressed</span><span class='heading-extra'><a href='#get_char_pressed'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2521,8 +2325,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_collision_rec'><span class='heading-body'>fn get_collision_rec</span><span class='heading-extra'><a href='#get_collision_rec'>[link]</a>
-	</span></h4>
+<h4 id='get_collision_rec'><span class='heading-body'>fn get_collision_rec</span><span class='heading-extra'><a href='#get_collision_rec'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2530,8 +2333,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_current_monitor'><span class='heading-body'>fn get_current_monitor</span><span class='heading-extra'><a href='#get_current_monitor'>[link]</a>
-	</span></h4>
+<h4 id='get_current_monitor'><span class='heading-body'>fn get_current_monitor</span><span class='heading-extra'><a href='#get_current_monitor'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2539,8 +2341,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_fps'><span class='heading-body'>fn get_fps</span><span class='heading-extra'><a href='#get_fps'>[link]</a>
-	</span></h4>
+<h4 id='get_fps'><span class='heading-body'>fn get_fps</span><span class='heading-extra'><a href='#get_fps'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2548,8 +2349,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_frame_time'><span class='heading-body'>fn get_frame_time</span><span class='heading-extra'><a href='#get_frame_time'>[link]</a>
-	</span></h4>
+<h4 id='get_frame_time'><span class='heading-body'>fn get_frame_time</span><span class='heading-extra'><a href='#get_frame_time'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2557,8 +2357,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_gamepad_axis_count'><span class='heading-body'>fn get_gamepad_axis_count</span><span class='heading-extra'><a href='#get_gamepad_axis_count'>[link]</a>
-	</span></h4>
+<h4 id='get_gamepad_axis_count'><span class='heading-body'>fn get_gamepad_axis_count</span><span class='heading-extra'><a href='#get_gamepad_axis_count'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2566,8 +2365,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_gamepad_axis_movement'><span class='heading-body'>fn get_gamepad_axis_movement</span><span class='heading-extra'><a href='#get_gamepad_axis_movement'>[link]</a>
-	</span></h4>
+<h4 id='get_gamepad_axis_movement'><span class='heading-body'>fn get_gamepad_axis_movement</span><span class='heading-extra'><a href='#get_gamepad_axis_movement'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2575,8 +2373,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_gamepad_button_pressed'><span class='heading-body'>fn get_gamepad_button_pressed</span><span class='heading-extra'><a href='#get_gamepad_button_pressed'>[link]</a>
-	</span></h4>
+<h4 id='get_gamepad_button_pressed'><span class='heading-body'>fn get_gamepad_button_pressed</span><span class='heading-extra'><a href='#get_gamepad_button_pressed'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2584,8 +2381,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_gamepad_name'><span class='heading-body'>fn get_gamepad_name</span><span class='heading-extra'><a href='#get_gamepad_name'>[link]</a>
-	</span></h4>
+<h4 id='get_gamepad_name'><span class='heading-body'>fn get_gamepad_name</span><span class='heading-extra'><a href='#get_gamepad_name'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2593,8 +2389,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_key_pressed'><span class='heading-body'>fn get_key_pressed</span><span class='heading-extra'><a href='#get_key_pressed'>[link]</a>
-	</span></h4>
+<h4 id='get_key_pressed'><span class='heading-body'>fn get_key_pressed</span><span class='heading-extra'><a href='#get_key_pressed'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2602,8 +2397,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_master_volume'><span class='heading-body'>fn get_master_volume</span><span class='heading-extra'><a href='#get_master_volume'>[link]</a>
-	</span></h4>
+<h4 id='get_master_volume'><span class='heading-body'>fn get_master_volume</span><span class='heading-extra'><a href='#get_master_volume'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2611,8 +2405,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_monitor_count'><span class='heading-body'>fn get_monitor_count</span><span class='heading-extra'><a href='#get_monitor_count'>[link]</a>
-	</span></h4>
+<h4 id='get_monitor_count'><span class='heading-body'>fn get_monitor_count</span><span class='heading-extra'><a href='#get_monitor_count'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2620,8 +2413,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_monitor_height'><span class='heading-body'>fn get_monitor_height</span><span class='heading-extra'><a href='#get_monitor_height'>[link]</a>
-	</span></h4>
+<h4 id='get_monitor_height'><span class='heading-body'>fn get_monitor_height</span><span class='heading-extra'><a href='#get_monitor_height'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2629,8 +2421,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_monitor_name'><span class='heading-body'>fn get_monitor_name</span><span class='heading-extra'><a href='#get_monitor_name'>[link]</a>
-	</span></h4>
+<h4 id='get_monitor_name'><span class='heading-body'>fn get_monitor_name</span><span class='heading-extra'><a href='#get_monitor_name'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2638,8 +2429,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_monitor_physical_height'><span class='heading-body'>fn get_monitor_physical_height</span><span class='heading-extra'><a href='#get_monitor_physical_height'>[link]</a>
-	</span></h4>
+<h4 id='get_monitor_physical_height'><span class='heading-body'>fn get_monitor_physical_height</span><span class='heading-extra'><a href='#get_monitor_physical_height'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2647,8 +2437,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_monitor_physical_width'><span class='heading-body'>fn get_monitor_physical_width</span><span class='heading-extra'><a href='#get_monitor_physical_width'>[link]</a>
-	</span></h4>
+<h4 id='get_monitor_physical_width'><span class='heading-body'>fn get_monitor_physical_width</span><span class='heading-extra'><a href='#get_monitor_physical_width'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2656,8 +2445,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_monitor_position'><span class='heading-body'>fn get_monitor_position</span><span class='heading-extra'><a href='#get_monitor_position'>[link]</a>
-	</span></h4>
+<h4 id='get_monitor_position'><span class='heading-body'>fn get_monitor_position</span><span class='heading-extra'><a href='#get_monitor_position'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2665,8 +2453,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_monitor_refresh_rate'><span class='heading-body'>fn get_monitor_refresh_rate</span><span class='heading-extra'><a href='#get_monitor_refresh_rate'>[link]</a>
-	</span></h4>
+<h4 id='get_monitor_refresh_rate'><span class='heading-body'>fn get_monitor_refresh_rate</span><span class='heading-extra'><a href='#get_monitor_refresh_rate'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2674,8 +2461,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_monitor_width'><span class='heading-body'>fn get_monitor_width</span><span class='heading-extra'><a href='#get_monitor_width'>[link]</a>
-	</span></h4>
+<h4 id='get_monitor_width'><span class='heading-body'>fn get_monitor_width</span><span class='heading-extra'><a href='#get_monitor_width'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2683,8 +2469,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_mouse_delta'><span class='heading-body'>fn get_mouse_delta</span><span class='heading-extra'><a href='#get_mouse_delta'>[link]</a>
-	</span></h4>
+<h4 id='get_mouse_delta'><span class='heading-body'>fn get_mouse_delta</span><span class='heading-extra'><a href='#get_mouse_delta'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2692,8 +2477,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_mouse_position'><span class='heading-body'>fn get_mouse_position</span><span class='heading-extra'><a href='#get_mouse_position'>[link]</a>
-	</span></h4>
+<h4 id='get_mouse_position'><span class='heading-body'>fn get_mouse_position</span><span class='heading-extra'><a href='#get_mouse_position'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2701,8 +2485,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_mouse_wheel_move'><span class='heading-body'>fn get_mouse_wheel_move</span><span class='heading-extra'><a href='#get_mouse_wheel_move'>[link]</a>
-	</span></h4>
+<h4 id='get_mouse_wheel_move'><span class='heading-body'>fn get_mouse_wheel_move</span><span class='heading-extra'><a href='#get_mouse_wheel_move'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2710,8 +2493,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_mouse_wheel_move_v'><span class='heading-body'>fn get_mouse_wheel_move_v</span><span class='heading-extra'><a href='#get_mouse_wheel_move_v'>[link]</a>
-	</span></h4>
+<h4 id='get_mouse_wheel_move_v'><span class='heading-body'>fn get_mouse_wheel_move_v</span><span class='heading-extra'><a href='#get_mouse_wheel_move_v'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2719,8 +2501,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_mouse_x'><span class='heading-body'>fn get_mouse_x</span><span class='heading-extra'><a href='#get_mouse_x'>[link]</a>
-	</span></h4>
+<h4 id='get_mouse_x'><span class='heading-body'>fn get_mouse_x</span><span class='heading-extra'><a href='#get_mouse_x'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2728,8 +2509,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_mouse_y'><span class='heading-body'>fn get_mouse_y</span><span class='heading-extra'><a href='#get_mouse_y'>[link]</a>
-	</span></h4>
+<h4 id='get_mouse_y'><span class='heading-body'>fn get_mouse_y</span><span class='heading-extra'><a href='#get_mouse_y'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2737,8 +2517,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_music_time_length'><span class='heading-body'>fn get_music_time_length</span><span class='heading-extra'><a href='#get_music_time_length'>[link]</a>
-	</span></h4>
+<h4 id='get_music_time_length'><span class='heading-body'>fn get_music_time_length</span><span class='heading-extra'><a href='#get_music_time_length'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2746,8 +2525,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_music_time_played'><span class='heading-body'>fn get_music_time_played</span><span class='heading-extra'><a href='#get_music_time_played'>[link]</a>
-	</span></h4>
+<h4 id='get_music_time_played'><span class='heading-body'>fn get_music_time_played</span><span class='heading-extra'><a href='#get_music_time_played'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2755,8 +2533,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_render_height'><span class='heading-body'>fn get_render_height</span><span class='heading-extra'><a href='#get_render_height'>[link]</a>
-	</span></h4>
+<h4 id='get_render_height'><span class='heading-body'>fn get_render_height</span><span class='heading-extra'><a href='#get_render_height'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2764,8 +2541,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_render_width'><span class='heading-body'>fn get_render_width</span><span class='heading-extra'><a href='#get_render_width'>[link]</a>
-	</span></h4>
+<h4 id='get_render_width'><span class='heading-body'>fn get_render_width</span><span class='heading-extra'><a href='#get_render_width'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2773,8 +2549,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_screen_height'><span class='heading-body'>fn get_screen_height</span><span class='heading-extra'><a href='#get_screen_height'>[link]</a>
-	</span></h4>
+<h4 id='get_screen_height'><span class='heading-body'>fn get_screen_height</span><span class='heading-extra'><a href='#get_screen_height'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2782,8 +2557,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_screen_to_world_2d'><span class='heading-body'>fn get_screen_to_world_2d</span><span class='heading-extra'><a href='#get_screen_to_world_2d'>[link]</a>
-	</span></h4>
+<h4 id='get_screen_to_world_2d'><span class='heading-body'>fn get_screen_to_world_2d</span><span class='heading-extra'><a href='#get_screen_to_world_2d'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2791,8 +2565,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_screen_width'><span class='heading-body'>fn get_screen_width</span><span class='heading-extra'><a href='#get_screen_width'>[link]</a>
-	</span></h4>
+<h4 id='get_screen_width'><span class='heading-body'>fn get_screen_width</span><span class='heading-extra'><a href='#get_screen_width'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2800,8 +2573,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_time'><span class='heading-body'>fn get_time</span><span class='heading-extra'><a href='#get_time'>[link]</a>
-	</span></h4>
+<h4 id='get_time'><span class='heading-body'>fn get_time</span><span class='heading-extra'><a href='#get_time'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2809,8 +2581,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_window_position'><span class='heading-body'>fn get_window_position</span><span class='heading-extra'><a href='#get_window_position'>[link]</a>
-	</span></h4>
+<h4 id='get_window_position'><span class='heading-body'>fn get_window_position</span><span class='heading-extra'><a href='#get_window_position'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2818,8 +2589,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_window_scale_dpi'><span class='heading-body'>fn get_window_scale_dpi</span><span class='heading-extra'><a href='#get_window_scale_dpi'>[link]</a>
-	</span></h4>
+<h4 id='get_window_scale_dpi'><span class='heading-body'>fn get_window_scale_dpi</span><span class='heading-extra'><a href='#get_window_scale_dpi'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2827,8 +2597,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='get_world_to_screen_2d'><span class='heading-body'>fn get_world_to_screen_2d</span><span class='heading-extra'><a href='#get_world_to_screen_2d'>[link]</a>
-	</span></h4>
+<h4 id='get_world_to_screen_2d'><span class='heading-body'>fn get_world_to_screen_2d</span><span class='heading-extra'><a href='#get_world_to_screen_2d'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2836,8 +2605,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='hide_cursor'><span class='heading-body'>fn hide_cursor</span><span class='heading-extra'><a href='#hide_cursor'>[link]</a>
-	</span></h4>
+<h4 id='hide_cursor'><span class='heading-body'>fn hide_cursor</span><span class='heading-extra'><a href='#hide_cursor'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2845,8 +2613,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='init_window'><span class='heading-body'>fn init_window</span><span class='heading-extra'><a href='#init_window'>[link]</a>
-	</span></h4>
+<h4 id='init_window'><span class='heading-body'>fn init_window</span><span class='heading-extra'><a href='#init_window'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2854,8 +2621,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_audio_device_ready'><span class='heading-body'>fn is_audio_device_ready</span><span class='heading-extra'><a href='#is_audio_device_ready'>[link]</a>
-	</span></h4>
+<h4 id='is_audio_device_ready'><span class='heading-body'>fn is_audio_device_ready</span><span class='heading-extra'><a href='#is_audio_device_ready'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2863,8 +2629,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_cursor_hidden'><span class='heading-body'>fn is_cursor_hidden</span><span class='heading-extra'><a href='#is_cursor_hidden'>[link]</a>
-	</span></h4>
+<h4 id='is_cursor_hidden'><span class='heading-body'>fn is_cursor_hidden</span><span class='heading-extra'><a href='#is_cursor_hidden'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2872,8 +2637,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_cursor_on_screen'><span class='heading-body'>fn is_cursor_on_screen</span><span class='heading-extra'><a href='#is_cursor_on_screen'>[link]</a>
-	</span></h4>
+<h4 id='is_cursor_on_screen'><span class='heading-body'>fn is_cursor_on_screen</span><span class='heading-extra'><a href='#is_cursor_on_screen'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2881,8 +2645,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_gamepad_avaible'><span class='heading-body'>fn is_gamepad_avaible</span><span class='heading-extra'><a href='#is_gamepad_avaible'>[link]</a>
-	</span></h4>
+<h4 id='is_gamepad_avaible'><span class='heading-body'>fn is_gamepad_avaible</span><span class='heading-extra'><a href='#is_gamepad_avaible'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2890,8 +2653,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_gamepad_button_down'><span class='heading-body'>fn is_gamepad_button_down</span><span class='heading-extra'><a href='#is_gamepad_button_down'>[link]</a>
-	</span></h4>
+<h4 id='is_gamepad_button_down'><span class='heading-body'>fn is_gamepad_button_down</span><span class='heading-extra'><a href='#is_gamepad_button_down'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2899,8 +2661,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_gamepad_button_pressed'><span class='heading-body'>fn is_gamepad_button_pressed</span><span class='heading-extra'><a href='#is_gamepad_button_pressed'>[link]</a>
-	</span></h4>
+<h4 id='is_gamepad_button_pressed'><span class='heading-body'>fn is_gamepad_button_pressed</span><span class='heading-extra'><a href='#is_gamepad_button_pressed'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2908,8 +2669,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_gamepad_button_released'><span class='heading-body'>fn is_gamepad_button_released</span><span class='heading-extra'><a href='#is_gamepad_button_released'>[link]</a>
-	</span></h4>
+<h4 id='is_gamepad_button_released'><span class='heading-body'>fn is_gamepad_button_released</span><span class='heading-extra'><a href='#is_gamepad_button_released'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2917,8 +2677,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_gamepad_button_up'><span class='heading-body'>fn is_gamepad_button_up</span><span class='heading-extra'><a href='#is_gamepad_button_up'>[link]</a>
-	</span></h4>
+<h4 id='is_gamepad_button_up'><span class='heading-body'>fn is_gamepad_button_up</span><span class='heading-extra'><a href='#is_gamepad_button_up'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2926,8 +2685,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_key_down'><span class='heading-body'>fn is_key_down</span><span class='heading-extra'><a href='#is_key_down'>[link]</a>
-	</span></h4>
+<h4 id='is_key_down'><span class='heading-body'>fn is_key_down</span><span class='heading-extra'><a href='#is_key_down'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2935,8 +2693,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_key_pressed_repeat'><span class='heading-body'>fn is_key_pressed_repeat</span><span class='heading-extra'><a href='#is_key_pressed_repeat'>[link]</a>
-	</span></h4>
+<h4 id='is_key_pressed_repeat'><span class='heading-body'>fn is_key_pressed_repeat</span><span class='heading-extra'><a href='#is_key_pressed_repeat'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2944,8 +2701,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_key_released'><span class='heading-body'>fn is_key_released</span><span class='heading-extra'><a href='#is_key_released'>[link]</a>
-	</span></h4>
+<h4 id='is_key_released'><span class='heading-body'>fn is_key_released</span><span class='heading-extra'><a href='#is_key_released'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2953,8 +2709,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_key_up'><span class='heading-body'>fn is_key_up</span><span class='heading-extra'><a href='#is_key_up'>[link]</a>
-	</span></h4>
+<h4 id='is_key_up'><span class='heading-body'>fn is_key_up</span><span class='heading-extra'><a href='#is_key_up'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2962,8 +2717,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_mouse_button_down'><span class='heading-body'>fn is_mouse_button_down</span><span class='heading-extra'><a href='#is_mouse_button_down'>[link]</a>
-	</span></h4>
+<h4 id='is_mouse_button_down'><span class='heading-body'>fn is_mouse_button_down</span><span class='heading-extra'><a href='#is_mouse_button_down'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2971,8 +2725,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_mouse_button_released'><span class='heading-body'>fn is_mouse_button_released</span><span class='heading-extra'><a href='#is_mouse_button_released'>[link]</a>
-	</span></h4>
+<h4 id='is_mouse_button_released'><span class='heading-body'>fn is_mouse_button_released</span><span class='heading-extra'><a href='#is_mouse_button_released'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2980,8 +2733,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_mouse_button_up'><span class='heading-body'>fn is_mouse_button_up</span><span class='heading-extra'><a href='#is_mouse_button_up'>[link]</a>
-	</span></h4>
+<h4 id='is_mouse_button_up'><span class='heading-body'>fn is_mouse_button_up</span><span class='heading-extra'><a href='#is_mouse_button_up'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2989,8 +2741,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_music_ready'><span class='heading-body'>fn is_music_ready</span><span class='heading-extra'><a href='#is_music_ready'>[link]</a>
-	</span></h4>
+<h4 id='is_music_ready'><span class='heading-body'>fn is_music_ready</span><span class='heading-extra'><a href='#is_music_ready'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -2998,8 +2749,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_music_stream_playing'><span class='heading-body'>fn is_music_stream_playing</span><span class='heading-extra'><a href='#is_music_stream_playing'>[link]</a>
-	</span></h4>
+<h4 id='is_music_stream_playing'><span class='heading-body'>fn is_music_stream_playing</span><span class='heading-extra'><a href='#is_music_stream_playing'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3007,8 +2757,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_sound_playing'><span class='heading-body'>fn is_sound_playing</span><span class='heading-extra'><a href='#is_sound_playing'>[link]</a>
-	</span></h4>
+<h4 id='is_sound_playing'><span class='heading-body'>fn is_sound_playing</span><span class='heading-extra'><a href='#is_sound_playing'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3016,8 +2765,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_sound_ready'><span class='heading-body'>fn is_sound_ready</span><span class='heading-extra'><a href='#is_sound_ready'>[link]</a>
-	</span></h4>
+<h4 id='is_sound_ready'><span class='heading-body'>fn is_sound_ready</span><span class='heading-extra'><a href='#is_sound_ready'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3025,8 +2773,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_wave_ready'><span class='heading-body'>fn is_wave_ready</span><span class='heading-extra'><a href='#is_wave_ready'>[link]</a>
-	</span></h4>
+<h4 id='is_wave_ready'><span class='heading-body'>fn is_wave_ready</span><span class='heading-extra'><a href='#is_wave_ready'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3034,8 +2781,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_window_focused'><span class='heading-body'>fn is_window_focused</span><span class='heading-extra'><a href='#is_window_focused'>[link]</a>
-	</span></h4>
+<h4 id='is_window_focused'><span class='heading-body'>fn is_window_focused</span><span class='heading-extra'><a href='#is_window_focused'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3043,8 +2789,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_window_fullscreen'><span class='heading-body'>fn is_window_fullscreen</span><span class='heading-extra'><a href='#is_window_fullscreen'>[link]</a>
-	</span></h4>
+<h4 id='is_window_fullscreen'><span class='heading-body'>fn is_window_fullscreen</span><span class='heading-extra'><a href='#is_window_fullscreen'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3052,8 +2797,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_window_hidden'><span class='heading-body'>fn is_window_hidden</span><span class='heading-extra'><a href='#is_window_hidden'>[link]</a>
-	</span></h4>
+<h4 id='is_window_hidden'><span class='heading-body'>fn is_window_hidden</span><span class='heading-extra'><a href='#is_window_hidden'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3061,8 +2805,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_window_maximized'><span class='heading-body'>fn is_window_maximized</span><span class='heading-extra'><a href='#is_window_maximized'>[link]</a>
-	</span></h4>
+<h4 id='is_window_maximized'><span class='heading-body'>fn is_window_maximized</span><span class='heading-extra'><a href='#is_window_maximized'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3070,8 +2813,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_window_minimized'><span class='heading-body'>fn is_window_minimized</span><span class='heading-extra'><a href='#is_window_minimized'>[link]</a>
-	</span></h4>
+<h4 id='is_window_minimized'><span class='heading-body'>fn is_window_minimized</span><span class='heading-extra'><a href='#is_window_minimized'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3079,8 +2821,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_window_ready'><span class='heading-body'>fn is_window_ready</span><span class='heading-extra'><a href='#is_window_ready'>[link]</a>
-	</span></h4>
+<h4 id='is_window_ready'><span class='heading-body'>fn is_window_ready</span><span class='heading-extra'><a href='#is_window_ready'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3088,8 +2829,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_window_resized'><span class='heading-body'>fn is_window_resized</span><span class='heading-extra'><a href='#is_window_resized'>[link]</a>
-	</span></h4>
+<h4 id='is_window_resized'><span class='heading-body'>fn is_window_resized</span><span class='heading-extra'><a href='#is_window_resized'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3097,8 +2837,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='is_window_state'><span class='heading-body'>fn is_window_state</span><span class='heading-extra'><a href='#is_window_state'>[link]</a>
-	</span></h4>
+<h4 id='is_window_state'><span class='heading-body'>fn is_window_state</span><span class='heading-extra'><a href='#is_window_state'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3106,8 +2845,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='load_image'><span class='heading-body'>fn load_image</span><span class='heading-extra'><a href='#load_image'>[link]</a>
-	</span></h4>
+<h4 id='load_image'><span class='heading-body'>fn load_image</span><span class='heading-extra'><a href='#load_image'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3115,8 +2853,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='load_music_stream'><span class='heading-body'>fn load_music_stream</span><span class='heading-extra'><a href='#load_music_stream'>[link]</a>
-	</span></h4>
+<h4 id='load_music_stream'><span class='heading-body'>fn load_music_stream</span><span class='heading-extra'><a href='#load_music_stream'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3124,8 +2861,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='load_music_stream_from_memory'><span class='heading-body'>fn load_music_stream_from_memory</span><span class='heading-extra'><a href='#load_music_stream_from_memory'>[link]</a>
-	</span></h4>
+<h4 id='load_music_stream_from_memory'><span class='heading-body'>fn load_music_stream_from_memory</span><span class='heading-extra'><a href='#load_music_stream_from_memory'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3133,8 +2869,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='load_sound'><span class='heading-body'>fn load_sound</span><span class='heading-extra'><a href='#load_sound'>[link]</a>
-	</span></h4>
+<h4 id='load_sound'><span class='heading-body'>fn load_sound</span><span class='heading-extra'><a href='#load_sound'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3142,8 +2877,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='load_sound_alias'><span class='heading-body'>fn load_sound_alias</span><span class='heading-extra'><a href='#load_sound_alias'>[link]</a>
-	</span></h4>
+<h4 id='load_sound_alias'><span class='heading-body'>fn load_sound_alias</span><span class='heading-extra'><a href='#load_sound_alias'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3151,8 +2885,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='load_sound_from_wave'><span class='heading-body'>fn load_sound_from_wave</span><span class='heading-extra'><a href='#load_sound_from_wave'>[link]</a>
-	</span></h4>
+<h4 id='load_sound_from_wave'><span class='heading-body'>fn load_sound_from_wave</span><span class='heading-extra'><a href='#load_sound_from_wave'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3160,8 +2893,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='load_texture'><span class='heading-body'>fn load_texture</span><span class='heading-extra'><a href='#load_texture'>[link]</a>
-	</span></h4>
+<h4 id='load_texture'><span class='heading-body'>fn load_texture</span><span class='heading-extra'><a href='#load_texture'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3169,8 +2901,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='load_texture_from_image'><span class='heading-body'>fn load_texture_from_image</span><span class='heading-extra'><a href='#load_texture_from_image'>[link]</a>
-	</span></h4>
+<h4 id='load_texture_from_image'><span class='heading-body'>fn load_texture_from_image</span><span class='heading-extra'><a href='#load_texture_from_image'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3178,8 +2909,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='load_wave'><span class='heading-body'>fn load_wave</span><span class='heading-extra'><a href='#load_wave'>[link]</a>
-	</span></h4>
+<h4 id='load_wave'><span class='heading-body'>fn load_wave</span><span class='heading-extra'><a href='#load_wave'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3187,8 +2917,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='load_wave_samples'><span class='heading-body'>fn load_wave_samples</span><span class='heading-extra'><a href='#load_wave_samples'>[link]</a>
-	</span></h4>
+<h4 id='load_wave_samples'><span class='heading-body'>fn load_wave_samples</span><span class='heading-extra'><a href='#load_wave_samples'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3196,8 +2925,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='maximize_window'><span class='heading-body'>fn maximize_window</span><span class='heading-extra'><a href='#maximize_window'>[link]</a>
-	</span></h4>
+<h4 id='maximize_window'><span class='heading-body'>fn maximize_window</span><span class='heading-extra'><a href='#maximize_window'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3205,8 +2933,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='minimize_window'><span class='heading-body'>fn minimize_window</span><span class='heading-extra'><a href='#minimize_window'>[link]</a>
-	</span></h4>
+<h4 id='minimize_window'><span class='heading-body'>fn minimize_window</span><span class='heading-extra'><a href='#minimize_window'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3214,8 +2941,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='open_url'><span class='heading-body'>fn open_url</span><span class='heading-extra'><a href='#open_url'>[link]</a>
-	</span></h4>
+<h4 id='open_url'><span class='heading-body'>fn open_url</span><span class='heading-extra'><a href='#open_url'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3223,8 +2949,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='pause_music_stream'><span class='heading-body'>fn pause_music_stream</span><span class='heading-extra'><a href='#pause_music_stream'>[link]</a>
-	</span></h4>
+<h4 id='pause_music_stream'><span class='heading-body'>fn pause_music_stream</span><span class='heading-extra'><a href='#pause_music_stream'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3232,8 +2957,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='pause_sound'><span class='heading-body'>fn pause_sound</span><span class='heading-extra'><a href='#pause_sound'>[link]</a>
-	</span></h4>
+<h4 id='pause_sound'><span class='heading-body'>fn pause_sound</span><span class='heading-extra'><a href='#pause_sound'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3241,8 +2965,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='play_music_stream'><span class='heading-body'>fn play_music_stream</span><span class='heading-extra'><a href='#play_music_stream'>[link]</a>
-	</span></h4>
+<h4 id='play_music_stream'><span class='heading-body'>fn play_music_stream</span><span class='heading-extra'><a href='#play_music_stream'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3250,8 +2973,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='restore_window'><span class='heading-body'>fn restore_window</span><span class='heading-extra'><a href='#restore_window'>[link]</a>
-	</span></h4>
+<h4 id='restore_window'><span class='heading-body'>fn restore_window</span><span class='heading-extra'><a href='#restore_window'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3259,8 +2981,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='resume_music_stream'><span class='heading-body'>fn resume_music_stream</span><span class='heading-extra'><a href='#resume_music_stream'>[link]</a>
-	</span></h4>
+<h4 id='resume_music_stream'><span class='heading-body'>fn resume_music_stream</span><span class='heading-extra'><a href='#resume_music_stream'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3268,8 +2989,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='resume_sound'><span class='heading-body'>fn resume_sound</span><span class='heading-extra'><a href='#resume_sound'>[link]</a>
-	</span></h4>
+<h4 id='resume_sound'><span class='heading-body'>fn resume_sound</span><span class='heading-extra'><a href='#resume_sound'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3277,8 +2997,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='seek_music_stream'><span class='heading-body'>fn seek_music_stream</span><span class='heading-extra'><a href='#seek_music_stream'>[link]</a>
-	</span></h4>
+<h4 id='seek_music_stream'><span class='heading-body'>fn seek_music_stream</span><span class='heading-extra'><a href='#seek_music_stream'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3286,8 +3005,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_exit_key'><span class='heading-body'>fn set_exit_key</span><span class='heading-extra'><a href='#set_exit_key'>[link]</a>
-	</span></h4>
+<h4 id='set_exit_key'><span class='heading-body'>fn set_exit_key</span><span class='heading-extra'><a href='#set_exit_key'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3295,8 +3013,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_gamepad_mappings'><span class='heading-body'>fn set_gamepad_mappings</span><span class='heading-extra'><a href='#set_gamepad_mappings'>[link]</a>
-	</span></h4>
+<h4 id='set_gamepad_mappings'><span class='heading-body'>fn set_gamepad_mappings</span><span class='heading-extra'><a href='#set_gamepad_mappings'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3304,8 +3021,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_master_volume'><span class='heading-body'>fn set_master_volume</span><span class='heading-extra'><a href='#set_master_volume'>[link]</a>
-	</span></h4>
+<h4 id='set_master_volume'><span class='heading-body'>fn set_master_volume</span><span class='heading-extra'><a href='#set_master_volume'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3313,8 +3029,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_mouse_cursor'><span class='heading-body'>fn set_mouse_cursor</span><span class='heading-extra'><a href='#set_mouse_cursor'>[link]</a>
-	</span></h4>
+<h4 id='set_mouse_cursor'><span class='heading-body'>fn set_mouse_cursor</span><span class='heading-extra'><a href='#set_mouse_cursor'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3322,8 +3037,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_mouse_offset'><span class='heading-body'>fn set_mouse_offset</span><span class='heading-extra'><a href='#set_mouse_offset'>[link]</a>
-	</span></h4>
+<h4 id='set_mouse_offset'><span class='heading-body'>fn set_mouse_offset</span><span class='heading-extra'><a href='#set_mouse_offset'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3331,8 +3045,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_mouse_position'><span class='heading-body'>fn set_mouse_position</span><span class='heading-extra'><a href='#set_mouse_position'>[link]</a>
-	</span></h4>
+<h4 id='set_mouse_position'><span class='heading-body'>fn set_mouse_position</span><span class='heading-extra'><a href='#set_mouse_position'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3340,8 +3053,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_mouse_scale'><span class='heading-body'>fn set_mouse_scale</span><span class='heading-extra'><a href='#set_mouse_scale'>[link]</a>
-	</span></h4>
+<h4 id='set_mouse_scale'><span class='heading-body'>fn set_mouse_scale</span><span class='heading-extra'><a href='#set_mouse_scale'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3349,8 +3061,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_music_pan'><span class='heading-body'>fn set_music_pan</span><span class='heading-extra'><a href='#set_music_pan'>[link]</a>
-	</span></h4>
+<h4 id='set_music_pan'><span class='heading-body'>fn set_music_pan</span><span class='heading-extra'><a href='#set_music_pan'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3358,8 +3069,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_music_pitch'><span class='heading-body'>fn set_music_pitch</span><span class='heading-extra'><a href='#set_music_pitch'>[link]</a>
-	</span></h4>
+<h4 id='set_music_pitch'><span class='heading-body'>fn set_music_pitch</span><span class='heading-extra'><a href='#set_music_pitch'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3367,8 +3077,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_music_volume'><span class='heading-body'>fn set_music_volume</span><span class='heading-extra'><a href='#set_music_volume'>[link]</a>
-	</span></h4>
+<h4 id='set_music_volume'><span class='heading-body'>fn set_music_volume</span><span class='heading-extra'><a href='#set_music_volume'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3376,8 +3085,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_sound_pan'><span class='heading-body'>fn set_sound_pan</span><span class='heading-extra'><a href='#set_sound_pan'>[link]</a>
-	</span></h4>
+<h4 id='set_sound_pan'><span class='heading-body'>fn set_sound_pan</span><span class='heading-extra'><a href='#set_sound_pan'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3385,8 +3093,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_sound_pitch'><span class='heading-body'>fn set_sound_pitch</span><span class='heading-extra'><a href='#set_sound_pitch'>[link]</a>
-	</span></h4>
+<h4 id='set_sound_pitch'><span class='heading-body'>fn set_sound_pitch</span><span class='heading-extra'><a href='#set_sound_pitch'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3394,8 +3101,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_sound_volume'><span class='heading-body'>fn set_sound_volume</span><span class='heading-extra'><a href='#set_sound_volume'>[link]</a>
-	</span></h4>
+<h4 id='set_sound_volume'><span class='heading-body'>fn set_sound_volume</span><span class='heading-extra'><a href='#set_sound_volume'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3403,8 +3109,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_window_focused'><span class='heading-body'>fn set_window_focused</span><span class='heading-extra'><a href='#set_window_focused'>[link]</a>
-	</span></h4>
+<h4 id='set_window_focused'><span class='heading-body'>fn set_window_focused</span><span class='heading-extra'><a href='#set_window_focused'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3412,8 +3117,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_window_icon'><span class='heading-body'>fn set_window_icon</span><span class='heading-extra'><a href='#set_window_icon'>[link]</a>
-	</span></h4>
+<h4 id='set_window_icon'><span class='heading-body'>fn set_window_icon</span><span class='heading-extra'><a href='#set_window_icon'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3421,8 +3125,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_window_icons'><span class='heading-body'>fn set_window_icons</span><span class='heading-extra'><a href='#set_window_icons'>[link]</a>
-	</span></h4>
+<h4 id='set_window_icons'><span class='heading-body'>fn set_window_icons</span><span class='heading-extra'><a href='#set_window_icons'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3430,8 +3133,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_window_max_size'><span class='heading-body'>fn set_window_max_size</span><span class='heading-extra'><a href='#set_window_max_size'>[link]</a>
-	</span></h4>
+<h4 id='set_window_max_size'><span class='heading-body'>fn set_window_max_size</span><span class='heading-extra'><a href='#set_window_max_size'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3439,8 +3141,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_window_min_size'><span class='heading-body'>fn set_window_min_size</span><span class='heading-extra'><a href='#set_window_min_size'>[link]</a>
-	</span></h4>
+<h4 id='set_window_min_size'><span class='heading-body'>fn set_window_min_size</span><span class='heading-extra'><a href='#set_window_min_size'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3448,8 +3149,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_window_monitor'><span class='heading-body'>fn set_window_monitor</span><span class='heading-extra'><a href='#set_window_monitor'>[link]</a>
-	</span></h4>
+<h4 id='set_window_monitor'><span class='heading-body'>fn set_window_monitor</span><span class='heading-extra'><a href='#set_window_monitor'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3457,8 +3157,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_window_opacity'><span class='heading-body'>fn set_window_opacity</span><span class='heading-extra'><a href='#set_window_opacity'>[link]</a>
-	</span></h4>
+<h4 id='set_window_opacity'><span class='heading-body'>fn set_window_opacity</span><span class='heading-extra'><a href='#set_window_opacity'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3466,8 +3165,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_window_position'><span class='heading-body'>fn set_window_position</span><span class='heading-extra'><a href='#set_window_position'>[link]</a>
-	</span></h4>
+<h4 id='set_window_position'><span class='heading-body'>fn set_window_position</span><span class='heading-extra'><a href='#set_window_position'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3475,8 +3173,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_window_size'><span class='heading-body'>fn set_window_size</span><span class='heading-extra'><a href='#set_window_size'>[link]</a>
-	</span></h4>
+<h4 id='set_window_size'><span class='heading-body'>fn set_window_size</span><span class='heading-extra'><a href='#set_window_size'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3484,8 +3181,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_window_state'><span class='heading-body'>fn set_window_state</span><span class='heading-extra'><a href='#set_window_state'>[link]</a>
-	</span></h4>
+<h4 id='set_window_state'><span class='heading-body'>fn set_window_state</span><span class='heading-extra'><a href='#set_window_state'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3493,8 +3189,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='set_window_title'><span class='heading-body'>fn set_window_title</span><span class='heading-extra'><a href='#set_window_title'>[link]</a>
-	</span></h4>
+<h4 id='set_window_title'><span class='heading-body'>fn set_window_title</span><span class='heading-extra'><a href='#set_window_title'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3502,8 +3197,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='stop_music_stream'><span class='heading-body'>fn stop_music_stream</span><span class='heading-extra'><a href='#stop_music_stream'>[link]</a>
-	</span></h4>
+<h4 id='stop_music_stream'><span class='heading-body'>fn stop_music_stream</span><span class='heading-extra'><a href='#stop_music_stream'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3511,8 +3205,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='stop_sound'><span class='heading-body'>fn stop_sound</span><span class='heading-extra'><a href='#stop_sound'>[link]</a>
-	</span></h4>
+<h4 id='stop_sound'><span class='heading-body'>fn stop_sound</span><span class='heading-extra'><a href='#stop_sound'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3520,8 +3213,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='take_screenshot'><span class='heading-body'>fn take_screenshot</span><span class='heading-extra'><a href='#take_screenshot'>[link]</a>
-	</span></h4>
+<h4 id='take_screenshot'><span class='heading-body'>fn take_screenshot</span><span class='heading-extra'><a href='#take_screenshot'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3529,8 +3221,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='toggle_borderless_windowed'><span class='heading-body'>fn toggle_borderless_windowed</span><span class='heading-extra'><a href='#toggle_borderless_windowed'>[link]</a>
-	</span></h4>
+<h4 id='toggle_borderless_windowed'><span class='heading-body'>fn toggle_borderless_windowed</span><span class='heading-extra'><a href='#toggle_borderless_windowed'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3538,8 +3229,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='toggle_fullscreen'><span class='heading-body'>fn toggle_fullscreen</span><span class='heading-extra'><a href='#toggle_fullscreen'>[link]</a>
-	</span></h4>
+<h4 id='toggle_fullscreen'><span class='heading-body'>fn toggle_fullscreen</span><span class='heading-extra'><a href='#toggle_fullscreen'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3547,8 +3237,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='unload_music_stream'><span class='heading-body'>fn unload_music_stream</span><span class='heading-extra'><a href='#unload_music_stream'>[link]</a>
-	</span></h4>
+<h4 id='unload_music_stream'><span class='heading-body'>fn unload_music_stream</span><span class='heading-extra'><a href='#unload_music_stream'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3556,8 +3245,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='unload_sound'><span class='heading-body'>fn unload_sound</span><span class='heading-extra'><a href='#unload_sound'>[link]</a>
-	</span></h4>
+<h4 id='unload_sound'><span class='heading-body'>fn unload_sound</span><span class='heading-extra'><a href='#unload_sound'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3565,8 +3253,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='unload_sound_alias'><span class='heading-body'>fn unload_sound_alias</span><span class='heading-extra'><a href='#unload_sound_alias'>[link]</a>
-	</span></h4>
+<h4 id='unload_sound_alias'><span class='heading-body'>fn unload_sound_alias</span><span class='heading-extra'><a href='#unload_sound_alias'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3574,8 +3261,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='unload_texture'><span class='heading-body'>fn unload_texture</span><span class='heading-extra'><a href='#unload_texture'>[link]</a>
-	</span></h4>
+<h4 id='unload_texture'><span class='heading-body'>fn unload_texture</span><span class='heading-extra'><a href='#unload_texture'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3583,8 +3269,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='unload_wave'><span class='heading-body'>fn unload_wave</span><span class='heading-extra'><a href='#unload_wave'>[link]</a>
-	</span></h4>
+<h4 id='unload_wave'><span class='heading-body'>fn unload_wave</span><span class='heading-extra'><a href='#unload_wave'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3592,8 +3277,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='unload_wave_samples'><span class='heading-body'>fn unload_wave_samples</span><span class='heading-extra'><a href='#unload_wave_samples'>[link]</a>
-	</span></h4>
+<h4 id='unload_wave_samples'><span class='heading-body'>fn unload_wave_samples</span><span class='heading-extra'><a href='#unload_wave_samples'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3601,8 +3285,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='update_music_stream'><span class='heading-body'>fn update_music_stream</span><span class='heading-extra'><a href='#update_music_stream'>[link]</a>
-	</span></h4>
+<h4 id='update_music_stream'><span class='heading-body'>fn update_music_stream</span><span class='heading-extra'><a href='#update_music_stream'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3610,8 +3293,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='update_sound'><span class='heading-body'>fn update_sound</span><span class='heading-extra'><a href='#update_sound'>[link]</a>
-	</span></h4>
+<h4 id='update_sound'><span class='heading-body'>fn update_sound</span><span class='heading-extra'><a href='#update_sound'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3619,8 +3301,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='wave_copy'><span class='heading-body'>fn wave_copy</span><span class='heading-extra'><a href='#wave_copy'>[link]</a>
-	</span></h4>
+<h4 id='wave_copy'><span class='heading-body'>fn wave_copy</span><span class='heading-extra'><a href='#wave_copy'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3628,8 +3309,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='wave_crop'><span class='heading-body'>fn wave_crop</span><span class='heading-extra'><a href='#wave_crop'>[link]</a>
-	</span></h4>
+<h4 id='wave_crop'><span class='heading-body'>fn wave_crop</span><span class='heading-extra'><a href='#wave_crop'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3637,8 +3317,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='wave_format'><span class='heading-body'>fn wave_format</span><span class='heading-extra'><a href='#wave_format'>[link]</a>
-	</span></h4>
+<h4 id='wave_format'><span class='heading-body'>fn wave_format</span><span class='heading-extra'><a href='#wave_format'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
@@ -3646,8 +3325,7 @@
 </details>
 </section>
 <section class='member'>
-<h4 id='window_should_close'><span class='heading-body'>fn window_should_close</span><span class='heading-extra'><a href='#window_should_close'>[link]</a>
-	</span></h4>
+<h4 id='window_should_close'><span class='heading-body'>fn window_should_close</span><span class='heading-extra'><a href='#window_should_close'>[permalink]</a></span></h4>
 <details>
 <summary>Show undocumented member</summary>
 <pre class='decl'>
