@@ -983,3 +983,20 @@ export @symbol("SetAudioStreamBufferSizeDefault") fn set_audio_stream_buffer_siz
 // AttachAudioMixedProcessor
 // DetachAudioMixedProcessor
 
+@test fn test_01_basic_window() void = {
+	const screen_width: int = 800;
+	const screen_height: int = 450;
+
+	init_window(screen_width, screen_height, "Raylib window test");
+	set_target_fps(60);
+
+	for (!window_should_close()) {
+	begin_drawing();
+		clear_background(RAYWHITE);
+		draw_text("Congrats! Raylib is working!", screen_width / 3, 200, 20, LIGHTGRAY);
+	end_drawing();
+	};
+
+	close_window();
+};
+

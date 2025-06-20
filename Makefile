@@ -21,6 +21,9 @@ bin:
 	hare build ${FLAGS} -o ${OUT}/02_basic_screen_manager examples/02_basic_screen_manager.ha
 	./${OUT}/02_basic_screen_manager
 
+test:
+	hare test -lraylib -lm raylib/
+
 doc:
 	@rm -rf doc
 	@mkdir doc
