@@ -999,39 +999,64 @@ export @symbol("SetAudioStreamBufferSizeDefault") fn set_audio_stream_buffer_siz
 // AttachAudioMixedProcessor
 // DetachAudioMixedProcessor
 
-@test fn test_cube() void = {
+@test fn test_dvd() void = {
 	const screen_width:  int = 800;
 	const screen_height: int = 600;
 
 	init_window(screen_width, screen_height, "DVD");
 
-	let square_position = Vector2 { 
-		x = screen_width: f32 / 2.0, 
+	let square_position = Vector2 {
+		x = screen_width: f32 / 2.0,
 		y = screen_height: f32 / 2.0
 	};
 	let square_size     = Vector2 { x = 50.0, y = 50.0 };
 	let square_velocity = Vector2 { x = 5.0, y = 3.0 };
+	let square_colors = [
+		RED,
+		BLUE,
+		GREEN,
+		PINK,
+		MAROON,
+		ORANGE,
+		GOLD,
+		MAGENTA,
+		PURPLE,
+	];
+	let square_color_index = 0;
 
 	set_target_fps(60);
 
 	for (!window_should_close()) {
 		square_position.x += square_velocity.x;
 		square_position.y += square_velocity.y;
+
 		if ((square_position.x <= 0.0)
 		|| (square_position.x + square_size.x >= screen_width: f32)) {
 			square_velocity.x *= -1.0;
+			square_color_index += 1;
 		};
+
 		if ((square_position.y <= 0.0)
 		|| (square_position.y + square_size.y >= screen_height: f32)) {
 			square_velocity.y *= -1.0;
+			square_color_index += 1;
 		};
+
+		if (square_color_index >= len(square_colors): int) {
+			square_color_index = 0;
+		};
+
+		let square_color = square_colors[square_color_index];
+
 		begin_drawing();
 		clear_background(RAYWHITE);
+		draw_text("Congrats! Raylib is working!",
+			screen_width / 3, screen_height / 2, 20,  GRAY);
 		draw_rectangle(square_position.x: int,
 			square_position.y: int,
 			square_size.x: int,
-			square_size.y: int, 
-			BLUE);
+			square_size.y: int,
+			square_color);
 		end_drawing();
 	};
 
