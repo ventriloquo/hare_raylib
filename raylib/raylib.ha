@@ -980,90 +980,112 @@ export @symbol("GetPixelDataSize")	fn get_pixel_data_size(width: int, height: in
 // module: rtext
 // Text-Drawing functions
 @symbol("DrawText") fn DrawText(*c::char, int, int, int, Color) void;
-export @symbol("DrawFPS") fn draw_fps(x: int, y: int) void;
 export fn draw_text(title: str, x: int, y: int, text_size: int, color: Color) void = DrawText(c::fromstr(title: str)!, x, y, text_size, color);
+
+export @symbol("DrawFPS") fn draw_fps(x: int, y: int) void;
 
 // Text font info functions
 export @symbol("SetTextLineSpacing") fn set_text_line_spacing(spacing: int) void;
 
 // module: raudio
 // Audio device management functions
-export @symbol("InitAudioDevice") fn init_audio_device() void;
-export @symbol("CloseAudioDevice") fn close_audio_device() void;
-export @symbol("IsAudioDeviceReady") fn is_audio_device_ready() bool;
-export @symbol("SetMasterVolume") fn set_master_volume(volume: f32) void;
-export @symbol("GetMasterVolume") fn get_master_volume() f32;
+export @symbol("InitAudioDevice")	fn init_audio_device() void;
+export @symbol("CloseAudioDevice")	fn close_audio_device() void;
+export @symbol("IsAudioDeviceReady")	fn is_audio_device_ready() bool;
+export @symbol("SetMasterVolume")	fn set_master_volume(volume: f32) void;
+export @symbol("GetMasterVolume")	fn get_master_volume() f32;
 
 // Wave/Sound loading/unloading functions
 @symbol("LoadWave") fn LoadWave(*c::char) Wave;
-@symbol("LoadSound") fn LoadSound(*c::char) Sound;
-@symbol("ExportWave") fn ExportWave(Wave, *c::char) bool;
-@symbol("ExportWaveAsCode") fn ExportWaveAsCode(Wave, *c::char) bool;
 export fn load_wave(filename: str) Wave = return LoadWave(c::fromstr(filename: str)!);
-export @symbol("IsWaveReady") fn is_wave_ready(wave: Wave) bool;
+
+@symbol("LoadSound") fn LoadSound(*c::char) Sound;
 export fn load_sound(filename: str) Sound = return LoadSound(c::fromstr(filename: str)!);
-export @symbol("LoadSoundFromWave") fn load_sound_from_wave(wave: Wave) Sound;
-export @symbol("LoadSoundAlias") fn load_sound_alias(source: Sound) Sound;
-export @symbol("IsSoundReady") fn is_sound_ready(sound: Sound) bool;
-export @symbol("UpdateSound") fn update_sound(sound: Sound, data: *opaque, sample_count: int) void;
-export @symbol("UnloadWave") fn unload_wave(wave: Wave) void;
-export @symbol("UnloadSound") fn unload_sound(sound: Sound) void;
-export @symbol("UnloadSoundAlias") fn unload_sound_alias(alias: Sound) void;
+
+@symbol("ExportWave") fn ExportWave(Wave, *c::char) bool;
 export fn export_wave(wave: Wave, filename: str) bool = ExportWave(wave, c::fromstr(filename: str)!);
+
+@symbol("ExportWaveAsCode") fn ExportWaveAsCode(Wave, *c::char) bool;
 export fn export_wave_as_code(wave: Wave, filename: str) bool = ExportWaveAsCode(wave, c::fromstr(filename: str)!);
 
+export @symbol("IsWaveReady")		fn is_wave_ready(wave: Wave) bool;
+export @symbol("LoadSoundFromWave")	fn load_sound_from_wave(wave: Wave) Sound;
+export @symbol("LoadSoundAlias")	fn load_sound_alias(source: Sound) Sound;
+export @symbol("IsSoundReady")		fn is_sound_ready(sound: Sound) bool;
+export @symbol("UpdateSound")		fn update_sound(sound: Sound, data: *opaque, sample_count: int) void;
+export @symbol("UnloadWave")		fn unload_wave(wave: Wave) void;
+export @symbol("UnloadSound")		fn unload_sound(sound: Sound) void;
+export @symbol("UnloadSoundAlias")	fn unload_sound_alias(alias: Sound) void;
+
 // Wave/Sound management functions
-export @symbol("PlaySound") fn play_sound(sound: Sound) void;
-export @symbol("StopSound") fn stop_sound(sound: Sound) void;
-export @symbol("PauseSound") fn pause_sound(sound: Sound) void;
-export @symbol("ResumeSound") fn resume_sound(sound: Sound) void;
-export @symbol("IsSoundPlaying") fn is_sound_playing(sound: Sound) bool;
-export @symbol("SetSoundVolume") fn set_sound_volume(sound: Sound, volume: f32) void;
-export @symbol("SetSoundPitch") fn set_sound_pitch(sound: Sound, pitch: f32) void;
-export @symbol("SetSoundPan") fn set_sound_pan(sound: Sound, pan: f32) void;
-export @symbol("WaveCopy") fn wave_copy(wave: Wave) Wave;
-export @symbol("WaveCrop") fn wave_crop(wave: *Wave, init_sample: int, final_sample: int) void;
-export @symbol("WaveFormat") fn wave_format(wave: *Wave, sample_rate: int, sample_size: int, channels: int) void;
-export @symbol("LoadWaveSamples") fn load_wave_samples(wave: Wave) *f32;
-export @symbol("UnloadWaveSamples") fn unload_wave_samples(samples: *f32) void;
+export @symbol("PlaySound")		fn play_sound(sound: Sound) void;
+export @symbol("StopSound")		fn stop_sound(sound: Sound) void;
+export @symbol("PauseSound")		fn pause_sound(sound: Sound) void;
+export @symbol("ResumeSound")		fn resume_sound(sound: Sound) void;
+export @symbol("IsSoundPlaying")	fn is_sound_playing(sound: Sound) bool;
+export @symbol("SetSoundVolume")	fn set_sound_volume(sound: Sound, volume: f32) void;
+export @symbol("SetSoundPitch")		fn set_sound_pitch(sound: Sound, pitch: f32) void;
+export @symbol("SetSoundPan")		fn set_sound_pan(sound: Sound, pan: f32) void;
+export @symbol("WaveCopy")		fn wave_copy(wave: Wave) Wave;
+export @symbol("WaveCrop")		fn wave_crop(wave: *Wave, init_sample: int, final_sample: int) void;
+export @symbol("WaveFormat")		fn wave_format(wave: *Wave, sample_rate: int, sample_size: int, channels: int) void;
+export @symbol("LoadWaveSamples")	fn load_wave_samples(wave: Wave) *f32;
+export @symbol("UnloadWaveSamples")	fn unload_wave_samples(samples: *f32) void;
 
 // Music management functions
 @symbol("LoadMusicStream") fn LoadMusicStream(*c::char) Music;
-@symbol("LoadMusicStreamFromMemory") fn LoadMusicStreamFromMemory(*c::char, *c::char, int) Music;
 export fn load_music_stream(filename: str) Music = return LoadMusicStream(c::fromstr(filename: str)!);
+
+@symbol("LoadMusicStreamFromMemory") fn LoadMusicStreamFromMemory(*c::char, *c::char, int) Music;
 export fn load_music_stream_from_memory(filetype: str, data: str, datasize: int) Music = { 
 	return LoadMusicStreamFromMemory(c::fromstr(filetype: str)!, c::fromstr(data: str)!, datasize);
 };
-export @symbol("IsMusicReady") fn is_music_ready(music: Music) bool;
-export @symbol("UnloadMusicStream") fn unload_music_stream(music: Music) void;
-export @symbol("PlayMusicStream") fn play_music_stream(music: Music) void;
-export @symbol("IsMusicStreamPlaying") fn is_music_stream_playing(music: Music) bool;
-export @symbol("UpdateMusicStream") fn update_music_stream(music: Music) void;
-export @symbol("StopMusicStream") fn stop_music_stream(music: Music) void;
-export @symbol("PauseMusicStream") fn pause_music_stream(music: Music) void;
-export @symbol("ResumeMusicStream") fn resume_music_stream(music: Music) void;
-export @symbol("SeekMusicStream") fn seek_music_stream(music: Music, position: f32) void;
-export @symbol("SetMusicVolume") fn set_music_volume(music: Music, volume: f32) void;
-export @symbol("SetMusicPitch") fn set_music_pitch(music: Music, pitch: f32) void;
-export @symbol("SetMusicPan") fn set_music_pan(music: Music, pan: f32) void;
-export @symbol("GetMusicTimeLength") fn get_music_time_length(music: Music) f32;
-export @symbol("GetMusicTimePlayed") fn get_music_time_played(music: Music) f32;
+
+export @symbol("IsMusicReady")		fn is_music_ready(music: Music) bool;
+export @symbol("UnloadMusicStream")	fn unload_music_stream(music: Music) void;
+export @symbol("PlayMusicStream")	fn play_music_stream(music: Music) void;
+export @symbol("IsMusicStreamPlaying")	fn is_music_stream_playing(music: Music) bool;
+export @symbol("UpdateMusicStream")	fn update_music_stream(music: Music) void;
+export @symbol("StopMusicStream")	fn stop_music_stream(music: Music) void;
+export @symbol("PauseMusicStream")	fn pause_music_stream(music: Music) void;
+export @symbol("ResumeMusicStream")	fn resume_music_stream(music: Music) void;
+export @symbol("SeekMusicStream")	fn seek_music_stream(music: Music, position: f32) void;
+export @symbol("SetMusicVolume")	fn set_music_volume(music: Music, volume: f32) void;
+export @symbol("SetMusicPitch")		fn set_music_pitch(music: Music, pitch: f32) void;
+export @symbol("SetMusicPan")		fn set_music_pan(music: Music, pan: f32) void;
+export @symbol("GetMusicTimeLength")	fn get_music_time_length(music: Music) f32;
+export @symbol("GetMusicTimePlayed")	fn get_music_time_played(music: Music) f32;
 
 // AudioStream management functions
-export @symbol("LoadAudioStream") fn load_audio_stream(sample_rate: u32, sample_size: u32, channels: u32) AudioStream;    // Load audio stream (to stream raw audio pcm data)
-export @symbol("IsAudioStreamReady") fn is_audio_stream_ready(stream: AudioStream) bool;                                  // Checks if an audio stream is ready
-export @symbol("UnloadAudioStream") fn unload_audio_stream(stream: AudioStream) void;                                     // Unload audio stream and free memory
-export @symbol("UpdateAudioStream") fn update_audio_stream(stream: AudioStream, data: *opaque, frame_count: int) void;    // Update audio stream buffers with data
-export @symbol("IsAudioStreamProcessed") fn is_audio_stream_processed(stream: AudioStream) bool;                          // Check if any audio stream buffers requires refill
-export @symbol("PlayAudioStream") fn play_audio_stream(stream: AudioStream) void;                                         // Play audio stream
-export @symbol("PauseAudioStream") fn pause_audio_stream(stream: AudioStream) void;                                       // Pause audio stream
-export @symbol("ResumeAudioStream") fn resume_audio_stream(stream: AudioStream) void;                                     // Resume audio stream
-export @symbol("IsAudioStreamPlaying") fn is_audio_stream_playing(stream: AudioStream) bool;                              // Check if audio stream is playing
-export @symbol("StopAudioStream") fn stop_audio_stream(stream: AudioStream) void;                                         // Stop audio stream
-export @symbol("SetAudioStreamVolume") fn set_audio_stream_volume(stream: AudioStream, volume: f32) void;                 // Set volume for audio stream (1.0 is max level)
-export @symbol("SetAudioStreamPitch") fn set_audio_stream_pitch(stream: AudioStream, pitch: f32) void;                    // Set pitch for audio stream (1.0 is base level)
-export @symbol("SetAudioStreamPan") fn set_audio_stream_pan(stream: AudioStream, pan: f32) void;                          // Set pan for audio stream (0.5 is centered)
-export @symbol("SetAudioStreamBufferSizeDefault") fn set_audio_stream_buffer_size_default(buffer_size: int) void;         // Default size for new audio streams
+
+// Load audio stream (to stream raw audio pcm data)
+export @symbol("LoadAudioStream")			fn load_audio_stream(sample_rate: u32, sample_size: u32, channels: u32) AudioStream;
+// Checks if an audio stream is ready
+export @symbol("IsAudioStreamReady")			fn is_audio_stream_ready(stream: AudioStream) bool;
+// Unload audio stream and free memory
+export @symbol("UnloadAudioStream")			fn unload_audio_stream(stream: AudioStream) void;
+// Update audio stream buffers with data
+export @symbol("UpdateAudioStream")			fn update_audio_stream(stream: AudioStream, data: *opaque, frame_count: int) void;
+// Check if any audio stream buffers requires refill
+export @symbol("IsAudioStreamProcessed")		fn is_audio_stream_processed(stream: AudioStream) bool;
+// Play audio stream
+export @symbol("PlayAudioStream")			fn play_audio_stream(stream: AudioStream) void;
+// Pause audio stream
+export @symbol("PauseAudioStream")			fn pause_audio_stream(stream: AudioStream) void;
+// Resume audio stream
+export @symbol("ResumeAudioStream")			fn resume_audio_stream(stream: AudioStream) void;
+// Check if audio stream is playing
+export @symbol("IsAudioStreamPlaying")			fn is_audio_stream_playing(stream: AudioStream) bool;
+// Stop audio stream
+export @symbol("StopAudioStream")			fn stop_audio_stream(stream: AudioStream) void;
+// Set volume for audio stream (1.0 is max level)
+export @symbol("SetAudioStreamVolume")			fn set_audio_stream_volume(stream: AudioStream, volume: f32) void;
+// Set pitch for audio stream (1.0 is base level)
+export @symbol("SetAudioStreamPitch")			fn set_audio_stream_pitch(stream: AudioStream, pitch: f32) void;
+// Set pan for audio stream (0.5 is centered)
+export @symbol("SetAudioStreamPan")			fn set_audio_stream_pan(stream: AudioStream, pan: f32) void;
+// Default size for new audio streams
+export @symbol("SetAudioStreamBufferSizeDefault")	fn set_audio_stream_buffer_size_default(buffer_size: int) void;				
 
 // TODO:
 // SetAudioStreamCallback
@@ -1098,7 +1120,7 @@ export @symbol("SetAudioStreamBufferSizeDefault") fn set_audio_stream_buffer_siz
 	let square_color_index = 0;
 
 	set_target_fps(60);
-
+	
 	for (!window_should_close()) {
 		square_position.x += square_velocity.x;
 		square_position.y += square_velocity.y;
@@ -1132,7 +1154,6 @@ export @symbol("SetAudioStreamBufferSizeDefault") fn set_audio_stream_buffer_siz
 			square_color);
 		end_drawing();
 	};
-
 	close_window();
 };
 
