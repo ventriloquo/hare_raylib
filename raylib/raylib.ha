@@ -958,7 +958,24 @@ export @symbol("DrawTexturePro")	fn draw_texture_pro(texture: Texture, source: R
 export @symbol("DrawTextureNPatch")	fn draw_texture_npatch(texture: Texture, npatch_info: NPatchInfo, dest: Rectangle, origin: Vector2, rotation: f32, tint: Color) void;
 
 // Color/Pixel related functions
-export @symbol("GetColor") fn get_color(color: u32) Color;
+
+export @symbol("ColorIsEqual")		fn color_is_equal(color_1: Color, color_2: Color) bool;
+export @symbol("Fade")			fn fade(color: Color, alpha: f32) Color;
+export @symbol("ColorToInt")		fn color_to_int(color: Color) int;
+export @symbol("ColorNormalize")	fn color_normalize(color: Color) Vector4;
+export @symbol("ColorNormalized")	fn color_normalized(normalized_color: Vector4) Color;
+export @symbol("ColorToHSV")		fn color_to_hsv(color: Color) Vector3;
+export @symbol("ColorFromHSV")		fn color_from_hsv(hue: f32, saturation: f32, value: f32) Color;
+export @symbol("ColorTint")		fn color_tint(color: Color, tint: Color) Color;
+export @symbol("ColorBrightness")	fn color_brightness(color: Color, factor: f32) Color;                     
+export @symbol("ColorContrast")		fn color_contrast(color: Color, contrast: f32) Color;
+export @symbol("ColorAlpha")		fn color_alpha(color: Color, alpha: f32) Color;
+export @symbol("ColorAlphaBlend")	fn color_alpha_blend(dst: Color, src: Color, tint: Color) Color;              
+export @symbol("ColorLerp")		fn color_lerp(color_1: Color, color_2: Color, factor: f32) Color;
+export @symbol("GetColor")		fn get_color(color: u32) Color;
+export @symbol("GetPixelColor")		fn get_pixel_color(srcPtr: *opaque, format: int) Color;
+export @symbol("SetPixelColor")		fn set_pixel_color(dstPtr: *opaque, color: Color, format: int) void;
+export @symbol("GetPixelDataSize")	fn get_pixel_data_size(width: int, height: int, format: int) int;
 
 // module: rtext
 // Text-Drawing functions
