@@ -43,6 +43,8 @@ export type Color = struct { r: u8, g: u8, b: u8, a: u8 };
 // Rectangle struct.
 //
 // It takes a [x, y] position and [width, height]
+//
+// NOTE: I probably should use [w, h] instead, it's faster to type.
 export type Rectangle = struct {
 	x:		f32,
 	y:		f32,
@@ -52,7 +54,10 @@ export type Rectangle = struct {
 
 // Triangle struct.
 //
-// It takes 3 2D vectors. They are used to define each vertice of the triangle.
+// It takes 3 2D vectors, which are used to define each vertice of the triangle.
+//
+// (I know you already knew it, but I'm a dumb idiot, so I need to remind myself
+// how to use this thing)
 export type Triangle = struct {
 	point_1:	Vector2,
 	point_2:	Vector2,
@@ -61,16 +66,14 @@ export type Triangle = struct {
 
 // Image struct.
 //
-// Not really sure if I bound it correctly, but at least on the example game it
-// works as spected.
-//
 // This struct is used by these functions:
-// - set_window_icon
-// - set_window_icons
-// - load_image
-// - load_texture_from_image
-// - draw_texture
+// - [[set_window_icon]]
+// - [[set_window_icons]]
+// - [[load_image]]
+// - [[load_texture_from_image]]
+// - [[draw_texture]]
 //
+// I did not test it enought, so maybe (probably) it has a problem.
 export type Image = struct {
 	data:		*opaque,
 	width:		int,
@@ -98,6 +101,9 @@ export type RenderTexture = struct {
 
 export type RenderTexture2D = RenderTexture;
 
+// I don't have any idea of what this is, but
+// it's used on [[draw_texture_npatch]], so I'll guess
+// it's something related to the handling of images.
 export type NPatchInfo = struct {
 	source:		Rectangle,
 	left:		int,
@@ -125,12 +131,15 @@ export type Font = struct {
 };
 
 export type Camera2D = struct {
-	cam_offset:	Vector2,
+	cam_offset:	Vector2, // It's called "cam_offset" because "offset" is a reserved keyword.
 	target:		Vector2,
 	rotation:	f32,
 	zoom:		f32,
 };
 
+// WARNING: The implementation of 3D development is not, in any shape
+// or form, close to be usable. It isn't finished. Don't try to use it.
+// Please.
 export type Camera3D = struct {
 	position: 	Vector3,
 	target: 	Vector3,
@@ -139,7 +148,11 @@ export type Camera3D = struct {
 	projection: 	int,
 };
 
-export type Camera = Camera3D;
+// The 2D camera is the default camera on Raylib.ha, for now at least.
+//
+// When I start to implement Raymath and other related things needed for
+// 3D to work, I'll restore the original default from Raylib (the 3D Camera).
+export type Camera = Camera2D;
 
 export type Wave = struct {
 	frame_count:	u32,
@@ -430,133 +443,113 @@ export type NPatchLayout = enum {
 	NPATCH_THREE_PATCH_HORIZONTAL   // Npatch layout: 3x1 tiles};
 };
 
-// Light Gray
+// Color definitions
+
 export const LIGHTGRAY			= Color { r = 200, g = 200, b = 200, a = 255 };
-// Gray
 export const GRAY			= Color { r = 130, g = 130, b = 130, a = 255 };
-// Dark Gray
 export const DARKGRAY			= Color { r = 80,  g = 80,  b = 80,  a = 255 };
-// Yellow
 export const YELLOW			= Color { r = 253, g = 249, b = 0,   a = 255 };
-// Gold
 export const GOLD			= Color { r = 255, g = 203, b = 0,   a = 255 };
-// Orange
 export const ORANGE			= Color { r = 255, g = 161, b = 0,   a = 255 };
-// Pink
 export const PINK			= Color { r = 255, g = 109, b = 194, a = 255 };
-// Red
 export const RED			= Color { r = 230, g = 41,  b = 55,  a = 255 };
-// Maroon
 export const MAROON			= Color { r = 190, g = 33,  b = 55,  a = 255 };
-// Green
 export const GREEN			= Color { r = 0,   g = 228, b = 48,  a = 255 };
-// Lime
 export const LIME			= Color { r = 0,   g = 158, b = 47,  a = 255 };
-// Dark Green
 export const DARKGREEN			= Color { r = 0,   g = 117, b = 44,  a = 255 };
-// Sky Blue
 export const SKYBLUE			= Color { r = 102, g = 191, b = 255, a = 255 };
-// Blue
 export const BLUE			= Color { r = 0,   g = 121, b = 241, a = 255 };
-// Dark Blue
 export const DARKBLUE			= Color { r = 0,   g = 82,  b = 172, a = 255 };
-// Purple
 export const PURPLE			= Color { r = 200, g = 122, b = 255, a = 255 };
-// Violet
 export const VIOLET			= Color { r = 135, g = 60,  b = 190, a = 255 };
-// Dark Purple
 export const DARKPURPLE			= Color { r = 112, g = 31,  b = 126, a = 255 };
-// Beige
 export const BEIGE			= Color { r = 211, g = 176, b = 131, a = 255 };
-// Brown
 export const BROWN			= Color { r = 127, g = 106, b = 79,  a = 255 };
-// Dark Brown
 export const DARKBROWN			= Color { r = 76,  g = 63,  b = 47,  a = 255 };
-// White
 export const WHITE			= Color { r = 255, g = 255, b = 255, a = 255 };
-// Black
 export const BLACK			= Color { r = 0,   g = 0,   b = 0,   a = 255 };
-// Blank
-export const BLANK			= Color { r = 0,   g = 0,   b = 0,   a = 0 };
-// Magenta
+export const BLANK			= Color { r = 0,   g = 0,   b = 0,   a = 0 };  
 export const MAGENTA			= Color { r = 255, g = 0,   b = 255, a = 255 };
-// Ray White
 export const RAYWHITE			= Color { r = 245, g = 245, b = 245, a = 255 };
 
 // Window-Related functions
 @symbol("InitWindow") fn InitWindow(int, int, *c::char) void;
-@symbol("SetWindowTitle") fn SetWindowTitle(*c::char) void;
-@symbol("GetMonitorName") fn GetMonitorName(monitor: int) const *c::char;
 export fn init_window(width: int, height: int, title: str) void = InitWindow(width, height, c::fromstr(title: str)!);
-export @symbol("CloseWindow") fn close_window() void;
-export @symbol("WindowShouldClose") fn window_should_close() bool;
-export @symbol("IsWindowReady") fn is_window_ready() bool;
-export @symbol("IsWindowFullscreen") fn is_window_fullscreen() bool;
-export @symbol("IsWindowHidden") fn is_window_hidden() bool;
-export @symbol("IsWindowMinimized") fn is_window_minimized() bool;
-export @symbol("IsWindowMaximized") fn is_window_maximized() bool;
-export @symbol("IsWindowFocused") fn is_window_focused() bool;
-export @symbol("IsWindowResized") fn is_window_resized() bool;
-export @symbol("IsWindowState") fn is_window_state(flag: u32) bool;
-export @symbol("SetWindowState") fn set_window_state(flags: u32) void;
-export @symbol("ClearWindowState") fn clear_window_state(flags: u32) void;
-export @symbol("ToggleFullsreen") fn toggle_fullscreen() void;
-export @symbol("ToggleBorderlessWindowed") fn toggle_borderless_windowed() void;
-export @symbol("MaximizeWindow") fn maximize_window() void;
-export @symbol("MinimizeWindow") fn minimize_window() void;
-export @symbol("RestoreWindow") fn restore_window() void;
-export @symbol("SetWindowIcon") fn set_window_icon(image: Image) void;
-export @symbol("SetWindowIcons") fn set_window_icons(images: *Image, count: int) void;
+
+@symbol("SetWindowTitle") fn SetWindowTitle(*c::char) void;
 export fn set_window_title(title: str) void = SetWindowTitle(c::fromstr(title: str)!);
-export @symbol("SetWindowPosition") fn set_window_position(x: int, y: int) void;
-export @symbol("SetWindowMonitor") fn set_window_monitor(monitor: int) void;
-export @symbol("SetWindowMinSize") fn set_window_min_size(width: int, height: int) void;
-export @symbol("SetWindowMaxSize") fn set_window_max_size(width: int, height: int) void;
-export @symbol("SetWindowSize") fn set_window_size(width: int, height: int) void;
-export @symbol("SetWindowOpacity") fn set_window_opacity(opacity: f32) void;
-export @symbol("SetWindowFocused") fn set_window_focused() void;
-export @symbol("GetScreenWidth") fn get_screen_width() int;
-export @symbol("GetScreenHeight") fn get_screen_height() int;
-export @symbol("GetRenderWidth") fn get_render_width() int;
-export @symbol("GetRenderHeight") fn get_render_height() int;
-export @symbol("GetMonitorCount") fn get_monitor_count() int;
-export @symbol("GetCurrentMonitor") fn get_current_monitor() int;
-export @symbol("GetMonitorPosition") fn get_monitor_position(monitor: int) Vector2;
-export @symbol("GetMonitorWidth") fn get_monitor_width(monitor: int) int;
-export @symbol("GetMonitorHeight") fn get_monitor_height(monitor: int) int;
-export @symbol("GetMonitorPhysicalWidth") fn get_monitor_physical_width(monitor: int) int;
-export @symbol("GetMonitorPhysicalHeight") fn get_monitor_physical_height(monitor: int) int;
-export @symbol("GetMonitorRefreshRate") fn get_monitor_refresh_rate(monitor: int) int;
-export @symbol("GetWindowPosition") fn get_window_position() Vector2;
-export @symbol("GetWindowScaleDPI") fn get_window_scale_dpi() Vector2;
+
+@symbol("GetMonitorName") fn GetMonitorName(monitor: int) const *c::char;
 export fn get_monitor_name(monitor: int) str = return c::tostr(GetMonitorName(monitor))!;
-export @symbol("EnableEventWaiting") fn enable_event_waiting() void;
-export @symbol("DisableEventWaiting") fn disable_event_waiting() void;
+
+export @symbol("CloseWindow")			fn close_window() void;
+export @symbol("WindowShouldClose")		fn window_should_close() bool;
+export @symbol("IsWindowReady")			fn is_window_ready() bool;
+export @symbol("IsWindowFullscreen")		fn is_window_fullscreen() bool;
+export @symbol("IsWindowHidden")		fn is_window_hidden() bool;
+export @symbol("IsWindowMinimized")		fn is_window_minimized() bool;
+export @symbol("IsWindowMaximized")		fn is_window_maximized() bool;
+export @symbol("IsWindowFocused")		fn is_window_focused() bool;
+export @symbol("IsWindowResized")		fn is_window_resized() bool;
+export @symbol("IsWindowState")			fn is_window_state(flag: u32) bool;
+export @symbol("SetWindowState")		fn set_window_state(flags: u32) void;
+export @symbol("ClearWindowState")		fn clear_window_state(flags: u32) void;
+export @symbol("ToggleFullsreen")		fn toggle_fullscreen() void;
+export @symbol("ToggleBorderlessWindowed")	fn toggle_borderless_windowed() void;
+export @symbol("MaximizeWindow")		fn maximize_window() void;
+export @symbol("MinimizeWindow")		fn minimize_window() void;
+export @symbol("RestoreWindow")			fn restore_window() void;
+export @symbol("SetWindowIcon")			fn set_window_icon(image: Image) void;
+export @symbol("SetWindowIcons")		fn set_window_icons(images: *Image, count: int) void;
+export @symbol("SetWindowPosition")		fn set_window_position(x: int, y: int) void;
+export @symbol("SetWindowMonitor")		fn set_window_monitor(monitor: int) void;
+export @symbol("SetWindowMinSize")		fn set_window_min_size(width: int, height: int) void;
+export @symbol("SetWindowMaxSize")		fn set_window_max_size(width: int, height: int) void;
+export @symbol("SetWindowSize")			fn set_window_size(width: int, height: int) void;
+export @symbol("SetWindowOpacity")		fn set_window_opacity(opacity: f32) void;
+export @symbol("SetWindowFocused")		fn set_window_focused() void;
+export @symbol("GetScreenWidth")		fn get_screen_width() int;
+export @symbol("GetScreenHeight")		fn get_screen_height() int;
+export @symbol("GetRenderWidth")		fn get_render_width() int;
+export @symbol("GetRenderHeight")		fn get_render_height() int;
+export @symbol("GetMonitorCount")		fn get_monitor_count() int;
+export @symbol("GetCurrentMonitor")		fn get_current_monitor() int;
+export @symbol("GetMonitorPosition")		fn get_monitor_position(monitor: int) Vector2;
+export @symbol("GetMonitorWidth")		fn get_monitor_width(monitor: int) int;
+export @symbol("GetMonitorHeight")		fn get_monitor_height(monitor: int) int;
+export @symbol("GetMonitorPhysicalWidth")	fn get_monitor_physical_width(monitor: int) int;
+export @symbol("GetMonitorPhysicalHeight")	fn get_monitor_physical_height(monitor: int) int;
+export @symbol("GetMonitorRefreshRate")		fn get_monitor_refresh_rate(monitor: int) int;
+export @symbol("GetWindowPosition")		fn get_window_position() Vector2;
+export @symbol("GetWindowScaleDPI")		fn get_window_scale_dpi() Vector2;
+export @symbol("EnableEventWaiting")		fn enable_event_waiting() void;
+export @symbol("DisableEventWaiting")		fn disable_event_waiting() void;
+
 // TODO:
 // *GetWindowHandle
 // SetClipboardText
 // *GetClipboardText
 
 // Cursor-Related functions
-export @symbol("ShowCursor") fn show_cursor() void;
-export @symbol("HideCursor") fn hide_cursor() void;
-export @symbol("IsCursorHidden") fn is_cursor_hidden() bool;
-export @symbol("EnableCursor") fn enable_cursor() void;
-export @symbol("DisableCursor") fn disable_cursor() void;
-export @symbol("IsCursorOnScreen") fn is_cursor_on_screen() bool;
+export @symbol("ShowCursor")		fn show_cursor() void;
+export @symbol("HideCursor")		fn hide_cursor() void;
+export @symbol("IsCursorHidden")	fn is_cursor_hidden() bool;
+export @symbol("EnableCursor")		fn enable_cursor() void;
+export @symbol("DisableCursor")		fn disable_cursor() void;
+export @symbol("IsCursorOnScreen")	fn is_cursor_on_screen() bool;
 
 // Drawing-Related functions
-export @symbol("ClearBackground") fn clear_background(color: Color) void;
-export @symbol("BeginDrawing") fn begin_drawing() void;
-export @symbol("EndDrawing") fn end_drawing() void;
-export @symbol("BeginMode2D") fn begin_mode_2d(camera: Camera2D) void;
-export @symbol("EndMode2D") fn end_mode_2d() void;
-export @symbol("BeginTextureMode") fn begin_texture_mode(target: RenderTexture2D) void;
-export @symbol("EndTextureMode") fn end_texture_mode() void;
-export @symbol("BeginBlendMode") fn begin_blend_mode(mode: int) void;
-export @symbol("EndBlendMode") fn end_blend_mode() void;
-export @symbol("BeginScissorMode") fn begin_scissor_mode(x: int, y: int, width: int, height: int) void;
-export @symbol("EndScissorMode") fn end_scissor_mode() void;
+export @symbol("ClearBackground")	fn clear_background(color: Color) void;
+export @symbol("BeginDrawing")		fn begin_drawing() void;
+export @symbol("EndDrawing")		fn end_drawing() void;
+export @symbol("BeginMode2D")		fn begin_mode_2d(camera: Camera2D) void;
+export @symbol("EndMode2D")		fn end_mode_2d() void;
+export @symbol("BeginTextureMode")	fn begin_texture_mode(target: RenderTexture2D) void;
+export @symbol("EndTextureMode")	fn end_texture_mode() void;
+export @symbol("BeginBlendMode")	fn begin_blend_mode(mode: int) void;
+export @symbol("EndBlendMode")		fn end_blend_mode() void;
+export @symbol("BeginScissorMode")	fn begin_scissor_mode(x: int, y: int, width: int, height: int) void;
+export @symbol("EndScissorMode")	fn end_scissor_mode() void;
 // TODO:
 // BeginMode3D
 // EndMode3D
@@ -587,27 +580,40 @@ export @symbol("EndScissorMode") fn end_scissor_mode() void;
 // GetCameraMatrix
 // GetWorldToScreen
 // GetWorldToScreenEx
-export @symbol("GetCameraMatrix2D") fn get_camera_matrix_2d(camera: Camera2D) Matrix;
-export @symbol("GetScreenToWorld2D") fn get_screen_to_world_2d(position: Vector2, camera: Camera2D) Vector2;
-export @symbol("GetWorldToScreen2D") fn get_world_to_screen_2d(position: Vector2, camera: Camera2D) Vector2;
+export @symbol("GetCameraMatrix2D")	fn get_camera_matrix_2d(camera: Camera2D) Matrix;
+export @symbol("GetScreenToWorld2D")	fn get_screen_to_world_2d(position: Vector2, camera: Camera2D) Vector2;
+export @symbol("GetWorldToScreen2D")	fn get_world_to_screen_2d(position: Vector2, camera: Camera2D) Vector2;
 
 // Timing-Related functions
-export @symbol("SetTargetFPS") fn set_target_fps(fps: int) void;
-export @symbol("GetFrameTime") fn get_frame_time() f32;
-export @symbol("GetTime") fn get_time() f64;
-export @symbol("GetFPS") fn get_fps() int;
+
+// Sets the target frame-rate
+//
+// example:
+//	set_target_fps(120);
+export @symbol("SetTargetFPS")	fn set_target_fps(fps: int) void;
+// Gets the current frame-rate
+export @symbol("GetFPS")	fn get_fps() int;
+export @symbol("GetFrameTime")	fn get_frame_time() f32;
+export @symbol("GetTime")	fn get_time() f64;
 
 // Custom frame control functions
 // NOTE: Those functions are intended for advance users that want full control over the frame processing
 // By default EndDrawing() does this job: draws everything + SwapScreenBuffer() + manage frame timing + PollInputEvents()
 // To avoid that behaviour and control frame processes manually, enable in config.h: SUPPORT_CUSTOM_FRAME_CONTROL
-export @symbol("SwapScreenBuffer") fn swap_screen_buffer() void; // Swap back buffer with front buffer (screen drawing)
-export @symbol("PollInputEvents") fn poll_input_events() void;   // Register all input events
-export @symbol("WaitTime") fn wait_time(seconds: f64) void;      // Wait for some time (halt program execution)
+
+// Swap back buffer with front buffer (screen drawing)
+export @symbol("SwapScreenBuffer")	fn swap_screen_buffer() void;
+// Register all input events
+export @symbol("PollInputEvents")	fn poll_input_events() void;
+// Wait for some time (halt program execution)
+export @symbol("WaitTime")		fn wait_time(seconds: f64) void;
 
 // Random values generation functions
-export @symbol("SetRandomSeed") fn set_random_seed(seed: u32) void; // Set the seed for the random number generator
-export @symbol("GetRandomValue") fn get_random_value(min: int, max: int) void; // Get a random value between min and max (both included)
+
+// Set the seed for the random number generator
+export @symbol("SetRandomSeed")		fn set_random_seed(seed: u32) void;
+// Get a random value between min and max (both included)
+export @symbol("GetRandomValue")	fn get_random_value(min: int, max: int) void;
 
 // TODO:
 // int *LoadRandomSequence(unsigned int count, int min, int max); // Load random values sequence, no values repeated
@@ -615,8 +621,9 @@ export @symbol("GetRandomValue") fn get_random_value(min: int, max: int) void; /
 
 // Misc. functions
 @symbol("TakeScreenshot") fn TakeScreenshot(*c::char) void;
-@symbol("OpenURL") fn OpenURL(*c::char) void;
 export fn take_screenshot(filename: str) void = TakeScreenshot(c::fromstr(filename: str)!);
+
+@symbol("OpenURL") fn OpenURL(*c::char) void;
 export fn open_url(url: str) void = OpenURL(c::fromstr(url: str)!);
 
 // // NOTE: Following functions implemented in module [utils]
@@ -688,28 +695,27 @@ export fn open_url(url: str) void = OpenURL(c::fromstr(url: str)!);
 //------------------------------------------------------------------------------------
 
 // Input-related functions: keyboard
-export @symbol("IsKeyPressed") fn is_key_pressed(key: int) bool;
-export @symbol("IsKeyPressedRepeat") fn is_key_pressed_repeat(key: int) bool;
-export @symbol("IsKeyDown") fn is_key_down(key: int) bool;
-export @symbol("IsKeyReleased") fn is_key_released(key: int) bool;
-export @symbol("IsKeyUp") fn is_key_up(key: int) bool;
-export @symbol("GetKeyPressed") fn get_key_pressed() int;
-export @symbol("GetCharPressed") fn get_char_pressed() int;
-export @symbol("SetExitKey") fn set_exit_key(key: int) void;
+export @symbol("IsKeyPressed")		fn is_key_pressed(key: int) bool;
+export @symbol("IsKeyPressedRepeat")	fn is_key_pressed_repeat(key: int) bool;
+export @symbol("IsKeyDown")		fn is_key_down(key: int) bool;
+export @symbol("IsKeyReleased")		fn is_key_released(key: int) bool;
+export @symbol("IsKeyUp")		fn is_key_up(key: int) bool;
+export @symbol("GetKeyPressed")		fn get_key_pressed() int;
+export @symbol("GetCharPressed")	fn get_char_pressed() int;
+export @symbol("SetExitKey")		fn set_exit_key(key: int) void;
 
 // Input-related functions: gamepad
 
 // Get gamepad internal name id
 @symbol("GetGamepadName") fn GetGamepadName(gamepad: int) const *c::char;
+export fn get_gamepad_name(gamepad: int) str = return c::tostr(GetGamepadName(gamepad))!;
 
 // Set internal gamepad mappings (SDL_GameControllerDB)
 @symbol("SetGamepadMappings") fn SetGamepadMappings(*c::char) int;
+export fn set_gamepad_mappings(mappings: str) int = SetGamepadMappings(c::fromstr(mappings: str)!);
 
 // Check if a gamepad is available
 export @symbol("IsGamepadAvaible") fn is_gamepad_avaible(gamepad: int) bool;
-
-// Get gamepad internal name id
-export fn get_gamepad_name(gamepad: int) str = return c::tostr(GetGamepadName(gamepad))!;
 
 // Check if a gamepad button has been pressed once
 export @symbol("IsGamepadButtonPressed") fn is_gamepad_button_pressed(gamepad: int, button: int) bool;
@@ -731,9 +737,6 @@ export @symbol("GetGamepadAxisCount") fn get_gamepad_axis_count() int;
 
 // Get axis movement value for a gamepad axis
 export @symbol("GetGamepadAxisMovement") fn get_gamepad_axis_movement(gamepad: int, axis: int) f32;
-
-// Set internal gamepad mappings (SDL_GameControllerDB)
-export fn set_gamepad_mappings(mappings: str) int = SetGamepadMappings(c::fromstr(mappings: str)!);
 
 // Set gamepad vibration for both motors (duration in seconds)
 export @symbol("SetGamepadVibration") fn set_gamepad_vibration(gamepad: int, left_moto: f32, right_motor: f32, duration: f32) void;
@@ -829,75 +832,108 @@ export @symbol("GetGesturePinchAngle") fn get_gesture_pinch_angle() f32;
 export @symbol("SetShapesTexture") fn set_shapes_texture(texture: Texture2D, source: Rectangle) void;
 
 // Basic shapes drawing functions
-export @symbol("DrawPixel") fn draw_pixel(x: int, y: int, color: Color) void;
-export @symbol("DrawPixelV") fn draw_pixel_v(position: Vector2, color: Color) void;
-export @symbol("DrawLine") fn draw_line(start_x: int, start_y: int, end_x: int, end_y: int, color: Color) void;
-export @symbol("DrawLineV") fn draw_line_v(start_position: Vector2, end_position: Vector2, color: Color) void;
-export @symbol("DrawLineEx") fn draw_line_ex(start_position: Vector2, end_position: Vector2, thic: f32, color: Color) void;
-export @symbol("DrawLineStrip") fn draw_line_strip(points: *Vector2, point_count: int, color: Color) void;
-export @symbol("DrawLineBezier") fn draw_line_bezier(start_position: Vector2, end_position: Vector2, thic: f32, color: Color) void;
-export @symbol("DrawCircle") fn draw_circle(center_x: int, center_y: int, radius: f32, color: Color) void;
-export @symbol("DrawCircleSector") fn draw_circle_sector(center: Vector2, radius: f32, start_angle: f32, end_angle: f32, segments: int, color: Color) void;
-export @symbol("DrawCircleSectorLines") fn draw_circle_sector_lines(center: Vector2, radius: f32, start_angle: f32, end_angle: f32, segments: int, color: Color) void;
-export @symbol("DrawCircleGradient") fn draw_circle_gradient(center_x: int, center_y: int, radius: f32, color_1: Color, color_2: Color) void;
-export @symbol("DrawCircleV") fn draw_circle_v(center: Vector2, radius: f32, color: Color) void;
-export @symbol("DrawCircleLines") fn draw_circle_lines(center_x: int, center_y: int, radius: f32, color: Color) void;
-export @symbol("DrawCircleLinesV") fn draw_circle_lines_v(center: Vector2, radius: f32, color: Color) void;
-export @symbol("DrawEllipse") fn draw_ellipse(center_x: int, center_y: int, radius_h: f32, radius_v: f32, color: Color) void;
-export @symbol("DrawEllipseLines") fn draw_ellipse_lines(center_x: int, center_y: int, radius_h: f32, radius_v: f32, color: Color) void;
-export @symbol("DrawRing") fn draw_ring(center: Vector2, inner_radius: f32, outter_radius: f32, start_angle: f32, end_angle: f32, segments: int, color: Color) void;
-export @symbol("DrawRingLine") fn draw_ring_line(center: Vector2, inner_radius: f32, outter_radius: f32, start_angle: f32, end_angle: f32, segments: int, color: Color) void;
-export @symbol("DrawRectangle") fn draw_rectangle(x: int, y: int, w: int, h: int, color: Color) void;
-export @symbol("DrawRectangleV") fn draw_rectangle_v(position: Vector2, rectangle_size: Vector2, color: Color) void;
-export @symbol("DrawRectangleRec") fn draw_rectangle_rec(rec: Rectangle, color: Color) void;
-export @symbol("DrawRectanglePro") fn draw_rectangle_pro(rec: Rectangle, origin: Vector2, rotation: f32, color: Color) void;
-export @symbol("DrawRectangleGradientV") fn draw_rectangle_gradient_v(x: int, y: int, w: int, h: int, color_1: Color, color_2: Color) void;
-export @symbol("DrawRectangleGradientH") fn draw_rectangle_gradient_h(x: int, y: int, w: int, h: int, color_1: Color, color_2: Color) void;
-export @symbol("DrawRectangleGradientEx") fn draw_rectangle_gradient_ex(rec: Rectangle, color_1: Color, color_2: Color, color_3: Color, color_4: Color, ) void;
-export @symbol("DrawRectangleLines") fn draw_rectangle_lines(x: int, y: int, w: int, h: int, color: Color) void;
-export @symbol("DrawRectangleLinesEx") fn draw_rectangle_lines_ex(rec: Rectangle, line_thic: f32, color: Color) void;
-export @symbol("DrawRectangleRounded") fn draw_rectangle_rounded(rec: Rectangle, roundness: f32, segments: int, color: Color) void;
-export @symbol("DrawRectangleRoundedLines") fn draw_rectangle_rounded_lines(rec: Rectangle, roundness: f32, segments: int, line_thic: f32, color: Color) void;
-export @symbol("DrawTriangle") fn draw_triangle(v1: Vector2, v2: Vector2, v3: Vector2, color: Color) void;
+
+// Pixels
+export @symbol("DrawPixel")			fn draw_pixel(x: int, y: int, color: Color) void;
+export @symbol("DrawPixelV")			fn draw_pixel_v(position: Vector2, color: Color) void;
+
+// Lines
+export @symbol("DrawLine")			fn draw_line(start_x: int, start_y: int, end_x: int, end_y: int, color: Color) void;
+export @symbol("DrawLineV")			fn draw_line_v(start_position: Vector2, end_position: Vector2, color: Color) void;
+export @symbol("DrawLineEx")			fn draw_line_ex(start_position: Vector2, end_position: Vector2, thic: f32, color: Color) void;
+export @symbol("DrawLineStrip")			fn draw_line_strip(points: *Vector2, point_count: int, color: Color) void;
+export @symbol("DrawLineBezier")		fn draw_line_bezier(start_position: Vector2, end_position: Vector2, thic: f32, color: Color) void;
+
+// Circles
+export @symbol("DrawCircle")			fn draw_circle(center_x: int, center_y: int, radius: f32, color: Color) void;
+export @symbol("DrawCircleSector")		fn draw_circle_sector(center: Vector2, radius: f32, start_angle: f32, end_angle: f32, segments: int, color: Color) void;
+export @symbol("DrawCircleSectorLines")		fn draw_circle_sector_lines(center: Vector2, radius: f32, start_angle: f32, end_angle: f32, segments: int, color: Color) void;
+export @symbol("DrawCircleGradient")		fn draw_circle_gradient(center_x: int, center_y: int, radius: f32, color_1: Color, color_2: Color) void;
+export @symbol("DrawCircleV")			fn draw_circle_v(center: Vector2, radius: f32, color: Color) void;
+export @symbol("DrawCircleLines")		fn draw_circle_lines(center_x: int, center_y: int, radius: f32, color: Color) void;
+export @symbol("DrawCircleLinesV")		fn draw_circle_lines_v(center: Vector2, radius: f32, color: Color) void;
+
+// Ellipses
+export @symbol("DrawEllipse")			fn draw_ellipse(center_x: int, center_y: int, radius_h: f32, radius_v: f32, color: Color) void;
+export @symbol("DrawEllipseLines")		fn draw_ellipse_lines(center_x: int, center_y: int, radius_h: f32, radius_v: f32, color: Color) void;
+
+// Rings
+export @symbol("DrawRing")			fn draw_ring(center: Vector2, inner_radius: f32, outter_radius: f32, start_angle: f32, end_angle: f32, segments: int, color: Color) void;
+export @symbol("DrawRingLine")			fn draw_ring_line(center: Vector2, inner_radius: f32, outter_radius: f32, start_angle: f32, end_angle: f32, segments: int, color: Color) void;
+
+// Rectangles
+export @symbol("DrawRectangle")			fn draw_rectangle(x: int, y: int, w: int, h: int, color: Color) void;
+export @symbol("DrawRectangleV")		fn draw_rectangle_v(position: Vector2, rectangle_size: Vector2, color: Color) void;
+export @symbol("DrawRectangleRec")		fn draw_rectangle_rec(rec: Rectangle, color: Color) void;
+export @symbol("DrawRectanglePro")		fn draw_rectangle_pro(rec: Rectangle, origin: Vector2, rotation: f32, color: Color) void;
+export @symbol("DrawRectangleGradientV")	fn draw_rectangle_gradient_v(x: int, y: int, w: int, h: int, color_1: Color, color_2: Color) void;
+export @symbol("DrawRectangleGradientH")	fn draw_rectangle_gradient_h(x: int, y: int, w: int, h: int, color_1: Color, color_2: Color) void;
+export @symbol("DrawRectangleGradientEx")	fn draw_rectangle_gradient_ex(rec: Rectangle, color_1: Color, color_2: Color, color_3: Color, color_4: Color, ) void;
+export @symbol("DrawRectangleLines")		fn draw_rectangle_lines(x: int, y: int, w: int, h: int, color: Color) void;
+export @symbol("DrawRectangleLinesEx")		fn draw_rectangle_lines_ex(rec: Rectangle, line_thic: f32, color: Color) void;
+export @symbol("DrawRectangleRounded")		fn draw_rectangle_rounded(rec: Rectangle, roundness: f32, segments: int, color: Color) void;
+export @symbol("DrawRectangleRoundedLines")	fn draw_rectangle_rounded_lines(rec: Rectangle, roundness: f32, segments: int, line_thic: f32, color: Color) void;
+
+// Triangles
+export @symbol("DrawTriangle")			fn draw_triangle(v1: Vector2, v2: Vector2, v3: Vector2, color: Color) void;
+export @symbol("DrawTriangleLines")		fn draw_triangle_lines(v1: Vector2, v2: Vector2, v3: Vector2, color: Color) void;
+export @symbol("DrawTriangleFan")		fn draw_triangle_fan(points: *Vector2, point_count: int, color: Color) void;
+export @symbol("DrawTriangleStrip")		fn draw_triangle_strip(points: *Vector2, point_count: int, color: Color) void;
 export fn draw_triangle_v(points: Triangle, color: Color) void = {
 	draw_triangle(points.point_1, points.point_2, points.point_3, color);
 };
-export @symbol("DrawTriangleLines") fn draw_triangle_lines(v1: Vector2, v2: Vector2, v3: Vector2, color: Color) void;
-export @symbol("DrawTriangleFan") fn draw_triangle_fan(points: *Vector2, point_count: int, color: Color) void;
-export @symbol("DrawTriangleStrip") fn draw_triangle_strip(points: *Vector2, point_count: int, color: Color) void;
-export @symbol("DrawPoly") fn draw_poly(center: Vector2, sides: int, radius: f32, rotation: f32, color: Color) void;
-export @symbol("DrawPolyLines") fn draw_poly_lines(center: Vector2, sides: int, radius: f32, rotation: f32, color: Color) void;
-export @symbol("DrawPolyLinesEx") fn draw_poly_lines_ex(center: Vector2, sides: int, radius: f32, rotation: f32, line_thic: f32,color: Color) void;
 
- // Splines drawing functions
-export @symbol("DrawSplineLinear") fn draw_spline_linear(points: *Vector2, point_count: int, thick: f32, color: Color) void;                                                 // Draw spline: Linear, minimum 2 points
-export @symbol("DrawSplineBasis") fn draw_spline_basis(points: *Vector2, point_count: int, thick: f32, color: Color) void;                                                   // Draw spline: B-Spline, minimum 4 points
-export @symbol("DrawSplineCatmullRom") fn draw_spline_catmull_rom(points: *Vector2, point_count: int, thick: f32, color: Color) void;                                        // Draw spline: Catmull-Rom, minimum 4 points
-export @symbol("DrawSplineBezierQuadratic") fn draw_spline_bezier_quadratic(points: *Vector2, point_count: int, thick: f32, color: Color) void;                              // Draw spline: Quadratic Bezier, minimum 3 points (1 control point): [p1, c2, p3, c4...]
-export @symbol("DrawSplineBezierCubic") fn draw_spline_cubic(points: *Vector2, point_count: int, thick: f32, color: Color) void;                                             // Draw spline: Cubic Bezier, minimum 4 points (2 control points): [p1, c2, c3, p4, c5, c6...]
-export @symbol("DrawSplineSegmentLinear") fn draw_spline_segment_linear(p1: Vector2, p2: Vector2, thick: f32, color: Color) void;                                            // Draw spline segment: Linear, 2 points
-export @symbol("DrawSplineSegmentBasis") fn draw_spline_segment_basis(p1: Vector2, p2: Vector2, p3: Vector2, p4: Vector2, thick: f32, color: Color) void;                    // Draw spline segment: B-Spline, 4 points
-export @symbol("DrawSplineSegmentCatmullRom") fn draw_spline_segment_catmull_rom(p1: Vector2, p2: Vector2, p3: Vector2, p4: Vector2, thick: f32, color: Color) void;         // Draw spline segment: Catmull-Rom, 4 points
-export @symbol("DrawSplineSegmentBezierQuadratic") fn draw_spline_segment_bezier_quadratic(p1: Vector2, c2: Vector2, p3: Vector2, thick: f32, color: Color) void;            // Draw spline segment: Quadratic Bezier, 2 points, 1 control point
-export @symbol("DrawSplineSegmentBezierCubic") fn draw_spline_segment_bezier_cubic(p1: Vector2, c2: Vector2, c3: Vector2, p4: Vector2, thick: f32, color: Color) void;       // Draw spline segment: Cubic Bezier, 2 points, 2 control points
+// Polygons
+export @symbol("DrawPoly")		fn draw_poly(center: Vector2, sides: int, radius: f32, rotation: f32, color: Color) void;
+export @symbol("DrawPolyLines")		fn draw_poly_lines(center: Vector2, sides: int, radius: f32, rotation: f32, color: Color) void;
+export @symbol("DrawPolyLinesEx")	fn draw_poly_lines_ex(center: Vector2, sides: int, radius: f32, rotation: f32, line_thic: f32,color: Color) void;
+
+// Splines drawing functions
+
+// Draw spline: Linear, minimum 2 points
+export @symbol("DrawSplineLinear")			fn draw_spline_linear(points: *Vector2, point_count: int, thick: f32, color: Color) void;
+// Draw spline: B-Spline, minimum 4 points
+export @symbol("DrawSplineBasis")			fn draw_spline_basis(points: *Vector2, point_count: int, thick: f32, color: Color) void;
+// Draw spline: Catmull-Rom, minimum 4 points
+export @symbol("DrawSplineCatmullRom")			fn draw_spline_catmull_rom(points: *Vector2, point_count: int, thick: f32, color: Color) void;
+// Draw spline: Quadratic Bezier, minimum 3 points (1 control point): [p1, c2, p3, c4...]
+export @symbol("DrawSplineBezierQuadratic")		fn draw_spline_bezier_quadratic(points: *Vector2, point_count: int, thick: f32, color: Color) void;
+// Draw spline: Cubic Bezier, minimum 4 points (2 control points): [p1, c2, c3, p4, c5, c6...]
+export @symbol("DrawSplineBezierCubic")			fn draw_spline_cubic(points: *Vector2, point_count: int, thick: f32, color: Color) void;
+// Draw spline segment: Linear, 2 points
+export @symbol("DrawSplineSegmentLinear")		fn draw_spline_segment_linear(p1: Vector2, p2: Vector2, thick: f32, color: Color) void;
+// Draw spline segment: B-Spline, 4 points
+export @symbol("DrawSplineSegmentBasis")		fn draw_spline_segment_basis(p1: Vector2, p2: Vector2, p3: Vector2, p4: Vector2, thick: f32, color: Color) void;
+// Draw spline segment: Catmull-Rom, 4 points
+export @symbol("DrawSplineSegmentCatmullRom")		fn draw_spline_segment_catmull_rom(p1: Vector2, p2: Vector2, p3: Vector2, p4: Vector2, thick: f32, color: Color) void;
+// Draw spline segment: Quadratic Bezier, 2 points, 1 control point
+export @symbol("DrawSplineSegmentBezierQuadratic")	fn draw_spline_segment_bezier_quadratic(p1: Vector2, c2: Vector2, p3: Vector2, thick: f32, color: Color) void;
+// Draw spline segment: Cubic Bezier, 2 points, 2 control points
+export @symbol("DrawSplineSegmentBezierCubic")		fn draw_spline_segment_bezier_cubic(p1: Vector2, c2: Vector2, c3: Vector2, p4: Vector2, thick: f32, color: Color) void; 
 
 // Spline segment point evaluation functions, for a given t [0.0f .. 1.0f]
-export @symbol("GetSplinePointLinear") fn get_spline_point_linear(start_pos: Vector2, end_pos: Vector2, t: f32) Vector2;                          // Get (evaluate) spline point: Linear
-export @symbol("GetSplinePointBasis") fn get_spline_point_basis(p1: Vector2, p2: Vector2, p3: Vector2, p4: Vector2, t: f32) Vector2;              // Get (evaluate) spline point: B-Spline
-export @symbol("GetSplinePointCatmullRom") fn get_spline_point_catmull_rom(p1: Vector2, p2: Vector2, p3: Vector2, p4: Vector2, t: f32) Vector2;   // Get (evaluate) spline point: Catmull-Rom
-export @symbol("GetSplinePointBezierQuad") fn get_spline_point_bezier_quad(p1: Vector2, c2: Vector2, p3: Vector2, t: f32) Vector2;                // Get (evaluate) spline point: Quadratic Bezier
-export @symbol("GetSplinePointBezierCubic") fn get_spline_point_bezier_cubic(p1: Vector2, c2: Vector2, c3: Vector2, p4: Vector2, t: f32) Vector2; // Get (evaluate) spline point: Cubic Bezier
+
+// Get (evaluate) spline point: Linear
+export @symbol("GetSplinePointLinear")		fn get_spline_point_linear(start_pos: Vector2, end_pos: Vector2, t: f32) Vector2;                       
+// Get (evaluate) spline point: B-Spline
+export @symbol("GetSplinePointBasis")		fn get_spline_point_basis(p1: Vector2, p2: Vector2, p3: Vector2, p4: Vector2, t: f32) Vector2;
+// Get (evaluate) spline point: Catmull-Rom
+export @symbol("GetSplinePointCatmullRom")	fn get_spline_point_catmull_rom(p1: Vector2, p2: Vector2, p3: Vector2, p4: Vector2, t: f32) Vector2;
+// Get (evaluate) spline point: Quadratic Bezier
+export @symbol("GetSplinePointBezierQuad")	fn get_spline_point_bezier_quad(p1: Vector2, c2: Vector2, p3: Vector2, t: f32) Vector2;
+// Get (evaluate) spline point: Cubic Bezier
+export @symbol("GetSplinePointBezierCubic")	fn get_spline_point_bezier_cubic(p1: Vector2, c2: Vector2, c3: Vector2, p4: Vector2, t: f32) Vector2;	
 
 // Basic shapes collision detection functions
-export @symbol("CheckCollisionRecs") fn check_collision_recs(rec_1: Rectangle, rec_2: Rectangle) bool;
-export @symbol("CheckCollisionCircles") fn check_collision_circles(center_1: Vector2, radius_1: f32, center_2: Vector2, radius_2: f32) bool;
-export @symbol("CheckCollisionCirclesRec") fn check_collision_circles_rec(center: Vector2, radius: f32, rectangle: Rectangle) bool;
-export @symbol("CheckCollisionPointCircles") fn check_collision_point_circles(point: Vector2, center: Vector2, radius: f32) bool;
-export @symbol("CheckCollisionPointTriangle") fn check_collision_point_triangle(point: Vector2, v1: Vector2, v2: Vector2, v3: Vector2) bool;
-export @symbol("CheckCollisionPointPoly") fn check_collision_point_poly(point: Vector2, points: *Vector2, point_count: int) bool;
-export @symbol("CheckCollisionLines") fn check_collision_lines(pos_1_start: Vector2, pos_1_end: Vector2, pos_2_start: Vector2, pos_2_end: Vector2, collision_point: *Vector2) bool;
-export @symbol("CheckCollisionPointLine") fn check_collision_point_line(point: Vector2, p1: Vector2, p2: Vector2, threshold: int) bool;
-export @symbol("GetCollisionRec") fn get_collision_rec(rectangle_1: Rectangle, rectangle_2: Rectangle) Rectangle;
+export @symbol("CheckCollisionRecs")		fn check_collision_recs(rec_1: Rectangle, rec_2: Rectangle) bool;
+export @symbol("CheckCollisionCircles")		fn check_collision_circles(center_1: Vector2, radius_1: f32, center_2: Vector2, radius_2: f32) bool;
+export @symbol("CheckCollisionCirclesRec")	fn check_collision_circles_rec(center: Vector2, radius: f32, rectangle: Rectangle) bool;
+export @symbol("CheckCollisionPointCircles")	fn check_collision_point_circles(point: Vector2, center: Vector2, radius: f32) bool;
+export @symbol("CheckCollisionPointTriangle")	fn check_collision_point_triangle(point: Vector2, v1: Vector2, v2: Vector2, v3: Vector2) bool;
+export @symbol("CheckCollisionPointPoly")	fn check_collision_point_poly(point: Vector2, points: *Vector2, point_count: int) bool;
+export @symbol("CheckCollisionLines")		fn check_collision_lines(pos_1_start: Vector2, pos_1_end: Vector2, pos_2_start: Vector2, pos_2_end: Vector2, collision_point: *Vector2) bool;
+export @symbol("CheckCollisionPointLine")	fn check_collision_point_line(point: Vector2, p1: Vector2, p2: Vector2, threshold: int) bool;
+export @symbol("GetCollisionRec")		fn get_collision_rec(rectangle_1: Rectangle, rectangle_2: Rectangle) Rectangle;
 
 // module: rtextures
 // Image loading functions
@@ -905,18 +941,21 @@ export @symbol("GetCollisionRec") fn get_collision_rec(rectangle_1: Rectangle, r
 export fn load_image(filename: str) Image = return LoadImage(c::fromstr(filename: str)!);
 
 // Texture loading functions
+
 @symbol("LoadTexture") fn LoadTexture(*c::char) Texture2D;
 export fn load_texture(filename: str) Texture2D = return LoadTexture(c::fromstr(filename: str)!);
-export @symbol("LoadTextureFromImage") fn load_texture_from_image(image: Image) Texture2D;
-export @symbol("UnloadTexture") fn unload_texture(texture: Texture2D) void;
+
+export @symbol("LoadTextureFromImage")	fn load_texture_from_image(image: Image) Texture2D;
+export @symbol("UnloadTexture")		fn unload_texture(texture: Texture2D) void;
 
 // Texture drawing functions
-export @symbol("DrawTexture") fn draw_texture(texture: Texture, x: int, y: int, tint: Color) void;
-export @symbol("DrawTextureV") fn draw_texture_v(texture: Texture, position: Vector2, tint: Color) void;
-export @symbol("DrawTextureEx") fn draw_texture_ex(texture: Texture, position: Vector2, rotation: f32, scale: f32, tint: Color) void;
-export @symbol("DrawTextureRec") fn draw_texture_rec(texture: Texture, source: Rectangle, position: Vector2, tint: Color) void;
-export @symbol("DrawTexturePro") fn draw_texture_pro(texture: Texture, source: Rectangle, dest: Rectangle, origin: Vector2, rotation: f32, tint: Color) void;
-export @symbol("DrawTextureNPatch") fn draw_texture_npatch(texture: Texture, npatch_info: NPatchInfo, dest: Rectangle, origin: Vector2, rotation: f32, tint: Color) void;
+
+export @symbol("DrawTexture")		fn draw_texture(texture: Texture, x: int, y: int, tint: Color) void;
+export @symbol("DrawTextureV")		fn draw_texture_v(texture: Texture, position: Vector2, tint: Color) void;
+export @symbol("DrawTextureEx")		fn draw_texture_ex(texture: Texture, position: Vector2, rotation: f32, scale: f32, tint: Color) void;
+export @symbol("DrawTextureRec")	fn draw_texture_rec(texture: Texture, source: Rectangle, position: Vector2, tint: Color) void;
+export @symbol("DrawTexturePro")	fn draw_texture_pro(texture: Texture, source: Rectangle, dest: Rectangle, origin: Vector2, rotation: f32, tint: Color) void;
+export @symbol("DrawTextureNPatch")	fn draw_texture_npatch(texture: Texture, npatch_info: NPatchInfo, dest: Rectangle, origin: Vector2, rotation: f32, tint: Color) void;
 
 // Color/Pixel related functions
 export @symbol("GetColor") fn get_color(color: u32) Color;
