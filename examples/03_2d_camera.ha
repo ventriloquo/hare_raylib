@@ -1,10 +1,8 @@
-// -*- default-directory: "~/Desktop/git/hare_raylib/"; compile-command: "make 03" -*-
 use raylib::*;
 use math::*;
 
 // TODO: implement what's required to generate random "buildings" on the background
 // https://github.com/raysan5/raylib/blob/master/examples/core/core_2d_camera.c
-def MAX_BUILDINGS = 100;
 
 export fn main() void = {
     const screen_width:  int = 800;
