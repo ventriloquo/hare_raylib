@@ -1,4 +1,3 @@
-// -*- default-directory: "~/Desktop/git/hare_raylib/"; compile-command: "make 01" -*-
 use raylib::*;
 
 export fn main() int = {
