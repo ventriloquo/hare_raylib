@@ -29,6 +29,20 @@ export type Vector4 = struct { x: f32, y: f32, z: f32, w: f32 };
 // Same as 4D Vector
 export type Quaternion = Vector4;
 
+// Ray
+export type Ray = struct {
+	position: Vector3,
+	direction: Vector3,
+};
+
+// Ray Collision
+export type RayCollision = struct {
+	hit: bool,
+	distance: f32,
+	point: Vector3,
+	normal: Vector3,
+};
+
 // Matrix
 export type Matrix = struct {
 	m0: f32, m4: f32, m8: f32, m12: f32,
@@ -168,7 +182,6 @@ export type rAudioProcessor = *rAudioProcessor;
 export type AudioStream = struct {
 	buffer:		rAudioBuffer,
 	processor:	rAudioProcessor,
-
 	sample_rate:	u32,
 	sample_size:	u32,
 	channels:	u32,
