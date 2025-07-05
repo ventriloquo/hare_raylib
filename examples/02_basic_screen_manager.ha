@@ -1,4 +1,3 @@
-// -*- default-directory: "~/Desktop/git/hare_raylib/"; compile-command: "make 02" -*-
 use raylib::*;
 
 type game_screen = enum {
@@ -26,20 +25,20 @@ switch (current_screen) {
 	if (frames_counter > 120) current_screen = game_screen::TITLE;
 	case game_screen::TITLE =>
 	     if (is_key_pressed(KeyboardKey::KEY_ENTER)
-			       || is_gesture_detected(Gestures::GESTURE_TAP)) current_screen = game_screen::GAMEPLAY;
+	     || is_gesture_detected(Gestures::GESTURE_TAP)) current_screen = game_screen::GAMEPLAY;
 	case game_screen::GAMEPLAY =>
 	     if (is_key_pressed(KeyboardKey::KEY_ENTER)
-			       || is_gesture_detected(Gestures::GESTURE_TAP)) current_screen = game_screen::ENDING;
+	     || is_gesture_detected(Gestures::GESTURE_TAP)) current_screen = game_screen::ENDING;
 	case game_screen::ENDING =>
 	     if (is_key_pressed(KeyboardKey::KEY_ENTER)
-			       || is_gesture_detected(Gestures::GESTURE_TAP)) current_screen = game_screen::TITLE;
+	     || is_gesture_detected(Gestures::GESTURE_TAP)) current_screen = game_screen::TITLE;
 	case => break;
 };
 
 begin_drawing();	
 clear_background(RAYWHITE);
 
-switch(current_screen) {
+switch (current_screen) {
 	case game_screen::LOGO =>
 	     draw_text("LOGO SCREEN", 20, 20, 40, LIGHTGRAY);
 	     draw_text("WAIT for 2 SECONDS...", 290, 220, 20, GRAY);
