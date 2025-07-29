@@ -1,3 +1,4 @@
+// -*- default-directory: "/home/john/Desktop/git/raylib.ha" -*-
 ////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                        //
 // '########:::::'###::::'##:::'##:'##:::::::'####:'########:::::::'##::::'##::::'###:::: //
@@ -486,13 +487,17 @@ export const MAGENTA			= Color { r = 255, g = 0,   b = 255, a = 255 };
 export const RAYWHITE			= Color { r = 245, g = 245, b = 245, a = 255 };
 
 // Window-Related functions
+
 @symbol("InitWindow") fn InitWindow(int, int, *c::char) void;
+// Initialize window and OpenGL context
 export fn init_window(width: int, height: int, title: str) void = InitWindow(width, height, c::fromstr(title: str)!);
 
 @symbol("SetWindowTitle") fn SetWindowTitle(*c::char) void;
+// Set title for window
 export fn set_window_title(title: str) void = SetWindowTitle(c::fromstr(title: str)!);
 
 @symbol("GetMonitorName") fn GetMonitorName(monitor: int) const *c::char;
+// Get the human-readable, UTF-8 encoded name of the specified monitor
 export fn get_monitor_name(monitor: int) str = return c::tostr(GetMonitorName(monitor))!;
 
 export @symbol("CloseWindow")			fn close_window() void;
@@ -537,11 +542,20 @@ export @symbol("GetWindowPosition")		fn get_window_position() Vector2;
 export @symbol("GetWindowScaleDPI")		fn get_window_scale_dpi() Vector2;
 export @symbol("EnableEventWaiting")		fn enable_event_waiting() void;
 export @symbol("DisableEventWaiting")		fn disable_event_waiting() void;
+// Get native window handle
+// WARN: NOT TESTED
+export @symbol("GetWindowHandle")		fn get_window_handle() opaque;
 
-// TODO:
-// *GetWindowHandle
-// SetClipboardText
-// *GetClipboardText
+@symbol("SetClipboardText")			fn SetClipboardText(*c::char) void;
+// Set clipboard text content
+export						fn set_clipboard_text(text: str) void = SetClipboardText(c::fromstr(text: str)!);
+
+@symbol("GetClipboardText")			fn GetClipboardText() *c::char;
+// Get clipboard text content
+export	fn get_clipboard_text() str = c::tostr(GetClipboardText())!;
+
+// NOTE: Find where this is "defined"
+// export @symbol("GetClipboardImage") fn get_clipboard_image() Image;
 
 // Cursor-Related functions
 export @symbol("ShowCursor")		fn show_cursor() void;
@@ -606,7 +620,9 @@ export @symbol("GetWorldToScreen2D")	fn get_world_to_screen_2d(position: Vector2
 export @symbol("SetTargetFPS")	fn set_target_fps(fps: int) void;
 // Gets the current frame-rate
 export @symbol("GetFPS")	fn get_fps() int;
+// Get time in seconds for last frame drawn (delta time)
 export @symbol("GetFrameTime")	fn get_frame_time() f32;
+// Get elapsed time in seconds since [[init_window]]
 export @symbol("GetTime")	fn get_time() f64;
 
 // Custom frame control functions
