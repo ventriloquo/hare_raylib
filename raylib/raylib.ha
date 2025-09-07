@@ -488,11 +488,11 @@ export const RAYWHITE			= Color { r = 245, g = 245, b = 245, a = 255 };
 
 // Window-Related functions
 
-@symbol("InitWindow") fn InitWindow(int, int, *c::char) void;
+@symbol("InitWindow") fn InitWindow(width: int, height: int, title: *c::char) void;
 // Initialize window and OpenGL context
 export fn init_window(width: int, height: int, title: str) void = InitWindow(width, height, c::fromstr(title: str)!);
 
-@symbol("SetWindowTitle") fn SetWindowTitle(*c::char) void;
+@symbol("SetWindowTitle") fn SetWindowTitle(title: *c::char) void;
 // Set title for window
 export fn set_window_title(title: str) void = SetWindowTitle(c::fromstr(title: str)!);
 
@@ -546,7 +546,7 @@ export @symbol("DisableEventWaiting")		fn disable_event_waiting() void;
 // WARN: NOT TESTED
 export @symbol("GetWindowHandle")		fn get_window_handle() opaque;
 
-@symbol("SetClipboardText")			fn SetClipboardText(*c::char) void;
+@symbol("SetClipboardText")			fn SetClipboardText(text: *c::char) void;
 // Set clipboard text content
 export						fn set_clipboard_text(text: str) void = SetClipboardText(c::fromstr(text: str)!);
 
@@ -649,10 +649,10 @@ export @symbol("GetRandomValue")	fn get_random_value(min: int, max: int) void;
 // void UnloadRandomSequence(int *sequence); // Unload random values sequence
 
 // Misc. functions
-@symbol("TakeScreenshot") fn TakeScreenshot(*c::char) void;
+@symbol("TakeScreenshot") fn TakeScreenshot(filename: *c::char) void;
 export fn take_screenshot(filename: str) void = TakeScreenshot(c::fromstr(filename: str)!);
 
-@symbol("OpenURL") fn OpenURL(*c::char) void;
+@symbol("OpenURL") fn OpenURL(url: *c::char) void;
 export fn open_url(url: str) void = OpenURL(c::fromstr(url: str)!);
 
 // // NOTE: Following functions implemented in module [utils]
@@ -740,7 +740,7 @@ export @symbol("SetExitKey")		fn set_exit_key(key: int) void;
 export fn get_gamepad_name(gamepad: int) str = return c::tostr(GetGamepadName(gamepad))!;
 
 // Set internal gamepad mappings (SDL_GameControllerDB)
-@symbol("SetGamepadMappings") fn SetGamepadMappings(*c::char) int;
+@symbol("SetGamepadMappings") fn SetGamepadMappings(mapping: *c::char) int;
 export fn set_gamepad_mappings(mappings: str) int = SetGamepadMappings(c::fromstr(mappings: str)!);
 
 // Check if a gamepad is available
@@ -966,12 +966,12 @@ export @symbol("GetCollisionRec")		fn get_collision_rec(rectangle_1: Rectangle, 
 
 // module: rtextures
 // Image loading functions
-@symbol("LoadImage") fn LoadImage(*c::char) Image;
+@symbol("LoadImage") fn LoadImage(image: *c::char) Image;
 export fn load_image(filename: str) Image = return LoadImage(c::fromstr(filename: str)!);
 
 // Texture loading functions
 
-@symbol("LoadTexture") fn LoadTexture(*c::char) Texture2D;
+@symbol("LoadTexture") fn LoadTexture(texture: *c::char) Texture2D;
 export fn load_texture(filename: str) Texture2D = return LoadTexture(c::fromstr(filename: str)!);
 
 export @symbol("LoadTextureFromImage")	fn load_texture_from_image(image: Image) Texture2D;
@@ -1008,7 +1008,7 @@ export @symbol("GetPixelDataSize")	fn get_pixel_data_size(width: int, height: in
 
 // module: rtext
 // Text-Drawing functions
-@symbol("DrawText") fn DrawText(*c::char, int, int, int, Color) void;
+@symbol("DrawText") fn DrawText(text: *c::char, x: int, y: int, text_size: int, color: Color) void;
 export fn draw_text(title: str, x: int, y: int, text_size: int, color: Color) void = DrawText(c::fromstr(title: str)!, x, y, text_size, color);
 
 export @symbol("DrawFPS") fn draw_fps(x: int, y: int) void;
@@ -1025,16 +1025,16 @@ export @symbol("SetMasterVolume")	fn set_master_volume(volume: f32) void;
 export @symbol("GetMasterVolume")	fn get_master_volume() f32;
 
 // Wave/Sound loading/unloading functions
-@symbol("LoadWave") fn LoadWave(*c::char) Wave;
+@symbol("LoadWave") fn LoadWave(wave: *c::char) Wave;
 export fn load_wave(filename: str) Wave = return LoadWave(c::fromstr(filename: str)!);
 
-@symbol("LoadSound") fn LoadSound(*c::char) Sound;
+@symbol("LoadSound") fn LoadSound(sound: *c::char) Sound;
 export fn load_sound(filename: str) Sound = return LoadSound(c::fromstr(filename: str)!);
 
-@symbol("ExportWave") fn ExportWave(Wave, *c::char) bool;
+@symbol("ExportWave") fn ExportWave(wave: Wave, filename: *c::char) bool;
 export fn export_wave(wave: Wave, filename: str) bool = ExportWave(wave, c::fromstr(filename: str)!);
 
-@symbol("ExportWaveAsCode") fn ExportWaveAsCode(Wave, *c::char) bool;
+@symbol("ExportWaveAsCode") fn ExportWaveAsCode(wave: Wave, filename: *c::char) bool;
 export fn export_wave_as_code(wave: Wave, filename: str) bool = ExportWaveAsCode(wave, c::fromstr(filename: str)!);
 
 export @symbol("IsWaveReady")		fn is_wave_ready(wave: Wave) bool;
@@ -1062,12 +1062,12 @@ export @symbol("LoadWaveSamples")	fn load_wave_samples(wave: Wave) *f32;
 export @symbol("UnloadWaveSamples")	fn unload_wave_samples(samples: *f32) void;
 
 // Music management functions
-@symbol("LoadMusicStream") fn LoadMusicStream(*c::char) Music;
+@symbol("LoadMusicStream") fn LoadMusicStream(filename: *c::char) Music;
 export fn load_music_stream(filename: str) Music = return LoadMusicStream(c::fromstr(filename: str)!);
 
-@symbol("LoadMusicStreamFromMemory") fn LoadMusicStreamFromMemory(*c::char, *c::char, int) Music;
-export fn load_music_stream_from_memory(filetype: str, data: str, datasize: int) Music = { 
-	return LoadMusicStreamFromMemory(c::fromstr(filetype: str)!, c::fromstr(data: str)!, datasize);
+@symbol("LoadMusicStreamFromMemory") fn LoadMusicStreamFromMemory(filetype: *c::char, data: *c::char, data_size: int) Music;
+export fn load_music_stream_from_memory(filetype: str, data: str, data_size: int) Music = {
+	return LoadMusicStreamFromMemory(c::fromstr(filetype: str)!, c::fromstr(data: str)!, data_size);
 };
 
 export @symbol("IsMusicReady")		fn is_music_ready(music: Music) bool;
