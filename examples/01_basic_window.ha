@@ -11,21 +11,23 @@ export fn main() int = {
 		a=0xFF,
 	};
 
-	const yellow = Color {
-		r=0xFF,
-		g=0xDD,
-		b=0x33,
+	const fg = Color {
+		r=0xEE,
+		g=0xEE,
+		b=0xEE,
 		a=0xFF,
 	};
-	
+
 	init_window(screen_width, screen_height, "Raylib [core] example - basic window");
 	set_target_fps(60);
-	
+
+	const text: str = "Raylib Rocks";
+	const font_size: int = 30;
+
 	for (!window_should_close()) {
 		begin_drawing();
 		clear_background(bg);
-		draw_text("Here's what you had on your clipboard:", 0, 0, 30, yellow);
-		draw_text(get_clipboard_text(), 0, 60, 20, yellow);
+		draw_text(text, screen_width/ 2 - (measure_text(text, font_size)/2), screen_height/2, font_size, fg);
 		end_drawing();
 	};
 

@@ -1,4 +1,3 @@
-// -*- default-directory: "/home/john/Desktop/git/raylib.ha" -*-
 ////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                        //
 // '########:::::'###::::'##:::'##:'##:::::::'####:'########:::::::'##::::'##::::'###:::: //
@@ -12,9 +11,9 @@
 //                                                                                        //
 /////////////////// Raylib bindings for the Hare programming language //////////////////////
 //
-// Author: Tukain <github.com/ventriloquo>
+// Author: Tukain <codeberg.org/tukain>
 //
-// This is an attempt at creating something programming-related as a guy that's not a programmer.
+// This is an attempt at creating something programming-related from a guy that's not a programmer.
 
 use types::c;
 
@@ -459,31 +458,57 @@ export type NPatchLayout = enum {
 
 // Color definitions
 
+// #c8c8c8ff
 export const LIGHTGRAY			= Color { r = 200, g = 200, b = 200, a = 255 };
+// #828282ff
 export const GRAY			= Color { r = 130, g = 130, b = 130, a = 255 };
+// #505050ff
 export const DARKGRAY			= Color { r = 80,  g = 80,  b = 80,  a = 255 };
+// #fdf900ff
 export const YELLOW			= Color { r = 253, g = 249, b = 0,   a = 255 };
+// #ffcb00ff
 export const GOLD			= Color { r = 255, g = 203, b = 0,   a = 255 };
+// #ffa100ff
 export const ORANGE			= Color { r = 255, g = 161, b = 0,   a = 255 };
+// #ff6dc2ff
 export const PINK			= Color { r = 255, g = 109, b = 194, a = 255 };
+// #e62937ff
 export const RED			= Color { r = 230, g = 41,  b = 55,  a = 255 };
+// #be2137ff
 export const MAROON			= Color { r = 190, g = 33,  b = 55,  a = 255 };
+// #00e430ff
 export const GREEN			= Color { r = 0,   g = 228, b = 48,  a = 255 };
+// #009e2fff
 export const LIME			= Color { r = 0,   g = 158, b = 47,  a = 255 };
+// #00752cff
 export const DARKGREEN			= Color { r = 0,   g = 117, b = 44,  a = 255 };
+// #66bfffff
 export const SKYBLUE			= Color { r = 102, g = 191, b = 255, a = 255 };
+// #0079f1ff
 export const BLUE			= Color { r = 0,   g = 121, b = 241, a = 255 };
+// #0052acff
 export const DARKBLUE			= Color { r = 0,   g = 82,  b = 172, a = 255 };
+// #c87affff
 export const PURPLE			= Color { r = 200, g = 122, b = 255, a = 255 };
+// #873cbeff
 export const VIOLET			= Color { r = 135, g = 60,  b = 190, a = 255 };
+// #701f7eff
 export const DARKPURPLE			= Color { r = 112, g = 31,  b = 126, a = 255 };
+// #d3b083ff
 export const BEIGE			= Color { r = 211, g = 176, b = 131, a = 255 };
+// #7f6a4fff
 export const BROWN			= Color { r = 127, g = 106, b = 79,  a = 255 };
+// #4c3f2fff
 export const DARKBROWN			= Color { r = 76,  g = 63,  b = 47,  a = 255 };
+// #ffffffff
 export const WHITE			= Color { r = 255, g = 255, b = 255, a = 255 };
+// #000000ff
 export const BLACK			= Color { r = 0,   g = 0,   b = 0,   a = 255 };
-export const BLANK			= Color { r = 0,   g = 0,   b = 0,   a = 0 };  
+// #00000000
+export const BLANK			= Color { r = 0,   g = 0,   b = 0,   a = 0 };
+// #ff00ffff
 export const MAGENTA			= Color { r = 255, g = 0,   b = 255, a = 255 };
+// #f5f5f5ff
 export const RAYWHITE			= Color { r = 245, g = 245, b = 245, a = 255 };
 
 // Window-Related functions
@@ -643,10 +668,10 @@ export @symbol("WaitTime")		fn wait_time(seconds: f64) void;
 export @symbol("SetRandomSeed")		fn set_random_seed(seed: u32) void;
 // Get a random value between min and max (both included)
 export @symbol("GetRandomValue")	fn get_random_value(min: int, max: int) void;
-
-// TODO:
-// int *LoadRandomSequence(unsigned int count, int min, int max); // Load random values sequence, no values repeated
-// void UnloadRandomSequence(int *sequence); // Unload random values sequence
+// Load random values sequence, no values repeated
+export @symbol("LoadRandomSequence")	fn load_random_sequence(count: u32, min: int, max: int) *int; // WARN: I don't know if this works
+// Unload random values sequence
+export @symbol("UnloadRandomSequence")	fn unload_random_sequence(sequence: *int) void; // WARN: I don't know if this works
 
 // Misc. functions
 @symbol("TakeScreenshot") fn TakeScreenshot(filename: *c::char) void;
@@ -678,6 +703,8 @@ export fn open_url(url: str) void = OpenURL(c::fromstr(url: str)!);
 // ExportDataAsCode
 // *LoadFileText
 // UnloadFileText
+@symbol("SaveFileText")	fn SaveFileText(filename: *c::char, text: *c::char) bool;
+export fn save_file_text(filename: str, text: str) bool = SaveFileText(c::fromstr(filename: str)!, c::fromstr(text: str)!);
 // SaveFileText
 // //------------------------------------------------------------------
 
@@ -863,58 +890,101 @@ export @symbol("SetShapesTexture") fn set_shapes_texture(texture: Texture2D, sou
 // Basic shapes drawing functions
 
 // Pixels
+
+// Draw a pixel using geometry [Can be slow, use with care]
 export @symbol("DrawPixel")			fn draw_pixel(x: int, y: int, color: Color) void;
+// Draw a pixel using geometry (Vector version) [Can be slow, use with care]
 export @symbol("DrawPixelV")			fn draw_pixel_v(position: Vector2, color: Color) void;
 
 // Lines
+
+// Draw a line
 export @symbol("DrawLine")			fn draw_line(start_x: int, start_y: int, end_x: int, end_y: int, color: Color) void;
+// Draw a line (using gl lines)
 export @symbol("DrawLineV")			fn draw_line_v(start_position: Vector2, end_position: Vector2, color: Color) void;
+// Draw a line (using triangles/quads)
 export @symbol("DrawLineEx")			fn draw_line_ex(start_position: Vector2, end_position: Vector2, thic: f32, color: Color) void;
+// Draw lines sequence (using gl lines)
 export @symbol("DrawLineStrip")			fn draw_line_strip(points: *Vector2, point_count: int, color: Color) void;
+// Draw line segment cubic-bezier in-out interpolation
 export @symbol("DrawLineBezier")		fn draw_line_bezier(start_position: Vector2, end_position: Vector2, thic: f32, color: Color) void;
 
 // Circles
+
+// Draw a color-filled circle
 export @symbol("DrawCircle")			fn draw_circle(center_x: int, center_y: int, radius: f32, color: Color) void;
+// Draw a piece of a circle
 export @symbol("DrawCircleSector")		fn draw_circle_sector(center: Vector2, radius: f32, start_angle: f32, end_angle: f32, segments: int, color: Color) void;
+// Draw circle sector outline
 export @symbol("DrawCircleSectorLines")		fn draw_circle_sector_lines(center: Vector2, radius: f32, start_angle: f32, end_angle: f32, segments: int, color: Color) void;
+// Draw a gradient-filled circle
 export @symbol("DrawCircleGradient")		fn draw_circle_gradient(center_x: int, center_y: int, radius: f32, color_1: Color, color_2: Color) void;
+// Draw a color-filled circle (Vector version)
 export @symbol("DrawCircleV")			fn draw_circle_v(center: Vector2, radius: f32, color: Color) void;
+// Draw circle outline
 export @symbol("DrawCircleLines")		fn draw_circle_lines(center_x: int, center_y: int, radius: f32, color: Color) void;
+// Draw circle outline (Vector version)
 export @symbol("DrawCircleLinesV")		fn draw_circle_lines_v(center: Vector2, radius: f32, color: Color) void;
 
 // Ellipses
+
+// Draw ellipse
 export @symbol("DrawEllipse")			fn draw_ellipse(center_x: int, center_y: int, radius_h: f32, radius_v: f32, color: Color) void;
+// Draw ellipse outline
 export @symbol("DrawEllipseLines")		fn draw_ellipse_lines(center_x: int, center_y: int, radius_h: f32, radius_v: f32, color: Color) void;
 
 // Rings
+
+// Draw ring
 export @symbol("DrawRing")			fn draw_ring(center: Vector2, inner_radius: f32, outter_radius: f32, start_angle: f32, end_angle: f32, segments: int, color: Color) void;
+// Draw ring outline
 export @symbol("DrawRingLine")			fn draw_ring_line(center: Vector2, inner_radius: f32, outter_radius: f32, start_angle: f32, end_angle: f32, segments: int, color: Color) void;
 
 // Rectangles
+
+// Draw a color-filled rectangle
 export @symbol("DrawRectangle")			fn draw_rectangle(x: int, y: int, w: int, h: int, color: Color) void;
+// Draw a color-filled rectangle (Vector version)
 export @symbol("DrawRectangleV")		fn draw_rectangle_v(position: Vector2, rectangle_size: Vector2, color: Color) void;
+// Draw a color-filled rectangle
 export @symbol("DrawRectangleRec")		fn draw_rectangle_rec(rec: Rectangle, color: Color) void;
+// Draw a color-filled rectangle with pro parameters
 export @symbol("DrawRectanglePro")		fn draw_rectangle_pro(rec: Rectangle, origin: Vector2, rotation: f32, color: Color) void;
+// Draw a vertical-gradient-filled rectangle
 export @symbol("DrawRectangleGradientV")	fn draw_rectangle_gradient_v(x: int, y: int, w: int, h: int, color_1: Color, color_2: Color) void;
+// Draw a horizontal-gradient-filled rectangle
 export @symbol("DrawRectangleGradientH")	fn draw_rectangle_gradient_h(x: int, y: int, w: int, h: int, color_1: Color, color_2: Color) void;
+// Draw a gradient-filled rectangle with custom vertex colors
 export @symbol("DrawRectangleGradientEx")	fn draw_rectangle_gradient_ex(rec: Rectangle, color_1: Color, color_2: Color, color_3: Color, color_4: Color, ) void;
+// Draw rectangle outline
 export @symbol("DrawRectangleLines")		fn draw_rectangle_lines(x: int, y: int, w: int, h: int, color: Color) void;
+// Draw rectangle outline with extended parameters
 export @symbol("DrawRectangleLinesEx")		fn draw_rectangle_lines_ex(rec: Rectangle, line_thic: f32, color: Color) void;
+// Draw rectangle with rounded edges
 export @symbol("DrawRectangleRounded")		fn draw_rectangle_rounded(rec: Rectangle, roundness: f32, segments: int, color: Color) void;
+// Draw rectangle lines with rounded edges
 export @symbol("DrawRectangleRoundedLines")	fn draw_rectangle_rounded_lines(rec: Rectangle, roundness: f32, segments: int, line_thic: f32, color: Color) void;
 
 // Triangles
+
+// Draw a color-filled triangle (vertex in counter-clockwise order!)
 export @symbol("DrawTriangle")			fn draw_triangle(v1: Vector2, v2: Vector2, v3: Vector2, color: Color) void;
+// Draw triangle outline (vertex in counter-clockwise order!)
 export @symbol("DrawTriangleLines")		fn draw_triangle_lines(v1: Vector2, v2: Vector2, v3: Vector2, color: Color) void;
+// Draw a triangle fan defined by points (first vertex is the center)
 export @symbol("DrawTriangleFan")		fn draw_triangle_fan(points: *Vector2, point_count: int, color: Color) void;
+// Draw a triangle strip defined by points
 export @symbol("DrawTriangleStrip")		fn draw_triangle_strip(points: *Vector2, point_count: int, color: Color) void;
 export fn draw_triangle_v(points: Triangle, color: Color) void = {
 	draw_triangle(points.point_1, points.point_2, points.point_3, color);
 };
 
 // Polygons
+// Draw a regular polygon (Vector version)
 export @symbol("DrawPoly")		fn draw_poly(center: Vector2, sides: int, radius: f32, rotation: f32, color: Color) void;
+// Draw a polygon outline of n sides
 export @symbol("DrawPolyLines")		fn draw_poly_lines(center: Vector2, sides: int, radius: f32, rotation: f32, color: Color) void;
+// Draw a polygon outline of n sides with extended parameters
 export @symbol("DrawPolyLinesEx")	fn draw_poly_lines_ex(center: Vector2, sides: int, radius: f32, rotation: f32, line_thic: f32,color: Color) void;
 
 // Splines drawing functions
@@ -943,7 +1013,7 @@ export @symbol("DrawSplineSegmentBezierCubic")		fn draw_spline_segment_bezier_cu
 // Spline segment point evaluation functions, for a given t [0.0f .. 1.0f]
 
 // Get (evaluate) spline point: Linear
-export @symbol("GetSplinePointLinear")		fn get_spline_point_linear(start_pos: Vector2, end_pos: Vector2, t: f32) Vector2;                       
+export @symbol("GetSplinePointLinear")		fn get_spline_point_linear(start_pos: Vector2, end_pos: Vector2, t: f32) Vector2;
 // Get (evaluate) spline point: B-Spline
 export @symbol("GetSplinePointBasis")		fn get_spline_point_basis(p1: Vector2, p2: Vector2, p3: Vector2, p4: Vector2, t: f32) Vector2;
 // Get (evaluate) spline point: Catmull-Rom
@@ -951,7 +1021,7 @@ export @symbol("GetSplinePointCatmullRom")	fn get_spline_point_catmull_rom(p1: V
 // Get (evaluate) spline point: Quadratic Bezier
 export @symbol("GetSplinePointBezierQuad")	fn get_spline_point_bezier_quad(p1: Vector2, c2: Vector2, p3: Vector2, t: f32) Vector2;
 // Get (evaluate) spline point: Cubic Bezier
-export @symbol("GetSplinePointBezierCubic")	fn get_spline_point_bezier_cubic(p1: Vector2, c2: Vector2, c3: Vector2, p4: Vector2, t: f32) Vector2;	
+export @symbol("GetSplinePointBezierCubic")	fn get_spline_point_bezier_cubic(p1: Vector2, c2: Vector2, c3: Vector2, p4: Vector2, t: f32) Vector2;
 
 // Basic shapes collision detection functions
 export @symbol("CheckCollisionRecs")		fn check_collision_recs(rec_1: Rectangle, rec_2: Rectangle) bool;
@@ -996,10 +1066,10 @@ export @symbol("ColorNormalized")	fn color_normalized(normalized_color: Vector4)
 export @symbol("ColorToHSV")		fn color_to_hsv(color: Color) Vector3;
 export @symbol("ColorFromHSV")		fn color_from_hsv(hue: f32, saturation: f32, value: f32) Color;
 export @symbol("ColorTint")		fn color_tint(color: Color, tint: Color) Color;
-export @symbol("ColorBrightness")	fn color_brightness(color: Color, factor: f32) Color;                     
+export @symbol("ColorBrightness")	fn color_brightness(color: Color, factor: f32) Color;
 export @symbol("ColorContrast")		fn color_contrast(color: Color, contrast: f32) Color;
 export @symbol("ColorAlpha")		fn color_alpha(color: Color, alpha: f32) Color;
-export @symbol("ColorAlphaBlend")	fn color_alpha_blend(dst: Color, src: Color, tint: Color) Color;              
+export @symbol("ColorAlphaBlend")	fn color_alpha_blend(dst: Color, src: Color, tint: Color) Color;
 export @symbol("ColorLerp")		fn color_lerp(color_1: Color, color_2: Color, factor: f32) Color;
 export @symbol("GetColor")		fn get_color(color: u32) Color;
 export @symbol("GetPixelColor")		fn get_pixel_color(srcPtr: *opaque, format: int) Color;
@@ -1008,13 +1078,29 @@ export @symbol("GetPixelDataSize")	fn get_pixel_data_size(width: int, height: in
 
 // module: rtext
 // Text-Drawing functions
-@symbol("DrawText") fn DrawText(text: *c::char, x: int, y: int, text_size: int, color: Color) void;
-export fn draw_text(title: str, x: int, y: int, text_size: int, color: Color) void = DrawText(c::fromstr(title: str)!, x, y, text_size, color);
 
+// Draw current FPS
 export @symbol("DrawFPS") fn draw_fps(x: int, y: int) void;
 
+@symbol("DrawText") fn DrawText(text: *c::char, x: int, y: int, text_size: int, color: Color) void;
+// Draw text (using default font)
+export fn draw_text(title: str, x: int, y: int, text_size: int, color: Color) void = DrawText(c::fromstr(title: str)!, x, y, text_size, color);
+
+@symbol("DrawTextEx") fn DrawTextEx(font: Font, text: *c::char, position: Vector2, font_size: f32, spacing: f32, tint: Color) void;
+// Draw text using font and additional parameters
+export fn draw_text_ex(font: Font, text: str, position: Vector2, font_size: f32, spacing: f32, tint: Color) void = DrawTextEx(font: Font, c::fromstr(text)!, position: Vector2, font_size: f32, spacing: f32, tint: Color);
+
+@symbol("DrawTextPro") fn DrawTextPro(font: Font, text: *c::char, position: Vector2, origin: Vector2, rotation: Vector2, font_size: f32, spacing: f32, tint: Color) void;
+// Draw text using Font and pro parameters (rotation)
+export fn draw_text_pro(font: Font, text: str, position: Vector2, origin: Vector2, rotation: Vector2, font_size: f32, spacing: f32, tint: Color) void = DrawTextPro(font: Font, c::fromstr(text)!, position: Vector2, origin: Vector2, rotation: Vector2, font_size: f32, spacing: f32, tint: Color);
+
 // Text font info functions
+
+// Set vertical line spacing when drawing with line-breaks
 export @symbol("SetTextLineSpacing") fn set_text_line_spacing(spacing: int) void;
+@symbol("MeasureText") fn MeasureText(text: *c::char, font_size: int) int;
+// Measure string width for default font
+export fn measure_text(text: str, font_size: int) int = MeasureText(c::fromstr(text: str)!, font_size: int);
 
 // module: raudio
 // Audio device management functions
@@ -1114,7 +1200,7 @@ export @symbol("SetAudioStreamPitch")			fn set_audio_stream_pitch(stream: AudioS
 // Set pan for audio stream (0.5 is centered)
 export @symbol("SetAudioStreamPan")			fn set_audio_stream_pan(stream: AudioStream, pan: f32) void;
 // Default size for new audio streams
-export @symbol("SetAudioStreamBufferSizeDefault")	fn set_audio_stream_buffer_size_default(buffer_size: int) void;				
+export @symbol("SetAudioStreamBufferSizeDefault")	fn set_audio_stream_buffer_size_default(buffer_size: int) void;
 
 // TODO:
 // SetAudioStreamCallback
@@ -1149,7 +1235,10 @@ export @symbol("SetAudioStreamBufferSizeDefault")	fn set_audio_stream_buffer_siz
 	let square_color_index = 0;
 
 	set_target_fps(60);
-	
+
+	const text: str = "Congrats! Raylib is working!";
+	const font_size: int = 20;
+
 	for (!window_should_close()) {
 		square_position.x += square_velocity.x;
 		square_position.y += square_velocity.y;
@@ -1174,8 +1263,7 @@ export @symbol("SetAudioStreamBufferSizeDefault")	fn set_audio_stream_buffer_siz
 
 		begin_drawing();
 		clear_background(RAYWHITE);
-		draw_text("Congrats! Raylib is working!",
-			screen_width / 3, screen_height / 2, 20,  GRAY);
+		draw_text(text, screen_width / 2 - (measure_text(text, font_size)/2), screen_height / 2, font_size,  GRAY);
 		draw_rectangle(square_position.x: int,
 			square_position.y: int,
 			square_size.x: int,
